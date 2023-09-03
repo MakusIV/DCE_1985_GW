@@ -9,7 +9,7 @@ if not versionDCE then versionDCE = {} end
 versionDCE["conf_mod.lua"] = "1.27.30"
 
 --By Old_Boy
-ACTIVATE_TESTING_ENVIROMENTS = true -- false: for running in DCE enviroment (DEBRIEF_Master.lua launched from DEBUG_DebriefMission.bat), true: for running in testing enviroment (DEBRIEF_Master.lua launched from DEBUG_DebriefMissionTesting.bat). By Old_Boy
+ACTIVATE_TESTING_ENVIROMENTS = false -- false: for running in DCE enviroment (DEBRIEF_Master.lua launched from DEBUG_DebriefMission.bat), true: for running in testing enviroment (DEBRIEF_Master.lua launched from DEBUG_DebriefMissionTesting.bat). By Old_Boy
 LOGGING_LEVEL = "warn" -- trace, debug, info, warn, error, fatal     --By Old_Boy
 LOG_DIR = "Log/"
 
@@ -58,7 +58,7 @@ mission_ini = {
 	max_skill_red_helicopter = "Excellent",	-- Average, Good, High, Excellent
 
 	PruneScript = true,							-- reduce a mission by removing units (mod Tomsk M09)
-	PruneAggressiveness = 1,					-- How aggressive should the pruning be [0 to 2], larger numbers will remove more units, 0 = no pruning at all
+	PruneAggressiveness = 1.5,					-- How aggressive should the pruning be [0 to 2], larger numbers will remove more units, 0 = no pruning at all
 	PruneStatic = false,							-- (default : false), true: Should ALL parked (static) aircraft be pruned [MP: recommend: true]
 	ForcedPruneSam = false,						-- (default : false), true: PBO-CEF wanted to keep some actives SAMs, this option desactivates them too.
 
@@ -91,7 +91,7 @@ mission_ini = {
 		["F-14B"] = "deck",						-- (default: "deck"), "catapult", "air"
 		["E-2C"] = "deck",
 		["S-3B Tanker"] = "deck",
-		["Pedro"] = "deck",
+		["Pedro"] = "air",
 	},
 
 	MP_PlaneRecovery = false,					--  (defaut: false) In multiplayer, this allows you to control an aircraft already in flight in case of a crash. M11.q
@@ -157,8 +157,8 @@ MISSION_START_COMMANDER = 5     -- first mission for start commander execution
 
 
 Debug = {
-	AfficheFailure = false,                        -- affiche les infos Pannes Al�atoires
-	AfficheFlight = false,						-- affiche les infos des packages cr��s dans ATO_FlightPlan
+	AfficheFailure = false	,                        -- affiche les infos Pannes Al�atoires
+	AfficheFlight = true,						-- affiche les infos des packages cr��s dans ATO_FlightPlan
 	AfficheSol = false,							-- affiche les infos des cibles encore intactes
 	KillGround  = {
 		flag = false,				-- Active la destruction al�atoires des cibles, via les options plus bas
@@ -167,7 +167,7 @@ Debug = {
 		pourcent = 50,				-- pourcentage de chance que l'unit� soit d�truite (juste l'unit�, pas le groupe)
 	},
 	Generator  = {
-		affiche = false,			-- affiche les infos des premiers vols cr��s dans ATO_Generator
+		affiche = true,			-- affiche les infos des premiers vols cr��s dans ATO_Generator
 		nb = 200,					-- nb de vol � afficher
 	},
 	checkTargetName = true,						-- FirsMission Alerte si les noms des targets possede 1 espace en premier ou en dernier
@@ -220,12 +220,12 @@ campMod = {
 			rayon = 200,		-- distance en Km autour de laquelle on peut placer le bullsEye
 		},
 		syria = {
-											pos = {
-												x =	-22163,	-- Israel Line 974
-												y = -11800,	-- Israel Line 974
-											},
-											rayon = 200,		-- distance en Km autour de laquelle on peut placer le bullsEye
-									},
+				pos = {
+					x =	-11409,	-- 
+					y = -712,	-- 
+				},
+				rayon = 200,		-- distance en Km autour de laquelle on peut placer le bullsEye
+		},
 	},
 
 	WestCallsign = {
@@ -257,7 +257,7 @@ campMod = {
 	Setting_Generation= {
 		["limit_escort"] = 8,												-- (default : 99)(recommended : 8), limit escort number to
 	},
-	StrikeOnlyWithEscorte = false, 											-- (default : true) strikes are possible with only one escort
+	StrikeOnlyWithEscorte = true, 											-- (default : true) strikes are possible with only one escort
 }
 
 
@@ -301,9 +301,9 @@ playable_m = {
 
 pictureBrief = {
 				["blue"] = {
-							 "FrontlineCaucasus.png",
+							 "Map Conflict.png",
 							},
 				["red"] = {
-							 "FrontlineCaucasus.png",
+							 "Map Conflict.png",
 							 },
 				}

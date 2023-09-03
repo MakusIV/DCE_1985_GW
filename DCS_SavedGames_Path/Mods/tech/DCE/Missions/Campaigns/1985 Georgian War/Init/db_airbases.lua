@@ -374,11 +374,11 @@ db_airbases = {
 		LimitedParkNb = 19,
 	},
 	-- Blue Ship
-	['CVN-74 John C. Stennis'] = {                            
-		unitname = "CVN-74 John C. Stennis",
+	['CVN-72 Abraham Lincoln'] = {                            
+		unitname = "CVN-72 Abraham Lincoln",
 		startup = 300,
 		side = "blue",							-- side : info obligatoire
-		LimitedParkNb  = 10, 
+		LimitedParkNb  = 9, 
 		ATC_frequency = "272.500",				--si ATC_frequency non present, on utilise la freq de base_mission
 	},
 	['CVN-71 Theodore Roosevelt'] = {                            

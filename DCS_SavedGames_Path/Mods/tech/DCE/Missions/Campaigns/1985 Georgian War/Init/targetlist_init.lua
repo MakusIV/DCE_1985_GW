@@ -2420,41 +2420,23 @@ targetlist = {
 			radius = 15000,
 			text = "",
 		},
-		["CAP AWACS"] = {
-			task = "CAP",
-			priority = 10,
-			attributes = {},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			refpoint = "CAP-AWACS",
-			radius = 50000,
-			text = "south AWACS",
-			inactive = false,
-		},
-		["Mozdok Alert 200 Km"] = {
-			task = "Intercept",
-			priority = 5,
+		
+		
+		["Sweep South"] = {
+			task = "Fighter Sweep",
+			priority = 1,
 			attributes = {},
 			firepower = {
 				min = 3,
 				max = 5,
 			},
-			base = "Mozdok",
-			radius = 200000,
+			x = -246773,
+			y = 864192,
+			text = "in the south area",
 		},
-		["Mozdok Alert 120 Km"] = {
-			task = "Intercept",
-			priority = 7,
-			attributes = {},
-			firepower = {
-				min = 3,
-				max = 5,
-			},
-			base = "Mozdok",
-			radius = 120000,
-		},
+		
+
+		-- CAP
 		["CAP Mozdok"] = {
 			task = "CAP",
 			priority = 20,
@@ -2468,18 +2450,84 @@ targetlist = {
 			text = "south Mozdok",
 			inactive = true,
 		},
-		["Sweep South"] = {
-			task = "Fighter Sweep",
-			priority = 1,
+		["CAP Beslan"] = {--active
+			task = "CAP",
+			priority = 10,
 			attributes = {},
 			firepower = {
 				min = 3,
 				max = 5,
 			},
-			x = -246773,
-			y = 864192,
-			text = "in the south area",
+			refpoint = "CAP Beslan",
+			radius = 50000,
+			text = "South West Beslan",
+			--inactive = true,
 		},
+		["CAP Mineralnye-Vody"] = {
+			task = "CAP",
+			priority = 7,
+			attributes = {},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			refpoint = "CAP Mineralnye-Vody",
+			radius = 50000,
+			text = "south east Mineralnye-Vody",
+			inactive = true,
+		},
+		["CAP Nalchik"] = {
+			task = "CAP",
+			priority = 6,
+			attributes = {},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			refpoint = "CAP Nalchik",
+			radius = 50000,
+			text = "south east Nalchik",
+			inactive = true,
+		},
+		["CAP Center"] = {--active
+			task = "CAP",
+			priority = 7,
+			attributes = {},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			refpoint = "CAP Center",
+			radius = 50000,
+			text = "over Center front",
+			--inactive = true,
+		},
+		["CAP West"] = {--active
+			task = "CAP",
+			priority = 7,
+			attributes = {},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			refpoint = "CAP West",
+			radius = 50000,
+			text = "over West front",
+			--inactive = true,
+		},
+		
+		-- INTERCEPT
+		["Nalchik Alert 100 Km"] = {
+			task = "Intercept",
+			priority = 6,
+			attributes = {},
+			firepower = {
+				min = 3,
+				max = 5,
+			},
+			base = "Nalchik",
+			radius = 100000,
+		},	
 		["Nalchik Alert 200 Km"] = {
 			task = "Intercept",
 			priority = 7,
@@ -2512,20 +2560,7 @@ targetlist = {
 			},
 			base = "Beslan",
 			radius = 120000,
-		},
-		["CAP Beslan"] = {
-			task = "CAP",
-			priority = 10,
-			attributes = {},
-			firepower = {
-				min = 3,
-				max = 5,
-			},
-			refpoint = "CAP Beslan",
-			radius = 50000,
-			text = "South West Beslan",
-			--inactive = true,
-		},
+		},		
 		["Mineralnye-Vody Alert 200 Km"] = {
 			task = "Intercept",
 			priority = 5,
@@ -2537,56 +2572,30 @@ targetlist = {
 			base = "Mineralnye-Vody",
 			radius = 200000,
 		},
-		["CAP Mineralnye-Vody"] = {
-			task = "CAP",
-			priority = 7,
-			attributes = {},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			refpoint = "CAP Mineralnye-Vody",
-			radius = 50000,
-			text = "south east Mineralnye-Vody",
-			inactive = true,
-		},
-		["Nalchik Alert 100 Km"] = {
+		["Mozdok Alert 200 Km"] = {
 			task = "Intercept",
-			priority = 6,
+			priority = 5,
 			attributes = {},
 			firepower = {
 				min = 3,
 				max = 5,
 			},
-			base = "Nalchik",
-			radius = 100000,
+			base = "Mozdok",
+			radius = 200000,
 		},
-		["CAP Nalchik"] = {
-			task = "CAP",
-			priority = 6,
-			attributes = {},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			refpoint = "CAP Nalchik",
-			radius = 50000,
-			text = "south east Nalchik",
-			inactive = true,
-		},
-		["CAP Center"] = {
-			task = "CAP",
+		["Mozdok Alert 120 Km"] = {
+			task = "Intercept",
 			priority = 7,
 			attributes = {},
 			firepower = {
-				min = 2,
-				max = 4,
+				min = 3,
+				max = 5,
 			},
-			refpoint = "CAP Center",
-			radius = 50000,
-			text = "over Center front",
-			--inactive = true,
-		},		
+			base = "Mozdok",
+			radius = 120000,
+		},
+		
+		
 		["Airlift Beslan"] = {
 			task = "Transport",
 			priority = 1,
@@ -2673,9 +2682,9 @@ targetlist = {
 				max = 6,
 			},
 			class = "ship",
-			name = "TF-71",
+			name = "CVN-71",
 		},
-		["CVN-74 John C. Stennis"] = { -- was TF-74
+		["CVN-72 Abraham Lincoln"] = { -- was TF-74
 			task = "Anti-ship Strike",
 			priority = 1,
 			attributes = {"ship"},
@@ -2684,7 +2693,7 @@ targetlist = {
 				max = 6,
 			},
 			class = "ship",
-			name = "TF-74",
+			name = "CVN-72",
 		},
 		["LHA-Group"] = {
 			task = "Anti-ship Strike",

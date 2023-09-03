@@ -18,7 +18,7 @@ versionDCE["db_aircraft.lua"] = "OB.1.0.1"
 local log = dofile("../../../ScriptsMod."..versionPackageICM.."/UTIL_Log.lua")
 local log_level = LOGGING_LEVEL -- "traceVeryLow"
 local function_log_level = log_level --"warn" 
-log.activate = true
+log.activate = false
 log.level = log_level 
 log.outfile = LOG_DIR .. "LOG_db_aircraft.lua." .. camp.mission .. ".log" 
 log.debug("Start")
@@ -165,6 +165,54 @@ db_aircraft = {
 			["factor"] = {},
 		},	
 
+		["M-2000C"] = {--
+			["role"] = {"Fighter", "Attacker", "Reco"},
+			["cost"] = 35000, --balanced for gameplay, doc cost: 23000, --cost aircraft in K$ (mirage 2000 23 M$)
+			["factor"] = {},
+		},	
+
+		["Mirage-F1EE"] = {--
+			["role"] = {"Fighter", "Attacker", "Reco"},
+			["cost"] = 28000, --balanced for gameplay, doc cost: ?, --cost aircraft in K$ (mirage 2000 23 M$)
+			["factor"] = {},
+		},
+		
+		["A-10A"] = {--
+			["role"] = {"Attacker", "Reco"},
+			["cost"] = 18000, 
+			["factor"] = {},
+		},
+
+		["F-117A"] = {--
+			["role"] = {"Bomber", "Reco"},
+			["cost"] = 52000, 
+			["factor"] = {},
+		},
+
+		["F-16A"] = {--
+			["role"] = {"Fighter", "Attacker", "Reco"},
+			["cost"] = 35000, 
+			["factor"] = {},
+		},
+
+		["F-15C"] = {--
+			["role"] = {"Fighter", "Attacker", "Reco"},
+			["cost"] = 48000, 
+			["factor"] = {},
+		},
+
+		["C-101CC"] = {--
+			["role"] = {"Attacker", "Reco"},
+			["cost"] = 15000, 
+			["factor"] = {},
+		},
+
+		["Tornado IDS"] = {--
+			["role"] = {"Fighter", "Attacker", "Reco"},
+			["cost"] = 42000, 
+			["factor"] = {},
+		},		
+
 		["F-4E"] = {--1958 (primo volo) 1960 (entrata in servizio)
 			["role"] = {"Attacker", "Fighter", "Reco"},
 			["cost"] = 15000, -- balanced for gameplay, doc cost: 2400, --cost aircraft in K$
@@ -189,33 +237,21 @@ db_aircraft = {
 			["factor"] = {},
 		},
 
-		["MiG-27K"] = {--1970 (primo volo) 1975 (entrata in servizio) -- Bombe?
-			["role"] = {"Attacker", "Fighter", "Reco"},		
-			["cost"] = 13000, --balanced for gameplay, doc cost: 6600, --cost aircraft in K$  (1980)
-			["factor"] = {},
-		},
-
-		["MiG-21Bis"] = {--1955 (primo volo) 1959 (entrata in servizio) inserire Kh-66, S-24 e/o S-21
-			["role"] = {"Fighter", "Attacker", "Reco"},		
-			["cost"] = 10000, -- balanced for gameplay, doc cost: 3000, --cost aircraft in K$  (1974)
-			["factor"] = {},
-		},
-
-		["MiG-19P"] = {--1953 (primo volo) 1955 (entrata in servizio)
-			["role"] = {"Fighter", "Attacker", "Reco"},		
-			["cost"] = 2000, -- balanced for gameplay, doc cost: 1000, --cost aircraft in K$  (1980)
-			["factor"] = {},
-		},
-
-		["An-26B"] = {--1969 (primo volo) 1973 (entrata in servizio)
-			["role"] = {"Transporter"},
-			["cost"] = 14000, -- balanced for gameplay, doc cost: 4000, --cost aircraft in K$
-			["factor"] = {},
-		},
-		
-		["Mi-24V"] = {--1969 (primo volo) 1972 (entrata in servizio)
+		["SH-60B"] = {--
 			["role"] = {"Helicopter"},
-			["cost"] = 12500, --cost aircraft in K$
+			["cost"] = 80000, 
+			["factor"] = {},
+		},
+
+		["OH-58D"] = {--
+			["role"] = {"Helicopter"},
+			["cost"] = 5000, 
+			["factor"] = {},
+		},
+
+		["CH-47D"] = {--
+			["role"] = {"Helicopter"},
+			["cost"] = 60000, 
 			["factor"] = {},
 		},
 	},
@@ -240,19 +276,7 @@ db_aircraft = {
 			["role"] = {"Bomber"},
 			["cost"] = 25000, --cost aircraft in K$
 			["factor"] = {},
-		},
-
-		["Mi-8MT"] = {--1961 (primo volo) 1967 (entrata in servizio)
-			["role"] = {"Helicopter"},
-			["cost"] = 14000, --cost aircraft in K$
-			["factor"] = {},
-		},
-
-		["Mi-24V"] = {--1969 (primo volo) 1972 (entrata in servizio)
-			["role"] = {"Helicopter"},
-			["cost"] = 12500, --cost aircraft in K$
-			["factor"] = {},
-		},
+		},		
 
 		["A-50"] = { -- 1978 (primo volo) 1984 (entrata in servizio) SI in quanto in DCS non esiste un'altro AWACS per l'USSR
 			["role"] = {"AWACS"},
@@ -302,12 +326,36 @@ db_aircraft = {
 			["factor"] = {},
 		},
 
-		["MiG-19P"] = {--1953 (primo volo) 1955 (entrata in servizio)
-			["role"] = {"Fighter", "Attacker", "Reco"},		
-			["cost"] = 2000, -- balanced for gameplay, doc cost: 1000, --cost aircraft in K$  (1980)
+		["F-14A"] = {--
+			["role"] = {"Fighter", "Reco"},		
+			["cost"] = 32000,
 			["factor"] = {},
 		},
 
+		["MiG-31"] = {-- 1982
+			["role"] = {"Fighter", "Reco"},		
+			["cost"] = 33000,
+			["factor"] = {},
+		},		
+
+		["MiG-29A"] = {-- 1983
+			["role"] = {"Fighter", "Attacker", "Reco"},		
+			["cost"] = 12000,
+			["factor"] = {},
+		},
+
+		["Su-27"] = {-- 1984
+			["role"] = {"Fighter", "Attacker", "Reco"},		
+			["cost"] = 30000,
+			["factor"] = {},
+		},
+		
+		["Su-25"] = {-- 1981
+			["role"] = {"Attacker", "Reco"},		
+			["cost"] = 11000,
+			["factor"] = {},
+		},
+				
 		["Il-76MD"] = {--1971 (primo volo) 1974 (entrata in servizio)
 			["role"] = {"Transporter"},
 			["cost"] = 54000, --cost aircraft in K$
@@ -319,39 +367,49 @@ db_aircraft = {
 			["cost"] = 15000, --cost aircraft in K$  (1980)
 			["factor"] = {},
 		},
-	},
 
-    -- Not valid
-
-    -- Nato
-	--[[
-    ["SH-60B"] = {--? (primo volo) 1984 (entrata in servizio) NO
+		["Mi-26"] = {-- 1977
+			["role"] = {"Helicopter"},		
+			["cost"] = 25000,
+			["factor"] = {},
+		},
 		
+		["SA342M"] = {-- 1973
+			["role"] = {"Helicopter"},		
+			["cost"] = 3000,
+			["factor"] = {},
+		},
+
+		["SA342Minigun"] = {-- 1973
+			["role"] = {"Helicopter"},		
+			["cost"] = 3500,
+			["factor"] = {},
+		},
+
+		["SA342Mistral"] = {-- 1973
+			["role"] = {"Helicopter"},		
+			["cost"] = 5000,
+			["factor"] = {},
+		},
+
+		["Mi-8MT"] = {--1961 (primo volo) 1967 (entrata in servizio)
+			["role"] = {"Helicopter"},
+			["cost"] = 14000, --cost aircraft in K$
+			["factor"] = {},
+		},
+
+		["Mi-24V"] = {--1969 (primo volo) 1972 (entrata in servizio)
+			["role"] = {"Helicopter"},
+			["cost"] = 12500, --cost aircraft in K$
+			["factor"] = {},
+		},
+
+		["Mi-24P"] = {--1980 (primo volo)
+			["role"] = {"Helicopter"},
+			["cost"] = 15000, --cost aircraft in K$
+			["factor"] = {},
+		},		
 	},
-
-    ["B-1B"] = { --1974 (primo volo) 1986 (entrata in servizio) NO
-		
-	},
-
-	]]
-	-- UH-60 --1974 (primo volo) 1978 (entrata in servizio) NO
-	-- SA-342 Gazelle (1978-2000 (sistemi d'arma)?)
-
-    --URSS
-	--[[
-    ["Mi-26"] = {--1977 (primo volo) 1983 (entrata in servizio) NO
-	
-	},
-
-    ["Tu-142"] = {--1975 (primo volo) 1980 (entrata in servizio) NO
-		
-	},
-
-	["Mi-24P"] = {--1980 (primo volo) (entrata in servizio)
-		
-	},
-	]]
-
 }
 
 

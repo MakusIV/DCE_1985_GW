@@ -8,13 +8,13 @@
 -------------------------------------------------------------------------------------------------------
 
 camp = {
-	title = "1975 Georgian War",	--Title of campaign (name of missions)
+	title = "1985 Georgian War",	--Title of campaign (name of missions)
 	version = "V 1.0",
 	mission = 1,					--campaig mission number
 	date = {						--campaign date
-        day = 13,
-        year = 1975,
-        month = 9,
+        day = 23,
+        year = 1985,
+        month = 11
     },
 	time = 3600,					--daytime in seconds
 	dawn = 21600,					--time of dawn in seconds
@@ -30,7 +30,7 @@ camp = {
 		refTemp = 20,				--average day max temperature
 	},
 	variation = 4,					--variation in degrees from true north to magneitic north
-	debug = false,					--debug mode
+	debug = true,					--debug mode
 	-- hotstart = false,       		--player flights starts with engines running     ---- change it  in init/conf_mod.lua
     -- intercept_hotstart = true,    --player flights with intercept task starts with engines running  ---- change it  in init/conf_mod.lua
 
@@ -122,8 +122,8 @@ camp = {
             ["FIREPOWER_ROUNDED_COMPUTATION"] = 0.01,              -- don't touch!
             ["FIREPOWER_ROUNDED_ASSIGNEMENT"] = 0.1,               -- don't touch!
             ["FACTOR_FOR_CALCULATED_TARGET_FIREPOWER_MAX"] = 1.1,   -- factor for computed firepower max target: firepower_max = firepower_min * weapon_variability * FACTOR
-            ["WEIGHT_MISSILE_A2A_RELIABILITY"] = 0.3,              -- look weight_missile_a2a_attribute calculus (down)
-            ["WEIGHT_MISSILE_A2A_MANOUVRABILITY"] = 0.2,           -- look weight_missile_a2a_attribute calculus (down)
+            ["WEIGHT_MISSILE_A2A_RELIABILITY"] = 0.3,              -- look weight_missile_a2a_attribute calculus
+            ["WEIGHT_MISSILE_A2A_MANOUVRABILITY"] = 0.2,           -- look weight_missile_a2a_attribute calculus
             
             ["FIREPOWER_FOR_AA_TARGETS"] = {        
                     
@@ -466,17 +466,17 @@ camp = {
 			GROUND_THREAT_RILEVABILITY_RED_AIR_CAPACITY = 1,						-- capacity for ground threath rilevability (1: max capacity, 0 minimum capacity)
 			GROUND_THREAT_RILEVABILITY_RED_GROUND_CAPACITY = 1,						-- capacity for ground threath rilevability (1: max capacity, 0 minimum capacity)
 			MAN_SAM_RILEVABILITY = 0.2,												-- specific ground asset rilevability (1: detectability ensured, 0 asset undetectable)
-			SMALL_AAA_SAM_IR_VEHICLE_RILEVABILITY = 0.4,							-- specific ground asset rilevability (1: detectability ensured, 0 asset undetectable)
-			SMALL_AAA_SAM_RADAR_VEHICLE_RILEVABILITY = 0.5,							-- specific ground asset rilevability (1: detectability ensured, 0 asset undetectable)
-			MEDIUM_AAA_SAM_IR_VEHICLE_RILEVABILITY = 0.6,							-- specific ground asset rilevability (1: detectability ensured, 0 asset undetectable)
-			MEDIUM_AAA_SAM_RADAR_VEHICLE_RILEVABILITY = 0.7,
-			LARGE_SAM_VEHICLE_RILEVABILITY = 0.8,
-			SMALL_AAA_SAM_FIXEDPOS_RILEVABILITY = 0.6,
-			MEDIUM_AAA_SAM_FIXEDPOS_RILEVABILITY = 0.8,
-			LARGE_AAA_SAM_FIXEDPOS_RILEVABILITY = 0.9,
-			SMALL_SHIP_RILEVABILITY = 0.7,
-			MEDIUM_SHIP_RILEVABILITY = 0.8,
-			LARGE_SHIP_RILEVABILITY = 0.95,
+			SMALL_AAA_SAM_IR_VEHICLE_RILEVABILITY = 0.5,							-- specific ground asset rilevability (1: detectability ensured, 0 asset undetectable)
+			SMALL_AAA_SAM_RADAR_VEHICLE_RILEVABILITY = 0.6,							-- specific ground asset rilevability (1: detectability ensured, 0 asset undetectable)
+			MEDIUM_AAA_SAM_IR_VEHICLE_RILEVABILITY = 0.7,							-- specific ground asset rilevability (1: detectability ensured, 0 asset undetectable)
+			MEDIUM_AAA_SAM_RADAR_VEHICLE_RILEVABILITY = 0.8,
+			LARGE_SAM_VEHICLE_RILEVABILITY = 0.9,
+			SMALL_AAA_SAM_FIXEDPOS_RILEVABILITY = 0.8,
+			MEDIUM_AAA_SAM_FIXEDPOS_RILEVABILITY = 0.9,
+			LARGE_AAA_SAM_FIXEDPOS_RILEVABILITY = 1,
+			SMALL_SHIP_RILEVABILITY = 0.75,
+			MEDIUM_SHIP_RILEVABILITY = 1,
+			LARGE_SHIP_RILEVABILITY = 1,
 		},
 
 		["ATO_Generator"] = {
@@ -531,7 +531,7 @@ camp = {
                 MAX_AIRCRAFT_FOR_SWEEP = 4,		 			    					-- max number of aircraft for an sweep mission 
                 MAX_AIRCRAFT_FOR_OTHER = 1,		 				    				-- max number of aircraft for other mission 
                 --MIN_AIRCRAFT_FOR_OTHER = 1, 										-- min number of aircraft for other mission 
-                MAX_AIRCRAFT_FOR_BOMBER = 1,										-- max number of aircraft for bomber                 
+                MAX_AIRCRAFT_FOR_BOMBER = 2,										-- max number of aircraft for bomber                 
             },
              
             ["red"] = {
@@ -579,7 +579,7 @@ camp = {
                 MAX_AIRCRAFT_FOR_SWEEP = 4,		 								    -- max number of aircraft for an sweep mission 
                 MAX_AIRCRAFT_FOR_OTHER = 1,		 								    -- max number of aircraft for other mission 
                 --MIN_AIRCRAFT_FOR_OTHER = 1, 										-- min number of aircraft for other mission 
-                MAX_AIRCRAFT_FOR_BOMBER = 1,										-- max number of aircraft for bomber                 
+                MAX_AIRCRAFT_FOR_BOMBER = 2,										-- max number of aircraft for bomber                 
             },
 		},
     },
