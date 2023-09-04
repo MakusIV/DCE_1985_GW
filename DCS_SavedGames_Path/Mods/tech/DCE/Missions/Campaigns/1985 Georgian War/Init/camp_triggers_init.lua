@@ -69,7 +69,7 @@ camp_triggers = {
 			[10] = 'Action.AddImage("Newspaper_FirstNight_red.jpg", "red")',
 		},
 	},
-	
+	s
 	
 	----- CAMPAIGN END -----
 	["Campaign End Victory 1"] = {
@@ -123,7 +123,7 @@ camp_triggers = {
 	["Campaign End Victory 5"] = {
 		active = true,
 		once = true,
-		condition = 'Return.TargetAlive("An Nasiriyah Airbase") < 3 and Return.TargetAlive("Damascus Airbase") < 12 and Return.TargetAlive("Tabqa Airbase") < 8 and Return.TargetAlive("Khalkhalah Airbase") < 8 and Return.TargetAlive("Bassel Al-Assad Airbase") < 9 and Return.TargetAlive("Deir ez-Zor Airbase") < 8 and Return.TargetAlive("Beirut-Rafic Hariri Airbase") < 3 and Return.TargetAlive("Taftanaz Airbase") < 5 and Return.TargetAlive("Hama Airbase") < 9 and Return.TargetAlive("Palmyra Airbase") < 8',
+		condition = 'Return.TargetAlive("Beslan Airbase") < 5 and Return.TargetAlive("Nalchik Airbase") < 4 and Return.TargetAlive("Mozdok Airbase") < 13 and Return.TargetAlive("Mineralnye-Vody Airbase") < 9 and Return.TargetAlive("Maykop-Khanskaya Airbase") < 18 and Return.TargetAlive("Krymsk") < 18 and Return.TargetAlive("Krasnodar-Center Airbase") < 18',
 		action = {
 			[1] = 'Action.CampaignEnd("win")',
 			[2] = 'Action.Text("The Russian Air Force is in ruins. All their main bases are destroyed, Russians are no longer able to produce any sorties or offer any resistance. The Allied forces now owns complete air superiority. Well done.")',
@@ -207,7 +207,7 @@ camp_triggers = {
 	["Campaign End Loss 7"] = {
 		active = true,
 		once = true,
-		condition = 'Return.TargetAlive("Incirlik Airbase") < 7 and Return.TargetAlive("Gaziantep Airbase") < 5 and Return.TargetAlive("Hatay Airbase") < 5 and Return.TargetAlive("Adana Sakirpasa") < 8 and Return.TargetAlive("Larnaca") < 7 and Return.TargetAlive("Paphos") < 2',
+		condition = 'Return.TargetAlive("Vaziani Airbase") < 7 and Return.TargetAlive("Tbilissi-Lochini Airbase") < 5 and Return.TargetAlive("Soganlug Airbase") < 5 and Return.TargetAlive("Kutaisi Airbase") < 8 and Return.TargetAlive("Senaki-Kolkhi Airbase") < 7 and Return.TargetAlive("Batumi Airbase") < 2  and Return.TargetAlive("Sukhumi Airbase") < 8',
 		action = {
 			[1] = 'Action.CampaignEnd("win")',
 			[2] = 'Action.Text("The USA and NATO Air Force are in ruins. All ours main bases are destroyed, USA and NATO Countries are not longer able to produce any sorties or offer any resistance. The Russian forces now owns complete air superiority and reconquer their territories.")',
@@ -307,7 +307,7 @@ camp_triggers = {
 	
 	
 	----- AIRBASE STRIKES -----
-	["Gudauta Airbase Disabled"] = {
+	--[[["Gudauta Airbase Disabled"] = {
 		active = true,
 		condition = 'Return.TargetAlive("Gudauta Airbase") < 10',
 		action = {
@@ -321,7 +321,7 @@ camp_triggers = {
 		action = {
 			[1] = 'Action.Text("After the facilities at Gudauta Airbase have been hit by air strikes, air operations at this base came to a complete stop. Intelligence believes that due to the heavy damage inflicted, the base is no longer ably to produce any aviation sorties.")',
 		}
-	},
+	},]]
 	["Batumi Airbase Disabled"] = {
 		active = true,
 		condition = 'Return.TargetAlive("Batumi Airbase") < 6',
@@ -473,6 +473,53 @@ camp_triggers = {
 		action = {
 			[1] = 'Action.Text("Thanks to the destruction of the fuel and ammunition stocks at Mineralnye Vody Airbase, air operations at that base have come to a complete halt. Intelligence estimates that interceptors at Mineralnye Vody Airbase no longer pose a threat to allied strike aircraft. This will considerably ease our access to targets in the enemy rear area.")',
 		--[[		[2] = 'Action.AddImage("BDA_Creech.jpg")', ]]-- ---A changer
+		}
+	},
+	["Maykop-Khanskaya Airbase Disabled"] = {
+		active = true,
+		condition = 'Return.TargetAlive("Maykop-Khanskaya Airbase") < 2',
+		action = {
+			[1] = 'db_airbases["Maykop-Khanskaya"].inactive = true',
+		}
+	},
+	["Maykop-Khanskaya Airbase Disabled Text"] = {
+		active = true,
+		once = true,
+		condition = 'Return.TargetAlive("Maykop-Khanskaya Airbase") < 2',
+		action = {
+			[1] = 'Action.Text("Recent air strikes have destroyed enemy ground elements running operations at Maykop-Khanskaya Airbase. Without their ground support, any remaining aircraft at the airstrip will no longer be able to launch on sorties.")',
+		}
+	},
+	["Krymsk Airbase Disabled"] = {
+		active = true,
+		condition = 'Return.TargetAlive("Krymsk Airbase") < 2',
+		action = {
+			[1] = 'db_airbases["Krymsk"].inactive = true',
+		}
+	},
+	["Krymsk Airbase Disabled Text"] = {
+		active = true,
+		once = true,
+		condition = 'Return.TargetAlive("Krymsk Airbase") < 2',
+		action = {
+			[1] = 'Action.Text("After the facilities at Krymsk Airbase have been hit by air strikes, air operations at this base came to a complete stop. Intelligence believes that due to the heavy damage inflicted, the base is no longer ably to produce any aviation sorties.")',
+		--[[		[2] = 'Action.AddImage("BDA_Beatty.jpg")', ]]--  ---A changer
+		}
+	},
+	["Krasnodar-Center Airbase Disabled"] = {
+		active = true,
+		condition = 'Return.TargetAlive("Krasnodar-Center Airbase") < 2',
+		action = {
+			[1] = 'db_airbases["Krasnodar-Center"].inactive = true',
+		}
+	},
+	["Krasnodar-Center Airbase Disabled Text"] = {
+		active = true,
+		once = true,
+		condition = 'Return.TargetAlive("Krasnodar-Center Airbase") < 2',
+		action = {
+			[1] = 'Action.Text("The infrastructure at Krasnodar-Center Airbase has been destroyed by air strikes. Flying operations at this base have ceased completely and are unlikely to resume. This will ease our efforts to hit other targets in the Nalchik Country area.")',
+		--[[		[2] = 'Action.AddImage("BDA_Lincoln.jpg")', ]]--  ---A changer
 		}
 	},
 	["Maykop-Khanskaya Airbase Disabled"] = {

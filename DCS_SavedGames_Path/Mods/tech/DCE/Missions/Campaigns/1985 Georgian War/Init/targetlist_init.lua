@@ -48,6 +48,8 @@ airport oca strike: 15 elements(structure and aircraft) -> min firepower: 9, max
 
 targetlist = {   
 	["blue"] = {
+
+		-- INTERCEPT
 		["Vaziani Alert"] = {
 			task = "Intercept",
 			priority = 5,
@@ -95,7 +97,9 @@ targetlist = {
 			base = "CVN-71 Theodore Roosevelt",
 			radius = 250000,
 		},
-		["Battle Group CAP"] = {
+		
+		-- CAP
+		["Battle Group CAP"] = {-- CAP CVN-71
 			task = "CAP",
 			priority = 10,
 			attributes = {"CV CAP"},
@@ -103,102 +107,36 @@ targetlist = {
 				min = 2,
 				max = 4,
 			},
-			slaved = {"TF-71", 335, 50000},
+			slaved = {"CVN-71", 335, 50000},
 			radius = 111000,
 			text = "",
-		},
-		["Battle Group AEW"] = {
-			task = "AWACS",
-			priority = 10,
-			attributes = {"AEW"},
-			firepower = {
-				min = 1, -- min num AWACS aircraft
-				max = 1, -- max num AWACS aircraft
-			},
-			slaved = {"TF-71",320, 40000},
-			text = "",
-		},
-		["Mission Support Tanker"] = {
-			task = "Refueling",
-			priority = 10,
-			attributes = {"medium"},
-			firepower = {
-				min = 1, -- min num Tanker aircraft
-				max = 1, -- max num Tanker aircraft
-			},
-			slaved = {"TF-71", 330, 35000},
-			text = "",
-		},
-		["Recovery Tanker"] = {
-			task = "Refueling",
-			priority = 5,
-			attributes = {"low"},
-			firepower = {
-				min = 1,
-				max = 1,
-			},
-			slaved = {"TF-71", 310, 30000},
-			text = "",
-		},
-		["Russian Convoy 1"] = {
-			task = "Anti-ship Strike",
-			priority = 1,
-			attributes = {"ship"},
-			dimension ="mix",
-			firepower = {
-				min = 5, 
-				max = 8, 
-			},
-			class = "ship",
-			name = "Russian Convoy 1",
-		},
-		["Russian Convoy 2"] = {
-			task = "Anti-ship Strike",
-			priority = 1,
-			attributes = {"ship"},
-			firepower = {
-				min = 5, 
-				max = 8, 
-			},
-			class = "ship",
-			name = "Russian Convoy 2",
 		},		
-		["AWACS"] = {
-			task = "AWACS",
-			priority = 10,
-			attributes = {"Sentry"},
+		["CAP Tbilissi"] = {
+			task = "CAP",
+			priority = 20,
+			attributes = {"Air Forces"},
 			firepower = {
-				min = 1,
-				max = 1,
+				min = 2,
+				max = 4,
 			},
-			refpoint = "AWACS",
-			radius = 15000,
-			text = "",
-		},
-		["Tanker Track West"] = {
-			task = "Refueling",
-			priority = 10,
-			attributes = {"KC135MPRS"},
+			refpoint = "CAP Tbilissi",
+			radius = 50000,
+			text = "North west of Tbilissi",
+		},		
+		["CAP Kutaisi"] = {
+			task = "CAP",
+			priority = 20,
+			attributes = {"Air Forces"},
 			firepower = {
-				min = 1,
-				max = 1,
+				min = 2,
+				max = 4,
 			},
-			refpoint = "Tanker Track West",
-			radius = 15000,
-			text = "West of Kutaisi",
+			refpoint = "CAP Kutaisi",
+			radius = 50000,
+			text = "North of Kutaisi",
 		},
-		["Tanker Track East"] = {
-			task = "Refueling",
-			priority = 10,
-			attributes = {"KC135"},
-			firepower = {
-				min = 1,
-				max = 1,
-			},
-			refpoint = "Tanker Track East KC135",
-			radius = 15000,
-			text = "north west of Tbilissi",
-		},
+
+		-- SWEEP
 		["Sweep Center"] = {
 			task = "Fighter Sweep",
 			priority = 1,
@@ -235,50 +173,81 @@ targetlist = {
 			y = 888342,
 			text = "in the east front area",
 		},
-		["Beslan Airbase OCA Strike"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"Parked Aircraft"},
+
+		-- AWACS
+		["Battle Group AEW"] = {-- AWACS CVN-71
+			task = "AWACS",
+			priority = 10,
+			attributes = {"AEW"},
 			firepower = {
-				min = 2, 
-				max = 4, 
+				min = 1, -- min num AWACS aircraft
+				max = 1, -- max num AWACS aircraft
 			},
-			class = "airbase",
-			name = "Beslan",
+			slaved = {"CVN-71",320, 40000},
+			text = "",
 		},
-		["Mozdok airbase OCA Strike"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"Parked Aircraft"},
+		["AWACS"] = {
+			task = "AWACS",
+			priority = 10,
+			attributes = {"Sentry"},
 			firepower = {
-				min = 2, 
-				max = 4, 
+				min = 1,
+				max = 1,
 			},
-			class = "airbase",
-			name = "Mozdok",
+			refpoint = "AWACS",
+			radius = 15000,
+			text = "",
 		},
-		["Nalchik airbase OCA Strike"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"Parked Aircraft"},
+		
+		-- REFUELLING
+		["Mission Support Tanker"] = { -- Tanker CVN-71
+			task = "Refueling",
+			priority = 10,
+			attributes = {"medium"},
 			firepower = {
-				min = 2, 
-				max = 4, 
+				min = 1, -- min num Tanker aircraft
+				max = 1, -- max num Tanker aircraft
 			},
-			class = "airbase",
-			name = "Nalchik",
+			slaved = {"CVN-71", 330, 35000},
+			text = "",
 		},
-		["Mineralnye-Vody airbase OCA Strike"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"Parked Aircraft"},
+		["Recovery Tanker"] = {
+			task = "Refueling",
+			priority = 5,
+			attributes = {"low"},
 			firepower = {
-				min = 2,
-				max = 4, 
+				min = 1,
+				max = 1,
 			},
-			class = "airbase",
-			name = "Mineralnye-Vody",
+			slaved = {"CVN-71", 310, 30000},
+			text = "",
+		},					
+		["Tanker Track West"] = {
+			task = "Refueling",
+			priority = 10,
+			attributes = {"KC135MPRS"},
+			firepower = {
+				min = 1,
+				max = 1,
+			},
+			refpoint = "Tanker Track West",
+			radius = 15000,
+			text = "West of Kutaisi",
 		},
+		["Tanker Track East"] = {
+			task = "Refueling",
+			priority = 10,
+			attributes = {"KC135"},
+			firepower = {
+				min = 1,
+				max = 1,
+			},
+			refpoint = "Tanker Track East KC135",
+			radius = 15000,
+			text = "north west of Tbilissi",
+		},
+		
+		-- SAM SITE
 		["101 EWR Site"] = {
 			task = "Strike",
 			priority = 5,
@@ -312,32 +281,8 @@ targetlist = {
 			},
 			class = "vehicle",
 			name = "103 EWR Site",
-		},
-		["CAP Tbilissi"] = {
-			task = "CAP",
-			priority = 20,
-			attributes = {"Air Forces"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			refpoint = "CAP Tbilissi",
-			radius = 50000,
-			text = "North west of Tbilissi",
 		},		
-		["CAP Kutaisi"] = {
-			task = "CAP",
-			priority = 20,
-			attributes = {"Air Forces"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			refpoint = "CAP Kutaisi",
-			radius = 50000,
-			text = "North of Kutaisi",
-		},
-		["203 SA-2 Site A-3"] = {
+		["SA-10 BESLAN SAM site"] = {
 			task = "Strike",
 			priority = 6,
 			attributes = {"SAM"},
@@ -346,7 +291,7 @@ targetlist = {
 				max = 4, 
 			},
 			class = "vehicle",
-			name = "203 SA-2 Site A-3",
+			name = "SA-10 BESLAN SAM site",
 		},
 		["204 SA-6 Site B-1"] = {
 			task = "Strike",
@@ -370,7 +315,7 @@ targetlist = {
 			class = "vehicle",
 			name = "206 SA-2 Site B-3",
 		},		
-		["209 SA-2 Site R-3"] = {
+		["SA-10 MOZDOK SAM site"] = {
 			task = "Strike",
 			priority = 6,
 			attributes = {"SAM"},
@@ -379,18 +324,7 @@ targetlist = {
 				max = 6, --  --4,
 			},
 			class = "vehicle",
-			name = "209 SA-2 Site R-3",
-		},
-		["101 SA-3 Site E-1"] = {
-			task = "Strike",
-			priority = 6,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3, -- --3,
-				max = 6, -- --4,
-			},
-			class = "vehicle",
-			name = "101 SA-3 Site E-1",
+			name = "SA-10 MOZDOK SAM site",
 		},
 		["104 SA-6 Site E-4"] = {
 			task = "Strike",
@@ -475,7 +409,9 @@ targetlist = {
 			class = "vehicle",
 			name = "Maykop SA-2",
 		},
-		["LENIGORI FARP AA"] = {
+		
+		-- eliminare?
+		["LENIGORI FARP Air Defence"] = {
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -486,7 +422,7 @@ targetlist = {
 			class = "vehicle",
 			name = "LENIGORI FARP AA",
 		},
-		["TSKHINVALI FARP AA"] = {
+		["TSKHINVALI FARP Air Defence"] = {
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -497,6 +433,32 @@ targetlist = {
 			class = "vehicle",
 			name = "TSKHINVALI FARP AA",
 		},		
+		-- SHIP -- 
+		["Russian Convoy 1"] = {
+			task = "Anti-ship Strike",
+			priority = 1,
+			attributes = {"ship"},
+			dimension ="mix",
+			firepower = {
+				min = 5, 
+				max = 8, 
+			},
+			class = "ship",
+			name = "Russian Convoy 1",
+		},
+		["Russian Convoy 2"] = {
+			task = "Anti-ship Strike",
+			priority = 1,
+			attributes = {"ship"},
+			firepower = {
+				min = 5, 
+				max = 8, 
+			},
+			class = "ship",
+			name = "Russian Convoy 2",
+		},	
+
+		-- AIRBASE STRIKE
 		["Beslan Airbase"] = {
 			task = "Strike",
 			priority = 4,
@@ -667,7 +629,7 @@ targetlist = {
 					y = 832356.5625,
 				},
 			},
-		},	
+		},			
 		["Maykop-Khanskaya Airbase"] = {
 			task = "Strike",
 			priority = 3,
@@ -826,8 +788,455 @@ targetlist = {
 					y = 708177.25,
 				},
 			},
-		},		
-		["Prohladniy Depot MP 24"] = {
+		},
+		["Krymsk Airbase"] = { --ok
+			task = "Strike",
+			priority = 3,
+			picture = {""},
+			attributes = {"Structure"},
+			class = "static",
+			firepower = {
+				min = 3, -- --3,
+				max = 3, -- --6,
+			},
+			elements = {
+				[1] = {
+					name = "Krymsk Airbase Logistic-1",					
+				},
+				[2] = {
+					name = "Krymsk Airbase Logistic-2",					
+				},
+				[3] = {
+					name = "Krymsk Airbase Logistic-3",					
+				},
+				[4] = {
+					name = "Krymsk Airbase Logistic-4",					
+				},
+				[5] = {
+					name = "Krymsk Airbase Logistic-5",					
+				},
+				[6] = {
+					name = "Krymsk Airbase Logistic-6",					
+				},
+				[7] = {
+					name = "Krymsk Airbase Logistic-7",					
+				},
+				[8] = {
+					name = "Krymsk Airbase Logistic-8",					
+				},
+				[9] = {
+					name = "Krymsk Airbase Logistic-9",					
+				},
+				[10] = {
+					name = "Krymsk Airbase Logistic-10",					
+				},
+				[11] = {
+					name = "Krymsk Airbase Logistic-11",					
+				},
+				[12] = {
+					name = "Krymsk Airbase Logistic-12",					
+				},
+				[13] = {
+					name = "Krymsk Airbase Logistic-13",					
+				},
+			},
+		},
+		["Krasnodar-Center Airbase"] = { --ok
+			task = "Strike",
+			priority = 3,
+			picture = {""},
+			attributes = {"Structure"},
+			class = "static",
+			firepower = {
+				min = 3, -- --3,
+				max = 3, -- --6,
+			},
+			elements = {
+				[1] = {
+					name = "Krasnodar-Center Airbase Logistic-1",					
+				},
+				[2] = {
+					name = "Krasnodar-Center Airbase Logistic-2",					
+				},
+				[3] = {
+					name = "Krasnodar-Center Airbase Logistic-3",					
+				},
+				[4] = {
+					name = "Krasnodar-Center Airbase Logistic-4",					
+				},
+				[5] = {
+					name = "Krasnodar-Center Airbase Logistic-5",					
+				},
+				[6] = {
+					name = "Krasnodar-Center Airbase Logistic-6",					
+				},
+				[7] = {
+					name = "Krasnodar-Center Airbase Logistic-7",					
+				},
+				[8] = {
+					name = "Krasnodar-Center Airbase Logistic-8",					
+				},
+				[9] = {
+					name = "Krasnodar-Center Airbase Logistic-9",					
+				},
+				[10] = {
+					name = "Krasnodar-Center Airbase Logistic-10",					
+				},
+				[11] = {
+					name = "Krasnodar-Center Airbase Logistic-11",					
+				},
+				[12] = {
+					name = "Krasnodar-Center Airbase Logistic-12",					
+				},
+				[13] = {
+					name = "Krasnodar-Center Airbase Logistic-13",					
+				},		
+			},
+		},
+		
+		-- AIRBASE OCA STRIKE
+		["Beslan Airbase OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 2, 
+				max = 4, 
+			},
+			class = "airbase",
+			name = "Beslan",
+		},
+		["Mozdok airbase OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 2, 
+				max = 4, 
+			},
+			class = "airbase",
+			name = "Mozdok",
+		},
+		["Nalchik airbase OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 2, 
+				max = 4, 
+			},
+			class = "airbase",
+			name = "Nalchik",
+		},
+		["Mineralnye-Vody airbase OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 2,
+				max = 4, 
+			},
+			class = "airbase",
+			name = "Mineralnye-Vody",
+		},
+		["Maykop-Khanskaya Airbase OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 2, 
+				max = 4, 
+			},
+			class = "airbase",
+			name = "Maykop-Khanskaya",
+		},
+		["Krymsk airbase OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 2, 
+				max = 4, 
+			},
+			class = "airbase",
+			name = "Krymsk",
+		},
+		["Krasnodar-Center airbase OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 2, 
+				max = 4, 
+			},
+			class = "airbase",
+			name = "Krasnodar-Center",
+		},
+
+		
+
+		-- FARP -----------
+		["NOGIR FARP MN76"] = {--ok
+			task = "Strike",
+			priority = 6,
+			picture = {"FARP_Vladikavkaz.png"},
+			attributes = {"soft"},
+			firepower = {
+				min = 3, --3,
+				max = 3, -- --6,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "NOGIR FARP - Hind 1",
+				},
+				[2] = {
+					name = "NOGIR FARP - Hind 2",
+				},
+				[3] = {
+					name = "NOGIR FARP - Hind 3",
+				},
+				[4] = {
+					name = "NOGIR FARP - Hip 1",
+				},
+				[5] = {
+					name = "NOGIR FARP - Hip 2",
+				},
+				[6] = {
+					name = "NOGIR FARP - Hip 3",
+				},
+				[7] = {
+					name = "NOGIR FARP - Hip 4",
+				},
+				[8] = {
+					name = "NOGIR FARP - Hip 5",
+				},
+				[9] = {
+					name = "NOGIR FARP - Ammo depot 1",
+				},
+				[10] = {
+					name = "NOGIR FARP - Ammo depot 2",
+				},
+				[11] = {
+					name = "NOGIR FARP - Ammo depot 3",
+				},
+				[12] = {
+					name = "NOGIR FARP - Fuel depot 1",
+				},
+				[13] = {
+					name = "NOGIR FARP - Fuel depot 2",
+				},
+				[14] = {
+					name = "NOGIR FARP - Fuel depot 3",
+				},
+				[15] = {
+					name = "NOGIR FARP - Crew house",
+				},
+				[16] = {
+					name = "NOGIR FARP - Crew Tent 1",
+				},
+				[17] = {
+					name = "NOGIR FARP - Crew Tent 2",
+				},
+				[18] = {
+					name = "NOGIR FARP - Crew Tent 3",
+				},
+			},
+		},
+		["LENIGORI FARP MM56"] = {--ok
+			task = "Strike",
+			priority = 6,
+			--picture = {"FARP_Vladikavkaz.png"},
+			attributes = {"soft"},
+			firepower = {
+				min = 3,  --3,
+				max = 3,  --6,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "LENIGORI FARP MM56",
+				},
+				[2] = {
+					name = "LENIGORI FARP MM56-1",
+				},
+				[3] = {
+					name = "LENIGORI FARP MM56-2",
+				},
+				[4] = {
+					name = "LENIGORI FARP MM56-3",
+				},	
+				[5] = {
+					name = "LENIGORI FARP MM56-4",
+				},	
+				[6] = {
+					name = "LENIGORI FARP MM56-5",
+				},	
+				[7] = {
+					name = "LENIGORI FARP MM56-6",
+				},	
+				[8] = {
+					name = "LENIGORI FARP MM56-7",
+				},	
+				[9] = {
+					name = "LENIGORI FARP MM56-8",
+				},	
+				[10] = {
+					name = "LENIGORI FARP MM56-9",
+				},	
+				[11] = {
+					name = "LENIGORI FARP MM56-10",
+				},
+				[12] = {
+					name = "LENIGORI FARP MM56-11",
+				},
+				[13] = {
+					name = "LENIGORI FARP MM56-12",
+				},
+				[14] = {
+					name = "LENIGORI FARP MM56-13",
+				},
+				[15] = {
+					name = "LENIGORI FARP MM56-14",
+				},			
+			},
+		},
+		["TSKHINVALI FARP MM27"] = {--ok
+			task = "Strike",
+			priority = 6,
+			--picture = {"FARP_Vladikavkaz.png"},
+			attributes = {"soft"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "TSKHINVALI FARP MM27",
+				},
+				[2] = {
+					name = "TSKHINVALI FARP MM27-1",
+				},
+				[3] = {
+					name = "TSKHINVALI FARP MM27-2",
+				},			
+				[4] = {
+					name = "TSKHINVALI FARP MM27-3",
+				},
+				[5] = {
+					name = "TSKHINVALI FARP MM27-4",
+				},	
+				[6] = {
+					name = "TSKHINVALI FARP MM27-5",
+				},	
+				[7] = {
+					name = "TSKHINVALI FARP MM27-6",
+				},	
+				[8] = {
+					name = "TSKHINVALI FARP MM27-7",
+				},	
+				[9] = {
+					name = "TSKHINVALI FARP MM27-8",
+				},	
+				[10] = {
+					name = "TSKHINVALI FARP MM27-9",
+				},	
+				[11] = {
+					name = "TSKHINVALI FARP MM27-10",
+				},	
+				[12] = {
+					name = "TSKHINVALI FARP MM27-11",
+				},	
+				[13] = {
+					name = "TSKHINVALI FARP MM27-12",
+				},	
+				[14] = {
+					name = "TSKHINVALI FARP MM27-13",
+				},	
+				[15] = {
+					name = "TSKHINVALI FARP MM27-14",
+				},			
+			},
+		},
+
+		-- ARMY
+		["407 8th Army ELINT Station"] = {
+			task = "Strike",
+			priority = 6,
+			picture = {"ElintStationIntel.png"},
+			attributes = {"soft"},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "ELINT Antenna Truck 1",
+				},
+				[2] = {
+					name = "ELINT Antenna Truck 2",
+				},
+				[3] = {
+					name = "ELINT Crew Van",
+				},
+				[4] = {
+					name = "ELINT Equipment Van",
+				},
+				[5] = {
+					name = "ELINT Generator Truck",
+				},
+			},
+		},
+		["501 5th Artillery Division/1.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 3, -- 2,
+				max = 3,  -- 4,
+			},
+			class = "vehicle",
+			name = "501 5th Artillery Division/1.Btry",
+		},
+		["502 5th Artillery Division/2.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 3, -- 2,
+				max = 3,  -- 4,
+			},
+			class = "vehicle",
+			name = "502 5th Artillery Division/2.Btry",
+		},
+		["503 5th Artillery Division/3.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 3,  -- 2,
+				max = 3,  -- 4,
+			},
+			class = "vehicle",
+			name = "503 5th Artillery Division/3.Btry",
+		},
+		["504 5th Artillery Division/4.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 3,  -- 2,
+				max = 3,  -- 4,
+			},
+			class = "vehicle",
+			name = "504 5th Artillery Division/4.Btry",
+		},
+		
+		
+		-- SUPPLY PLANT, INFRASTRUCTURE
+		["Prohladniy Depot MP 24"] = {--ok
 			task = "Strike",
 			priority = 4,
 			picture = {"Prohladniy_Depot.png"},
@@ -1180,6 +1589,8 @@ targetlist = {
 				},			
 			},
 		},		
+
+		-- SUPPLY LINES
 		["BAKSAN-MINERALNYE SUPPLY LINE"] = {
 			task = "Strike",
 			priority = 4,
@@ -1571,198 +1982,8 @@ targetlist = {
 				},				
 			},
 		},
-		["NOGIR FARP MN76"] = {
-			task = "Strike",
-			priority = 6,
-			picture = {"FARP_Vladikavkaz.png"},
-			attributes = {"SAM"},
-			firepower = {
-				min = 3, --3,
-				max = 3, -- --6,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "NOGIR FARP - Hind 1",
-				},
-				[2] = {
-					name = "NOGIR FARP - Hind 2",
-				},
-				[3] = {
-					name = "NOGIR FARP - Hind 3",
-				},
-				[4] = {
-					name = "NOGIR FARP - Hip 1",
-				},
-				[5] = {
-					name = "NOGIR FARP - Hip 2",
-				},
-				[6] = {
-					name = "NOGIR FARP - Hip 3",
-				},
-				[7] = {
-					name = "NOGIR FARP - Hip 4",
-				},
-				[8] = {
-					name = "NOGIR FARP - Hip 5",
-				},
-				[9] = {
-					name = "NOGIR FARP - Ammo depot 1",
-				},
-				[10] = {
-					name = "NOGIR FARP - Ammo depot 2",
-				},
-				[11] = {
-					name = "NOGIR FARP - Ammo depot 3",
-				},
-				[12] = {
-					name = "NOGIR FARP - Fuel depot 1",
-				},
-				[13] = {
-					name = "NOGIR FARP - Fuel depot 2",
-				},
-				[14] = {
-					name = "NOGIR FARP - Fuel depot 3",
-				},
-				[15] = {
-					name = "NOGIR FARP - Crew house",
-				},
-				[16] = {
-					name = "NOGIR FARP - Crew Tent 1",
-				},
-				[17] = {
-					name = "NOGIR FARP - Crew Tent 2",
-				},
-				[18] = {
-					name = "NOGIR FARP - Crew Tent 3",
-				},
-			},
-		},
-		["LENIGORI FARP MM56"] = {
-			task = "Strike",
-			priority = 6,
-			--picture = {"FARP_Vladikavkaz.png"},
-			attributes = {"soft"},
-			firepower = {
-				min = 3,  --3,
-				max = 3,  --6,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "LENIGORI FARP MM56",
-				},
-				[2] = {
-					name = "LENIGORI FARP MM56 - 1",
-				},
-				[3] = {
-					name = "LENIGORI FARP MM56 - 2",
-				},
-				[4] = {
-					name = "LENIGORI FARP MM56 - 3",
-				},			
-			},
-		},
-		["TSKHINVALI FARP MM27"] = {
-			task = "Strike",
-			priority = 6,
-			--picture = {"FARP_Vladikavkaz.png"},
-			attributes = {"soft"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "TSKHINVALI FARP MM27",
-				},
-				[2] = {
-					name = "TSKHINVALI FARP MM27-1",
-				},
-				[3] = {
-					name = "TSKHINVALI FARP MM27-2",
-				},			
-				[4] = {
-					name = "TSKHINVALI FARP MM27-3",
-				},
-				[5] = {
-					name = "TSKHINVALI FARP MM27-5",
-				},			
-			},
-		},
-		["407 8th Army ELINT Station"] = {
-			task = "Strike",
-			priority = 6,
-			picture = {"ElintStationIntel.png"},
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "ELINT Antenna Truck 1",
-				},
-				[2] = {
-					name = "ELINT Antenna Truck 2",
-				},
-				[3] = {
-					name = "ELINT Crew Van",
-				},
-				[4] = {
-					name = "ELINT Equipment Van",
-				},
-				[5] = {
-					name = "ELINT Generator Truck",
-				},
-			},
-		},
-		["501 5th Artillery Division/1.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 3, -- 2,
-				max = 3,  -- 4,
-			},
-			class = "vehicle",
-			name = "501 5th Artillery Division/1.Btry",
-		},
-		["502 5th Artillery Division/2.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 3, -- 2,
-				max = 3,  -- 4,
-			},
-			class = "vehicle",
-			name = "502 5th Artillery Division/2.Btry",
-		},
-		["503 5th Artillery Division/3.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 3,  -- 2,
-				max = 3,  -- 4,
-			},
-			class = "vehicle",
-			name = "503 5th Artillery Division/3.Btry",
-		},
-		["504 5th Artillery Division/4.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 3,  -- 2,
-				max = 3,  -- 4,
-			},
-			class = "vehicle",
-			name = "504 5th Artillery Division/4.Btry",
-		},		
+
+		-- INFRASTRUCTURE, FACILITIES
 		["Bridge Alagir MN 36"] = {
 			task = "Strike",
 			priority = 3,
@@ -2037,404 +2258,85 @@ targetlist = {
 		-- },		
 	},
 	["red"] = {		
-		["SUPPLY PLANT DAPNARI KM76"] = {
-			task = "Strike",
-			priority = 4,
-			--picture = {"Prohladniy_Depot.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 4,
-				max = 6,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "SUPPLY PLANT DAPNARI KM76",
-				},
-				[2] = {
-					name = "SUPPLY PLANT DAPNARI KM76-1",
-				},
-				[3] = {
-					name = "SUPPLY PLANT DAPNARI KM76-2",
-				},
-				[4] = {
-					name = "SUPPLY PLANT DAPNARI KM76-3",
-				},
-				[5] = {
-					name = "SUPPLY PLANT DAPNARI KM76-4",
-				},
-				[6] = {
-					name = "SUPPLY PLANT DAPNARI KM76-5",
-				},
-				[7] = {
-					name = "SUPPLY PLANT DAPNARI KM76-6",
-				},
-				[8] = {
-					name = "SUPPLY PLANT DAPNARI KM76-7",
-				},
-				[9] = {
-					name = "SUPPLY PLANT DAPNARI KM76-8",
-				},
-				[10] = {
-					name = "SUPPLY PLANT DAPNARI KM76-9",
-				},
-				[11] = {
-					name = "SUPPLY PLANT DAPNARI KM76-10",
-				},
-				[12] = {
-					name = "SUPPLY PLANT DAPNARI KM76-11",
-				},
-				[13] = {
-					name = "SUPPLY PLANT DAPNARI KM76-12",
-				},
-				[14] = {
-					name = "SUPPLY PLANT DAPNARI KM76-13",
-				},
-				[15] = {
-					name = "SUPPLY PLANT DAPNARI KM76-14",
-				},
-				[16] = {
-					name = "SUPPLY PLANT DAPNARI KM76-15",
-				},
-				[17] = {
-					name = "SUPPLY PLANT DAPNARI KM76-16",
-				},
-				[18] = {
-					name = "SUPPLY PLANT DAPNARI KM76-17",
-				},
-				[19] = {
-					name = "SUPPLY PLANT DAPNARI KM76-18",
-				},
-				[20] = {
-					name = "SUPPLY PLANT DAPNARI KM76-19",
-				},
-				[21] = {
-					name = "SUPPLY PLANT DAPNARI KM76-20",
-				},
-				[22] = {
-					name = "SUPPLY PLANT DAPNARI KM76-21",
-				},
-				[23] = {
-					name = "SUPPLY PLANT DAPNARI KM76-22",
-				},
-				[24] = {
-					name = "SUPPLY PLANT DAPNARI KM76-23",
-				},
-				[25] = {
-					name = "SUPPLY PLANT DAPNARI KM76-24",
-				},
-				[26] = {
-					name = "SUPPLY PLANT DAPNARI KM76-25",
-				},
-				[27] = {
-					name = "SUPPLY PLANT DAPNARI KM76-26",
-				},							
-			},
-		},
-		["SUPPLY PLANT MARNEULI ML89"] = {
-			task = "Strike",
-			priority = 4,
-			--picture = {"Prohladniy_Depot.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 4,
-				max = 6,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "SUPPLY PLANT MARNEULI ML89",
-				},	
-				[2] = {
-					name = "SUPPLY PLANT MARNEULI ML89-1",
-				},
-				[3] = {
-					name = "SUPPLY PLANT MARNEULI ML89-2",
-				},
-				[4] = {
-					name = "SUPPLY PLANT MARNEULI ML89-3",
-				},
-				[5] = {
-					name = "SUPPLY PLANT MARNEULI ML89-4",
-				},
-				[6] = {
-					name = "SUPPLY PLANT MARNEULI ML89-5",
-				},
-				[7] = {
-					name = "SUPPLY PLANT MARNEULI ML89-6",
-				},
-				[8] = {
-					name = "SUPPLY PLANT MARNEULI ML89-7",
-				},
-				[9] = {
-					name = "SUPPLY PLANT MARNEULI ML89-8",
-				},
-				[10] = {
-					name = "SUPPLY PLANT MARNEULI ML89-9",
-				},
-				[11] = {
-					name = "SUPPLY PLANT MARNEULI ML89-29",
-				},
-				[12] = {
-					name = "SUPPLY PLANT MARNEULI ML89-11",
-				},
-				[13] = {
-					name = "SUPPLY PLANT MARNEULI ML89-12",
-				},
-				[14] = {
-					name = "SUPPLY PLANT MARNEULI ML89-13",
-				},
-				[15] = {
-					name = "SUPPLY PLANT MARNEULI ML89-14",
-				},
-				[16] = {
-					name = "SUPPLY PLANT MARNEULI ML89-15",
-				},
-				[17] = {
-					name = "SUPPLY PLANT MARNEULI ML89-16",
-				},
-				[18] = {
-					name = "SUPPLY PLANT MARNEULI ML89-17",
-				},
-				[19] = {
-					name = "SUPPLY PLANT MARNEULI ML89-18",
-				},
-				[20] = {
-					name = "SUPPLY PLANT MARNEULI ML89-19",
-				},
-				[21] = {
-					name = "SUPPLY PLANT MARNEULI ML89-20",
-				},
-				[22] = {
-					name = "SUPPLY PLANT MARNEULI ML89-21",
-				},
-				[23] = {
-					name = "SUPPLY PLANT MARNEULI ML89-22",
-				},
-				[24] = {
-					name = "SUPPLY PLANT MARNEULI ML89-23",
-				},
-				[25] = {
-					name = "SUPPLY PLANT MARNEULI ML89-24",
-				},
-				[26] = {
-					name = "SUPPLY PLANT MARNEULI ML89-25",
-				},
-				[27] = {
-					name = "SUPPLY PLANT MARNEULI ML89-26",
-				},
-				[28] = {
-					name = "SUPPLY PLANT MARNEULI ML89-27",
-				},	
-				[29] = {
-					name = "SUPPLY PLANT MARNEULI ML89-28",
-				},															
-			},
-		},
-		["KHASHURI FARP LM84"] = {
-			task = "Strike",
-			priority = 6,
-			--picture = {"FARP_Vladikavkaz.png"},
-			attributes = {"soft"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "KHASHURI FARP LM84",
-				},				
-				[2] = {
-					name = "KHASHURI FARP LM84-1",
-				},				
-				[3] = {
-					name = "KHASHURI FARP LM84-2",
-				},				
-				[4] = {
-					name = "KHASHURI FARP LM84-3",
-				},				
-				[5] = {
-					name = "KHASHURI FARP LM84-4",
-				},				
-				[6] = {
-					name = "KHASHURI FARP LM84-5",
-				},				
-				[7] = {
-					name = "KHASHURI FARP LM84-6",
-				},				
-				[8] = {
-					name = "KHASHURI FARP LM84-7",
-				},				
-				[9] = {
-					name = "KHASHURI FARP LM84-8",
-				},				
-				[10] = {
-					name = "KHASHURI FARP LM84-9",
-				},				
-				[11] = {
-					name = "KHASHURI FARP LM84-10",
-				},				
-				[12] = {
-					name = "KHASHURI FARP LM84-11",
-				},				
-			},
-		},
-		["GORI FARP MM25"] = {
-			task = "Strike",
-			priority = 6,
-			--picture = {"FARP_Vladikavkaz.png"},
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "GORI FARP MM25",
-				},			
-				[2] = {
-					name = "GORI FARP MM25-1",
-				},			
-				[3] = {
-					name = "GORI FARP MM25-2",
-				},			
-				[4] = {
-					name = "GORI FARP MM25-3",
-				},			
-				[5] = {
-					name = "GORI FARP MM25-4",
-				},			
-				[6] = {
-					name = "GORI FARP MM25-5",
-				},			
-				[7] = {
-					name = "GORI FARP MM25-6",
-				},			
-				[8] = {
-					name = "GORI FARP MM25-7",
-				},			
-				[9] = {
-					name = "GORI FARP MM25-8",
-				},			
-				[10] = {
-					name = "GORI FARP MM25-9",
-				},			
-				[11] = {
-					name = "GORI FARP MM25-11",
-				},	
-			},		
-		},
-		["AMBROLAURI FARP LN41"] = {
-			task = "Strike",
-			priority = 6,
-			--picture = {"FARP_Vladikavkaz.png"},
-			attributes = {"soft"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "AMBROLAURI FARP LN41",
-				},
-				[2] = {
-					name = "AMBROLAURI FARP LN41-1",
-				},
-				[3] = {
-					name = "AMBROLAURI FARP LN41-2",
-				},
-				[4] = {
-					name = "AMBROLAURI FARP LN41-3",
-				},
-				[5] = {
-					name = "AMBROLAURI FARP LN41-4",
-				},
-				[6] = {
-					name = "AMBROLAURI FARP LN41-5",
-				},
-				[7] = {
-					name = "AMBROLAURI FARP LN41-6",
-				},
-				[8] = {
-					name = "AMBROLAURI FARP LN41-7",
-				},
-				[9] = {
-					name = "AMBROLAURI FARP LN41-8",
-				},
-				[10] = {
-					name = "AMBROLAURI FARP LN41-9",
-				},
-				[11] = {
-					name = "AMBROLAURI FARP LN41-11",
-				},
-				[12] = {
-					name = "AMBROLAURI FARP LN41-12",
-				},				
-			},
-		},
-		["EWR-1 Site"] = {
-			task = "Strike",
-			priority = 5,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "EWR-1",
-		},
-		["EWR-2 Site"] = {
-			task = "Strike",
-			priority = 5,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "EWR-2",
-		},
-		["EWR-3 Site"] = {
-			task = "Strike",
-			priority = 5,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "EWR-3",
-		},
-		["AWACS"] = {
-			task = "AWACS",
-			priority = 10,
-			attributes = {},
-			firepower = {
-				min = 1,
-				max = 1,
-			},
-			refpoint = "AWACS-RED",
-			radius = 15000,
-			text = "",
-		},
 		
-		
-		["Sweep South"] = {
-			task = "Fighter Sweep",
-			priority = 1,
+		-- INTERCEPT
+		["Nalchik Alert 100 Km"] = {
+			task = "Intercept",
+			priority = 6,
 			attributes = {},
 			firepower = {
 				min = 3,
 				max = 5,
 			},
-			x = -246773,
-			y = 864192,
-			text = "in the south area",
+			base = "Nalchik",
+			radius = 100000,
+		},	
+		["Nalchik Alert 200 Km"] = {
+			task = "Intercept",
+			priority = 7,
+			attributes = {},
+			firepower = {
+				min = 3,
+				max = 5,
+			},
+			base = "Nalchik",
+			radius = 200000,
 		},
-		
+		["Mineralnye-Vody Alert 280 Km"] = {
+			task = "Intercept",
+			priority = 4,
+			attributes = {},
+			firepower = {
+				min = 3,
+				max = 5,
+			},
+			base = "Mineralnye-Vody",
+			radius = 280000,
+		},
+		["Beslan Alert 120 Km"] = {
+			task = "Intercept",
+			priority = 7,
+			attributes = {},
+			firepower = {
+				min = 3,
+				max = 5,
+			},
+			base = "Beslan",
+			radius = 120000,
+		},		
+		["Mineralnye-Vody Alert 200 Km"] = {
+			task = "Intercept",
+			priority = 5,
+			attributes = {},
+			firepower = {
+				min = 3,
+				max = 5,
+			},
+			base = "Mineralnye-Vody",
+			radius = 200000,
+		},
+		["Mozdok Alert 200 Km"] = {
+			task = "Intercept",
+			priority = 5,
+			attributes = {},
+			firepower = {
+				min = 3,
+				max = 5,
+			},
+			base = "Mozdok",
+			radius = 200000,
+		},
+		["Mozdok Alert 120 Km"] = {
+			task = "Intercept",
+			priority = 7,
+			attributes = {},
+			firepower = {
+				min = 3,
+				max = 5,
+			},
+			base = "Mozdok",
+			radius = 120000,
+		},
 
 		-- CAP
 		["CAP Mozdok"] = {
@@ -2516,86 +2418,248 @@ targetlist = {
 			--inactive = true,
 		},
 		
-		-- INTERCEPT
-		["Nalchik Alert 100 Km"] = {
-			task = "Intercept",
+
+		-- SWEEP
+		["Sweep South"] = {
+			task = "Fighter Sweep",
+			priority = 1,
+			attributes = {},
+			firepower = {
+				min = 3,
+				max = 5,
+			},
+			x = -246773,
+			y = 864192,
+			text = "in the south area",
+		},
+		
+		-- AWACS
+		["AWACS"] = {
+			task = "AWACS",
+			priority = 10,
+			attributes = {},
+			firepower = {
+				min = 1,
+				max = 1,
+			},
+			refpoint = "AWACS-RED",
+			radius = 15000,
+			text = "",
+		},
+		
+		-- FARP
+		["KHASHURI FARP LM84"] = {
+			task = "Strike",
 			priority = 6,
-			attributes = {},
+			--picture = {"FARP_Vladikavkaz.png"},
+			attributes = {"soft"},
 			firepower = {
 				min = 3,
-				max = 5,
+				max = 6,
 			},
-			base = "Nalchik",
-			radius = 100000,
-		},	
-		["Nalchik Alert 200 Km"] = {
-			task = "Intercept",
-			priority = 7,
-			attributes = {},
-			firepower = {
-				min = 3,
-				max = 5,
+			class = "static",
+			elements = {
+				[1] = {
+					name = "KHASHURI FARP LM84",
+				},				
+				[2] = {
+					name = "KHASHURI FARP LM84-1",
+				},				
+				[3] = {
+					name = "KHASHURI FARP LM84-2",
+				},				
+				[4] = {
+					name = "KHASHURI FARP LM84-3",
+				},				
+				[5] = {
+					name = "KHASHURI FARP LM84-4",
+				},				
+				[6] = {
+					name = "KHASHURI FARP LM84-5",
+				},				
+				[7] = {
+					name = "KHASHURI FARP LM84-6",
+				},				
+				[8] = {
+					name = "KHASHURI FARP LM84-7",
+				},				
+				[9] = {
+					name = "KHASHURI FARP LM84-8",
+				},				
+				[10] = {
+					name = "KHASHURI FARP LM84-9",
+				},				
+				[11] = {
+					name = "KHASHURI FARP LM84-10",
+				},				
+				[12] = {
+					name = "KHASHURI FARP LM84-11",
+				},	
+				[13] = {
+					name = "KHASHURI FARP LM84-12",
+				},	
+				[14] = {
+					name = "KHASHURI FARP LM84-13",
+				},	
+				[15] = {
+					name = "KHASHURI FARP LM84-14",
+				},				
 			},
-			base = "Nalchik",
-			radius = 200000,
 		},
-		["Mineralnye-Vody Alert 280 Km"] = {
-			task = "Intercept",
-			priority = 4,
-			attributes = {},
+		["GORI FARP MM25"] = {
+			task = "Strike",
+			priority = 6,
+			--picture = {"FARP_Vladikavkaz.png"},
+			attributes = {"soft"},
 			firepower = {
 				min = 3,
-				max = 5,
+				max = 6,
 			},
-			base = "Mineralnye-Vody",
-			radius = 280000,
+			class = "static",
+			elements = {
+				[1] = {
+					name = "GORI FARP MM25",
+				},			
+				[2] = {
+					name = "GORI FARP MM25-1",
+				},			
+				[3] = {
+					name = "GORI FARP MM25-2",
+				},			
+				[4] = {
+					name = "GORI FARP MM25-3",
+				},			
+				[5] = {
+					name = "GORI FARP MM25-4",
+				},			
+				[6] = {
+					name = "GORI FARP MM25-5",
+				},			
+				[7] = {
+					name = "GORI FARP MM25-6",
+				},			
+				[8] = {
+					name = "GORI FARP MM25-7",
+				},			
+				[9] = {
+					name = "GORI FARP MM25-8",
+				},			
+				[10] = {
+					name = "GORI FARP MM25-9",
+				},			
+				[11] = {
+					name = "GORI FARP MM25-10",
+				},
+				[12] = {
+					name = "GORI FARP MM25-11",
+				},
+				[13] = {
+					name = "GORI FARP MM25-12",
+				},
+				[14] = {
+					name = "GORI FARP MM25-13",
+				},
+				[15] = {
+					name = "GORI FARP MM25-14",
+				},	
+			},		
 		},
-		["Beslan Alert 120 Km"] = {
-			task = "Intercept",
-			priority = 7,
-			attributes = {},
+		["AMBROLAURI FARP LN41"] = {
+			task = "Strike",
+			priority = 6,
+			--picture = {"FARP_Vladikavkaz.png"},
+			attributes = {"soft"},
 			firepower = {
 				min = 3,
-				max = 5,
+				max = 6,
 			},
-			base = "Beslan",
-			radius = 120000,
-		},		
-		["Mineralnye-Vody Alert 200 Km"] = {
-			task = "Intercept",
+			class = "static",
+			elements = {
+				[1] = {
+					name = "AMBROLAURI FARP LN41",
+				},
+				[2] = {
+					name = "AMBROLAURI FARP LN41-1",
+				},
+				[3] = {
+					name = "AMBROLAURI FARP LN41-2",
+				},
+				[4] = {
+					name = "AMBROLAURI FARP LN41-3",
+				},
+				[5] = {
+					name = "AMBROLAURI FARP LN41-4",
+				},
+				[6] = {
+					name = "AMBROLAURI FARP LN41-5",
+				},
+				[7] = {
+					name = "AMBROLAURI FARP LN41-6",
+				},
+				[8] = {
+					name = "AMBROLAURI FARP LN41-7",
+				},
+				[9] = {
+					name = "AMBROLAURI FARP LN41-8",
+				},
+				[10] = {
+					name = "AMBROLAURI FARP LN41-9",
+				},
+				[11] = {
+					name = "AMBROLAURI FARP LN41-11",
+				},
+				[12] = {
+					name = "AMBROLAURI FARP LN41-12",
+				},	
+				[13] = {
+					name = "AMBROLAURI FARP LN41-13",
+				},	
+				[14] = {
+					name = "AMBROLAURI FARP LN41-14",
+				},				
+			},
+		},
+
+		
+		-- EWR SITE
+		["EWR-1 Site"] = {
+			task = "Strike",
 			priority = 5,
-			attributes = {},
+			attributes = {"soft"},
 			firepower = {
-				min = 3,
-				max = 5,
+				min = 2,
+				max = 4,
 			},
-			base = "Mineralnye-Vody",
-			radius = 200000,
+			class = "vehicle",
+			name = "EWR-1",
 		},
-		["Mozdok Alert 200 Km"] = {
-			task = "Intercept",
+		["EWR-2 Site"] = {
+			task = "Strike",
 			priority = 5,
-			attributes = {},
+			attributes = {"soft"},
 			firepower = {
-				min = 3,
-				max = 5,
+				min = 2,
+				max = 4,
 			},
-			base = "Mozdok",
-			radius = 200000,
+			class = "vehicle",
+			name = "EWR-2",
 		},
-		["Mozdok Alert 120 Km"] = {
-			task = "Intercept",
-			priority = 7,
-			attributes = {},
+		["EWR-3 Site"] = {
+			task = "Strike",
+			priority = 5,
+			attributes = {"soft"},
 			firepower = {
-				min = 3,
-				max = 5,
+				min = 2,
+				max = 4,
 			},
-			base = "Mozdok",
-			radius = 120000,
+			class = "vehicle",
+			name = "EWR-3",
 		},
 		
 		
+		
+		
+		-- AIRBASE STRIKE
 		["Airlift Beslan"] = {
 			task = "Transport",
 			priority = 1,
@@ -2628,1179 +2692,6 @@ targetlist = {
 			},
 			class = "airbase",
 			name = "Tbilissi-Lochini",
-		},
-		["Sukhumi OCA Strike"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"Parked Aircraft"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "airbase",
-			name = "Sukhumi",
-		},
-		["Vaziani OCA Strike"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"Parked Aircraft"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "airbase",
-			name = "Vaziani",
-		},
-		["Kutaisi OCA Strike"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"Parked Aircraft"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "airbase",
-			name = "Kutaisi",
-		},
-		["Senaki-Kolkhi OCA Strike"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"Parked Aircraft"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "airbase",
-			name = "Senaki-Kolkhi",
-		},
-		["CVN-71 Theodore Roosevelt"] = { -- was TF-71
-			task = "Anti-ship Strike",
-			priority = 1,
-			attributes = {"ship"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "ship",
-			name = "CVN-71",
-		},
-		["CVN-72 Abraham Lincoln"] = { -- was TF-74
-			task = "Anti-ship Strike",
-			priority = 1,
-			attributes = {"ship"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "ship",
-			name = "CVN-72",
-		},
-		["LHA-Group"] = {
-			task = "Anti-ship Strike",
-			priority = 1,
-			attributes = {"ship"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "ship",
-			name = "LHA-Group",
-		},
-		["NATO Convoy 1"] = {
-			task = "Anti-ship Strike",
-			priority = 1,
-			attributes = {"ship"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "ship",
-			name = "NATO Convoy 1",
-		},
-		["Hawk Site Kutaisi"] = {
-			task = "Strike",
-			priority = 6,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Hawk Site Kutaisi",
-		},
-		["Rapier Site Tabakhmela"] = {
-			task = "Strike",
-			priority = 6,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Rapier Site Tabakhmela",
-		},
-		["Vaziani Defenses"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Vaziani Defenses",
-		},
-		["Tbilisi Defenses"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Tbilisi Defenses",
-		},
-		["Sukhumi Defenses"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Sukhumi Defenses",
-		},
-		["Kobuleti Defenses"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Kobuleti Defenses",
-		},
-		["Batumi Air Defenses"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Batumi Air Defenses",
-		},
-		["Kutaisi Defenses"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Kutaisi Defenses",
-		},
-		["Senaki Defenses"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Senaki Defenses",
-		},
-		["Rapier Site bridge Vartsihe Geguti"] = {
-			task = "Strike",
-			priority = 6,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Rapier Site bridge Vartsihe Geguti",
-		},
-		["GORI AA"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "GORI AA",
-		},
-		["KHASHURI FARP AA"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "KHASHURI FARP AA",
-		},
-		["AMBROLAURI FARP AA"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "AMBROLAURI FARP AA",
-		},
-		["10 US Army ELINT Station"] = {
-			task = "Strike",
-			priority = 5,
-			attributes = {"soft"},
-			firepower = {
-				min = 3,
-				max = 4,
-			},
-			class = "static",
-			elements = {
-				[1] = {
-					name = "US ELINT Antenna Truck 1",
-				},
-				[2] = {
-					name = "US ELINT Antenna Truck 2",
-				},
-				[3] = {
-					name = "US ELINT Crew Van",
-				},
-				[4] = {
-					name = "US ELINT Equipment Van",
-				},
-				[5] = {
-					name = "US ELINT Generator Truck",
-				},
-			},
-		},
-		["11 1st Artillery Division/1.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 3,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "11 1st Artillery Division/1.Btry",
-		},
-		["12 1st Artillery Division/2.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "12 1st Artillery Division/2.Btry",
-		},
-		["13 1st Artillery Division/3.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "13 1st Artillery Division/3.Btry",
-		},
-		["14 1st Artillery Division/4.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "14 1st Artillery Division/4.Btry",
-		},
-		["15 1st Artillery Division/5.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "15 1st Artillery Division/5.Btry",
-		},
-		["16 1st Artillery Division/6.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "16 1st Artillery Division/6.Btry",
-		},
-		["17 1st Artillery Division/7.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "17 1st Artillery Division/7.Btry",
-		},
-		["18 1st Artillery Division/8.Btry"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "18 1st Artillery Division/8.Btry",
-		},
-		["19 4th Army HQ"] = {
-			task = "Strike",
-			priority = 6,
-			attributes = {"soft"},
-			firepower = {
-				min = 2,
-				max = 4,
-			},
-			class = "vehicle",
-			name = "19 4th Army HQ",
-		},		
-		["Leselidze Train Station - EJ80"] = {
-			task = "Strike",
-			priority = 1,
-			picture = {"Leselidze Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 4,
-			},
-			elements = {
-				[1] = {
-					name = "Leselidze Train Station Hangar 1",
-					x = -169643.34375,
-					y = 470197.90625,
-				},
-				[2] = {
-					name = "Leselidze Train Station Hangar 2",
-					x = -169649.5,
-					y = 470258.59375,
-				},
-				[3] = {
-					name = "Leselidze Train Station Hangar 3",
-					x = -169836.35205078,
-					y = 470377.88964844,
-				},
-				[4] = {
-					name = "Leselidze Train Station Hangar 4",
-					x = -169724.6875,
-					y = 470219.125,
-				},
-			},
-		},
-		["Bzyb Train Station - FH18"] = {
-			task = "Strike",
-			priority = 1,
-			picture = {"Bzyb Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 4,
-			},
-			elements = {
-				[1] = {
-					name = "Bzyb Train Station Hangar 1",
-					x = -185802.78125,
-					y = 497412.5,
-				},
-				[2] = {
-					name = "Bzyb Train Station Hangar 2",
-					x = -185798.53125,
-					y = 497473.34375,
-				},
-				[3] = {
-					name = "Bzyb Train Station Hangar 3",
-					x = -185871.625,
-					y = 497466.28125,
-				},
-				[4] = {
-					name = "Bzyb Train Station Hangar 4",
-					x = -185871.046875,
-					y = 497421.78125,
-				},
-			},
-		},
-		["Adzhkhahara Train Station - FH28"] = {
-			task = "Strike",
-			priority = 1,
-			picture = {"Adzhkhahara Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Adzhkhahara Train Station Hangar 1",
-					x = -186107.1875,
-					y = 508142.1875,
-				},
-				[2] = {
-					name = "Adzhkhahara Train Station Hangar 2",
-					x = -186052.78125,
-					y = 508035.40625,
-				},
-				[3] = {
-					name = "Adzhkhahara Train Station Hangar 3",
-					x = -186081.21875,
-					y = 508089.34375,
-				},
-				[4] = {
-					name = "Adzhkhahara Train Station Hangar 4",
-					x = -186135.640625,
-					y = 508196.125,
-				},
-				[5] = {
-					name = "Adzhkhahara Train Station Hangar 5",
-					x = -186151.65625,
-					y = 508070.03125,
-				},
-				[6] = {
-					name = "Adzhkhahara Train Station Hangar 6",
-					x = -186114.59375,
-					y = 507998.1875,
-				},
-			},
-		},	
-		["Gudauta Train Station - FH37"] = {
-			task = "Strike",
-			priority = 1,
-			picture = {"Gudauta Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Gudauta Train Station Hangar 1",
-					x = -196995.96875,
-					y = 519848.40625,
-				},
-				[2] = {
-					name = "Gudauta Train Station Hangar 2",
-					x = -196992.15625,
-					y = 519787.53125,
-				},
-				[3] = {
-					name = "Gudauta Train Station Hangar 3",
-					x = -196930.96875,
-					y = 519884.96875,
-				},
-				[4] = {
-					name = "Gudauta Train Station Hangar 4",
-					x = -196930.875,
-					y = 519927.5625,
-				},
-				[5] = {
-					name = "Gudauta Train Station Hangar 5",
-					x = -197092.15625,
-					y = 519718.28125,
-				},
-				[6] = {
-					name = "Gudauta Train Station Hangar 6",
-					x = -197092.15625,
-					y = 519749.53125,
-				},
-				[7] = {
-					name = "Gudauta Train Station Hangar 7",
-					x = -197040.53125,
-					y = 519628.59375,
-				},
-				[8] = {
-					name = "Gudauta Train Station Hangar 8",
-					x = -197092.82836914,
-					y = 519652.375,
-				},
-				[9] = {
-					name = "Gudauta Train Station Hangar 9",
-					x = -197092.82836914,
-					y = 519671.90625,
-				},
-				[10] = {
-					name = "Gudauta Train Station Hangar 10",
-					x = -197092.82836914,
-					y = 519690.9375,
-				},
-				[11] = {
-					name = "Gudauta Train Station Hangar 11",
-					x = -197055.8125,
-					y = 519824.65625,
-				},
-			},
-		},
-		["Novyy Afon Train Station - FH57"] = {
-			task = "Strike",
-			priority = 1,
-			picture = {"Novyy Afon Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Novyy Afon Train Station Hangar 1",
-					x = -198444.3125,
-					y = 538777.375,
-				},
-				[2] = {
-					name = "Novyy Afon Train Station Hangar 2",
-					x = -198418.21875,
-					y = 538722.25,
-				},
-				[3] = {
-					name = "Novyy Afon Train Station Hangar 3",
-					x = -198356.1875,
-					y = 538764.75,
-				},
-				[4] = {
-					name = "Novyy Afon Train Station Hangar 4",
-					x = -198378.46875,
-					y = 538803.25,
-				},
-			},
-		},
-		["Gumista Train Station - FH56"] = {
-			task = "Strike",
-			priority = 1,
-			picture = {"Gumista Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Gumista Train Station Hangar 1",
-					x = -203787.28125,
-					y = 547048.4375,
-				},
-				[2] = {
-					name = "Gumista Train Station Hangar 2",
-					x = -203761.8125,
-					y = 546993,
-				},
-				[3] = {
-					name = "Gumista Train Station Hangar 3",
-					x = -203899.54248047,
-					y = 546970.57617188,
-				},
-				[4] = {
-					name = "Gumista Train Station Hangar 4",
-					x = -203867.72363281,
-					y = 546904.91210938,
-				},
-				[5] = {
-					name = "Gumista Train Station Hangar 5",
-					x = -203849.30273438,
-					y = 546948.3125,
-				},
-			},
-		},
-		["Sukhumi Train Station - FH66"] = {
-			task = "Strike",
-			priority = 1,
-			picture = {"Sukhumi Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Sukhumi Train Station Hangar 1",
-					x = -204884.0625,
-					y = 554344.375,
-				},
-				[2] = {
-					name = "Sukhumi Train Station Hangar 2",
-					x = -204955.125,
-					y = 554377.1875,
-				},
-				[3] = {
-					name = "Sukhumi Train Station Hangar 3",
-					x = -204968.50488281,
-					y = 554325.88476563,
-				},
-				[4] = {
-					name = "Sukhumi Train Station Hangar 4",
-					x = -204995.84375,
-					y = 554283,
-				},
-				[5] = {
-					name = "Sukhumi Train Station Hangar 5",
-					x = -204949.65007019,
-					y = 554210.63818359,
-				},
-			},
-		},
-		["Kvemo-Merheuli Train Station - FH66"] = {
-			task = "Strike",
-			priority = 1,
-			picture = {"Kvemo-Merheuli Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 4,
-			},
-			elements = {
-				[1] = {
-					name = "Kvemo-Merheuli Train Station Hangar 1",
-					x = -207974.40625,
-					y = 557894.3125,
-				},
-				[2] = {
-					name = "Kvemo-Merheuli Train Station Hangar 2",
-					x = -208008.9375,
-					y = 557919.25,
-				},
-				[3] = {
-					name = "Kvemo-Merheuli Train Station Hangar 3",
-					x = -207881.71875,
-					y = 557755.5,
-				},
-				[4] = {
-					name = "Kvemo-Merheuli Train Station Hangar 4",
-					x = -207933.375,
-					y = 557787.875,
-				},
-			},
-		},			
-		["Sukhumi-Babushara Train Station - FH74"] = {
-			task = "Strike",
-			priority = 1,
-			picture = {"Sukhumi-Babushara Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Sukhumi-Babushara Train Station Hangar 1",
-					x = -219071.4375,
-					y = 565464.4375,
-				},
-				[2] = {
-					name = "Sukhumi-Babushara Train Station Hangar 2",
-					x = -219023.4375,
-					y = 565426.8125,
-				},
-				[3] = {
-					name = "Sukhumi-Babushara Train Station Hangar 3",
-					x = -219005.28125,
-					y = 565502.9375,
-				},
-				[4] = {
-					name = "Sukhumi-Babushara Train Station Hangar 4",
-					x = -219001.41796875,
-					y = 565629.19628906,
-				},
-				[5] = {
-					name = "Sukhumi-Babushara Train Station Hangar 5",
-					x = -219245.6875,
-					y = 565555.05175781,
-				},
-				[6] = {
-					name = "Sukhumi-Babushara Train Station Hangar 6",
-					x = -219235.99511719,
-					y = 565595.43847656,
-				},
-				[7] = {
-					name = "Sukhumi-Babushara Train Station Fuel Tank 1",
-					x = -219203.48779297,
-					y = 565530.51834106,
-				},
-				[8] = {
-					name = "Sukhumi-Babushara Train Station Fuel Tank 2",
-					x = -219196.45996094,
-					y = 565561.22433472,
-				},
-				[9] = {
-					name = "Sukhumi-Babushara Train Station Fuel Tank 3",
-					x = -219146.88867188,
-					y = 565517.56420898,
-				},
-			},
-		},
-		["Senaki-Kolkhi Train Station - KM58"] = {
-			task = "Strike",
-			priority = 2,
-			picture = {"Senaki-Kolkhi Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Senaki-Kolkhi Train Station Hangar 1",
-					x = -278439.875,
-					y = 648014.0625,
-				},
-				[2] = {
-					name = "Senaki-Kolkhi Train Station Hangar 2",
-					x = -278455.3125,
-					y = 647955,
-				},
-				[3] = {
-					name = "Senaki-Kolkhi Train Station Hangar 3",
-					x = -278521.20019531,
-					y = 648174.72851563,
-				},
-				[4] = {
-					name = "Senaki-Kolkhi Train Station Hangar 4",
-					x = -278343.05957031,
-					y = 648212.17578125,
-				},
-				[5] = {
-					name = "Senaki-Kolkhi Train Station Hangar 5",
-					x = -278502.85058594,
-					y = 648053.55078125,
-				},
-				[6] = {
-					name = "Senaki-Kolkhi Train Station Hangar 6",
-					x = -278530.84375,
-					y = 647975.75,
-				},
-				[7] = {
-					name = "Senaki-Kolkhi Train Station Fuel Tank 1",
-					x = -278419.37255859,
-					y = 647905.97418213,
-				},
-				[8] = {
-					name = "Senaki-Kolkhi Train Station Fuel Tank 2",
-					x = -278418.84960938,
-					y = 647877.89447021,
-				},
-				[9] = {
-					name = "Senaki-Kolkhi Train Station Fuel Tank 3",
-					x = -278398.14453125,
-					y = 647870.21691895,
-				},
-				[10] = {
-					name = "Senaki-Kolkhi Train Station Fuel Tank 4",
-					x = -278397.734375,
-					y = 647898.79650879,
-				},
-				[11] = {
-					name = "Senaki-Kolkhi Train Station Hangar 7",
-					x = -278609.26757813,
-					y = 648182.73242188,
-				},
-			},
-		},
-		["Kobuleti Train Station - GG44"] = {
-			task = "Strike",
-			priority = 2,
-			picture = {" Kobuleti Train Station.png"},
-			attributes = {"Structure"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Kobuleti Train Station Hangar 1",
-					x = -316275.96289063,
-					y = 638171.36035156,
-				},
-				[2] = {
-					name = "Kobuleti Train Station Hangar 2",
-					x = -316280.92919922,
-					y = 638212.02636719,
-				},
-				[3] = {
-					name = "Kobuleti Train Station Hangar 3",
-					x = -316282.33740234,
-					y = 638238.39453125,
-				},
-				[4] = {
-					name = "Kobuleti Train Station Hangar 4",
-					x = -316283.07177734,
-					y = 638260.47753906,
-				},
-				[5] = {
-					name = "Kobuleti Train Station Hangar 5",
-					x = -316336.25,
-					y = 638392.6875,
-				},
-				[6] = {
-					name = "Kobuleti Train Station Hangar 6",
-					x = -316335.1875,
-					y = 638495.125,
-				},
-				[7] = {
-					name = "Kobuleti Train Station Hangar 7",
-					x = -316337,
-					y = 638439.0625,
-				},
-			},
-		},		
-		["bridge GORI"] = {--{supply line  gori
-			task = "Strike",
-			priority = 6,
-			--picture = {"Bridges positions EJ80-EH99.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "bridge little river",
-					x = -289338.90250721,
-					y = 821231.45182713,
-				},
-				[2] = {
-					name = "bridge big river",
-					x = -290558.91171324,
-					y = 820769.67147346,
-				},
-			},
-		},		
-		["Bridge Supply Line Gori - Tbilisi"] =  {--{supply line  gori
-			task = "Strike",
-			priority = 6,
-			--picture = {"Bridges positions EJ80-EH99.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 4,
-				max = 8,
-			},			
-			elements = {
-				[1] = {
-					name = "Bridge Supply Line Gori - Tbilisi-1",
-					x = -291901.15661608,
-					y = 836269.95717029,
-				},
-				[2] = {
-					name = "Bridge Supply Line Gori - Tbilisi-2",
-					x = -293785.15756579,
-					y = 848374.93828642,
-				},
-				[3] = {
-					name = "Bridge Supply Line Gori - Tbilisi-3",
-					x = -299055.94360335,
-					y = 864280.68645882,
-				},
-				[4] = {
-					name = "Bridge Supply Line Gori - Tbilisi-4",
-					x = -299277.05648133,
-					y = 872977.58810726,
-				},
-				[5] = {
-					name = "Bridge Supply Line Gori - Tbilisi-5",
-					x = -300308.92274769,
-					y = 878191.35657638,
-				},
-			},
-		},		
-		["bridge TKIBULI"] = { -- supply line kutaisi - farp ambrolauri
-			task = "Strike",
-			priority = 6,
-			--picture = {"Bridges positions EJ80-EH99.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "bridge TKIBULI river", -- cambia il nome
-					x = -263345.09071519,
-					y = 722875.74340048,				
-				},
-				[2] = {
-					name = "bridge TKIBULI lake", -- cambia il nome
-					x = -263318.92491384,
-					y = 722806.48098515,				
-				},
-			},							
-		},		
-		["Bridge Supply Line Marneuli - Tbilisi"] = { -- kutaisi - farp ambrolauri
-			task = "Strike",
-			priority = 6,
-			--picture = {"Bridges positions EJ80-EH99.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 4,
-				max = 8,
-			},
-			elements = {
-				[1] = {
-					name = "Bridge Supply Line Marneuli - Tbilisi-1", -- cambia il nome
-					x = -324597.40552542,
-					y = 882950.48548748,				
-				},					
-				[2] = {
-					name = "Bridge Supply Line Marneuli - Tbilisi-2", -- cambia il nome
-					x = -317070.77633033,
-					y = 891234.90923188,				
-				},					
-				[3] = {
-					name = "Bridge Supply Line Marneuli - Tbilisi-3", -- cambia il nome
-					x = -313485.95939054,
-					y = 883397.98896592,				
-				},	
-			},								
-		},		
-		["Rail Bridge Dapnari-KM76"] = { --supply line kobuleti - kutaisi
-			task = "Strike",
-			priority = 6,
-			picture = {"Bridges positions Dapnari-KM76.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Rail Bridge Dapnari North part-KM76",
-					x = -292722.10351563,
-					y = 671988.8125,
-				},
-				[2] = {
-					name = "Rail Bridge Dapnari Center part-KM76",
-					x = -292822.03710938,
-					y = 671985.1875,
-				},
-				[3] = {
-					name = "Rail Bridge Dapnari South part-KM76",
-					x = -292921.97070313,
-					y = 671981.56445313,
-				},
-			},
-		},		
-		["Bridge Dapnari-KM76"] = { --supply line kobuleti - kutaisi
-			task = "Strike",
-			priority = 6,
-			picture = {"Bridges positions Dapnari-KM76.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Bridge Dapnari North part-KM76",
-					x = -292658.8359375,
-					y = 672266.87695313,
-				},
-				[2] = {
-					name = "Bridge Dapnari South part-KM76",
-					x = -292795.8515625,
-					y = 672238.12304688,
-				},
-			},
-		},
-		["Bridge Vartsihe-LM16"] = { --supply line kutaisi - farp khashuri, gor
-			task = "Strike",
-			priority = 6,
-			picture = {"Bridges positions LM16-LM17-LM18.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Bridge Vartsihe West part-LM16",
-					x = -285269.1875,
-					y = 702893.90625,
-				},
-				[2] = {
-					name = "Bridge Vartsihe Center West part-LM16",
-					x = -285340.36523438,
-					y = 703014.46484375,
-				},
-				[3] = {
-					name = "Bridge Vartsihe Center East part-LM16",
-					x = -285411.54101563,
-					y = 703135.01953125,
-				},
-				[4] = {
-					name = "Bridge Vartsihe East part-LM16",
-					x = -285482.71875,
-					y = 703255.578125,
-				},
-			},
-		},				
-		["Bridge Geguti-LM17"] = {--supply line kutaisi - farp khashuri, gori
-			task = "Strike",
-			priority = 6,
-			--picture = {"Bridges positions LM16-LM17-LM18.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Bridge Geguti North part-LM17",
-					x = -282606.98828125,
-					y = 704785.0078125,
-				},
-				[2] = {
-					name = "Bridge Geguti Center part-LM17",
-					x = -282733.71875,
-					y = 704844.5,
-				},
-				[3] = {
-					name = "Bridge Geguti South part-LM17",
-					x = -282860.44921875,
-					y = 704903.9921875,
-				},
-			},
-		},
-		["Bridge Kutaisi-LM18"] = {--supply line -kutaisi -ambrolauri
-			task = "Strike",
-			priority = 6,
-			--picture = {"Bridges positions LM16-LM17-LM18.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Bridge Kutaisi West part-LM18",
-					x = -274859.59277344,
-					y = 701001.1796875,
-				},
-				[2] = {
-					name = "Bridge Kutaisi East part-LM18",
-					x = -274873.90722656,
-					y = 701140.4453125,
-				},
-			},
-		},
-		["Rail Bridge North Geguti-LM17"] = {--supply line kutaisi - farp khashuri, gori
-			task = "Strike",
-			priority = 6,
-			picture = {"Bridges positions LM16-LM17-LM18.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Rail Bridge North Geguti West part-LM17",
-					x = -280436.1328125,
-					y = 701658.0546875,
-				},
-				[2] = {
-					name = "Rail Bridge North Geguti Center part-LM17",
-					x = -280394.33398438,
-					y = 701748.8984375,
-				},
-				[3] = {
-					name = "Rail Bridge North Geguti East part-LM17",
-					x = -280352.53515625,
-					y = 701839.7421875,
-				},
-			},
-		},
-		["Bridge Koki-GH20"] = { --supply line sukhumi -senaki
-			task = "Strike",
-			priority = 6,
-			picture = {"Bridge positions GG19-GH10-GH20-GH21-GH31-GH42.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Bridge Koki North part-GH20",
-					x = -255475.2109375,
-					y = 616593.7421875,
-				},
-				[2] = {
-					name = "Bridge Koki Center part-GH20",
-					x = -255590.4296875,
-					y = 616673.2734375,
-				},
-				[3] = {
-					name = "Bridge Koki South part-GH20",
-					x = -255705.6484375,
-					y = 616752.796875,
-				},
-			},
-		},
-		["Rail Bridge Tagiloni-GH21"] = { --supply line sukhumi -senaki
-			task = "Strike",
-			priority = 6,
-			picture = {"Bridge positions GG19-GH10-GH20-GH21-GH31-GH42.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			elements = {
-				[1] = {
-					name = "Rail Bridge Tagiloni North up part-GH21",
-					x = -250657.7734375,
-					y = 622172,
-				},
-				[2] = {
-					name = "Rail Bridge Tagiloni North middle part-GH21",
-					x = -250744.234375,
-					y = 622222.2421875,
-				},
-				[3] = {
-					name = "Rail Bridge Tagiloni North down part-GH21",
-					x = -250830.6953125,
-					y = 622272.4921875,
-				},
-				[4] = {
-					name = "Rail Bridge Tagiloni South up part-GH21",
-					x = -250917.15625,
-					y = 622322.734375,
-				},
-				[5] = {
-					name = "Rail Bridge Tagiloni South middle part-GH21",
-					x = -251003.6171875,
-					y = 622372.984375,
-				},
-				[6] = {
-					name = "Rail Bridge Tagiloni South down part-GH21",
-					x = -251090.078125,
-					y = 622423.2265625,
-				},
-			},
 		},
 		["Sukhumi Airbase"] = {
 			task = "Strike",
@@ -4854,7 +3745,1394 @@ targetlist = {
 					y = 896795.625,
 				},
 			},
+		},
+
+		--AIRBASE OCA STRIKE
+		["Sukhumi OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "airbase",
+			name = "Sukhumi",
+		},
+		["Vaziani OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "airbase",
+			name = "Vaziani",
+		},
+		["Kutaisi OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "airbase",
+			name = "Kutaisi",
+		},
+		["Senaki-Kolkhi OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "airbase",
+			name = "Senaki-Kolkhi",
+		},
+
+
+		-- ANTI-SHIP STRIKE
+		["CVN-71 Theodore Roosevelt"] = { -- was TF-71
+			task = "Anti-ship Strike",
+			priority = 1,
+			attributes = {"ship"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "ship",
+			name = "CVN-71",
+		},
+		["CVN-72 Abraham Lincoln"] = { -- was TF-74
+			task = "Anti-ship Strike",
+			priority = 1,
+			attributes = {"ship"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "ship",
+			name = "CVN-72",
+		},
+		["LHA-Group"] = {
+			task = "Anti-ship Strike",
+			priority = 1,
+			attributes = {"ship"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "ship",
+			name = "LHA-Group",
+		},
+		["NATO Convoy 1"] = {
+			task = "Anti-ship Strike",
+			priority = 1,
+			attributes = {"ship"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "ship",
+			name = "NATO Convoy 1",
+		},
+
+		-- SAM SITE
+		["Hawk Site Kutaisi"] = {
+			task = "Strike",
+			priority = 6,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Hawk Site Kutaisi",
+		},
+		["Rapier Site Tabakhmela"] = {
+			task = "Strike",
+			priority = 6,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Rapier Site Tabakhmela",
+		},
+		["Vaziani Defenses"] = {
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Vaziani Defenses",
+		},
+		["Tbilisi Defenses"] = {
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Tbilisi Defenses",
+		},
+		["Sukhumi Defenses"] = {
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Sukhumi Defenses",
+		},
+		["Kobuleti Defenses"] = {
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Kobuleti Defenses",
+		},
+		["Batumi Air Defenses"] = {
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Batumi Air Defenses",
+		},
+		["Kutaisi Defenses"] = {
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Kutaisi Defenses",
+		},
+		["Senaki Defenses"] = {
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Senaki Defenses",
+		},
+		["Rapier Site bridge Vartsihe Geguti"] = {
+			task = "Strike",
+			priority = 6,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Rapier Site bridge Vartsihe Geguti",
+		},
+
+		
+		["GORI AA"] = {--ok
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "GORI AA",
+		},
+		["KHASHURI FARP AA"] = {--ok
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "KHASHURI FARP AA",
+		},
+		["AMBROLAURI FARP AA"] = {--ok
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "AMBROLAURI FARP AA",
+		},
+		
+		
+		-- ARMY
+		["10 US Army ELINT Station"] = {
+			task = "Strike",
+			priority = 5,
+			attributes = {"soft"},
+			firepower = {
+				min = 3,
+				max = 4,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "US ELINT Antenna Truck 1",
+				},
+				[2] = {
+					name = "US ELINT Antenna Truck 2",
+				},
+				[3] = {
+					name = "US ELINT Crew Van",
+				},
+				[4] = {
+					name = "US ELINT Equipment Van",
+				},
+				[5] = {
+					name = "US ELINT Generator Truck",
+				},
+			},
+		},
+		["11 1st Artillery Division/1.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 3,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "11 1st Artillery Division/1.Btry",
+		},
+		["12 1st Artillery Division/2.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "12 1st Artillery Division/2.Btry",
+		},
+		["13 1st Artillery Division/3.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "13 1st Artillery Division/3.Btry",
+		},
+		["14 1st Artillery Division/4.Btry"] = {--ok
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "14 1st Artillery Division/4.Btry",
+		},
+		["15 1st Artillery Division/5.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "15 1st Artillery Division/5.Btry",
+		},
+		["16 1st Artillery Division/6.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "16 1st Artillery Division/6.Btry",
+		},
+		["17 1st Artillery Division/7.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "17 1st Artillery Division/7.Btry",
+		},
+		["18 1st Artillery Division/8.Btry"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"soft"},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "18 1st Artillery Division/8.Btry",
+		},
+		["19 4th Army HQ"] = {
+			task = "Strike",
+			priority = 6,
+			attributes = {"soft"},
+			firepower = {
+				min = 2,
+				max = 4,
+			},
+			class = "vehicle",
+			name = "19 4th Army HQ",
+		},		
+
+
+		-- SUPPLY PLANT
+		["SUPPLY PLANT DAPNARI KM76"] = {
+			task = "Strike",
+			priority = 4,
+			--picture = {"Prohladniy_Depot.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 4,
+				max = 6,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "SUPPLY PLANT DAPNARI KM76",
+				},
+				[2] = {
+					name = "SUPPLY PLANT DAPNARI KM76-1",
+				},
+				[3] = {
+					name = "SUPPLY PLANT DAPNARI KM76-2",
+				},
+				[4] = {
+					name = "SUPPLY PLANT DAPNARI KM76-3",
+				},
+				[5] = {
+					name = "SUPPLY PLANT DAPNARI KM76-4",
+				},
+				[6] = {
+					name = "SUPPLY PLANT DAPNARI KM76-5",
+				},
+				[7] = {
+					name = "SUPPLY PLANT DAPNARI KM76-6",
+				},
+				[8] = {
+					name = "SUPPLY PLANT DAPNARI KM76-7",
+				},
+				[9] = {
+					name = "SUPPLY PLANT DAPNARI KM76-8",
+				},
+				[10] = {
+					name = "SUPPLY PLANT DAPNARI KM76-9",
+				},
+				[11] = {
+					name = "SUPPLY PLANT DAPNARI KM76-10",
+				},
+				[12] = {
+					name = "SUPPLY PLANT DAPNARI KM76-11",
+				},
+				[13] = {
+					name = "SUPPLY PLANT DAPNARI KM76-12",
+				},
+				[14] = {
+					name = "SUPPLY PLANT DAPNARI KM76-13",
+				},
+				[15] = {
+					name = "SUPPLY PLANT DAPNARI KM76-14",
+				},
+				[16] = {
+					name = "SUPPLY PLANT DAPNARI KM76-15",
+				},
+				[17] = {
+					name = "SUPPLY PLANT DAPNARI KM76-16",
+				},
+				[18] = {
+					name = "SUPPLY PLANT DAPNARI KM76-17",
+				},
+				[19] = {
+					name = "SUPPLY PLANT DAPNARI KM76-18",
+				},
+				[20] = {
+					name = "SUPPLY PLANT DAPNARI KM76-19",
+				},
+				[21] = {
+					name = "SUPPLY PLANT DAPNARI KM76-20",
+				},
+				[22] = {
+					name = "SUPPLY PLANT DAPNARI KM76-21",
+				},
+				[23] = {
+					name = "SUPPLY PLANT DAPNARI KM76-22",
+				},
+				[24] = {
+					name = "SUPPLY PLANT DAPNARI KM76-23",
+				},
+				[25] = {
+					name = "SUPPLY PLANT DAPNARI KM76-24",
+				},
+				[26] = {
+					name = "SUPPLY PLANT DAPNARI KM76-25",
+				},
+				[27] = {
+					name = "SUPPLY PLANT DAPNARI KM76-26",
+				},							
+			},
+		},
+		["SUPPLY PLANT MARNEULI ML89"] = {
+			task = "Strike",
+			priority = 4,
+			--picture = {"Prohladniy_Depot.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 4,
+				max = 6,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "SUPPLY PLANT MARNEULI ML89",
+				},	
+				[2] = {
+					name = "SUPPLY PLANT MARNEULI ML89-1",
+				},
+				[3] = {
+					name = "SUPPLY PLANT MARNEULI ML89-2",
+				},
+				[4] = {
+					name = "SUPPLY PLANT MARNEULI ML89-3",
+				},
+				[5] = {
+					name = "SUPPLY PLANT MARNEULI ML89-4",
+				},
+				[6] = {
+					name = "SUPPLY PLANT MARNEULI ML89-5",
+				},
+				[7] = {
+					name = "SUPPLY PLANT MARNEULI ML89-6",
+				},
+				[8] = {
+					name = "SUPPLY PLANT MARNEULI ML89-7",
+				},
+				[9] = {
+					name = "SUPPLY PLANT MARNEULI ML89-8",
+				},
+				[10] = {
+					name = "SUPPLY PLANT MARNEULI ML89-9",
+				},
+				[11] = {
+					name = "SUPPLY PLANT MARNEULI ML89-29",
+				},
+				[12] = {
+					name = "SUPPLY PLANT MARNEULI ML89-11",
+				},
+				[13] = {
+					name = "SUPPLY PLANT MARNEULI ML89-12",
+				},
+				[14] = {
+					name = "SUPPLY PLANT MARNEULI ML89-13",
+				},
+				[15] = {
+					name = "SUPPLY PLANT MARNEULI ML89-14",
+				},
+				[16] = {
+					name = "SUPPLY PLANT MARNEULI ML89-15",
+				},
+				[17] = {
+					name = "SUPPLY PLANT MARNEULI ML89-16",
+				},
+				[18] = {
+					name = "SUPPLY PLANT MARNEULI ML89-17",
+				},
+				[19] = {
+					name = "SUPPLY PLANT MARNEULI ML89-18",
+				},
+				[20] = {
+					name = "SUPPLY PLANT MARNEULI ML89-19",
+				},
+				[21] = {
+					name = "SUPPLY PLANT MARNEULI ML89-20",
+				},
+				[22] = {
+					name = "SUPPLY PLANT MARNEULI ML89-21",
+				},
+				[23] = {
+					name = "SUPPLY PLANT MARNEULI ML89-22",
+				},
+				[24] = {
+					name = "SUPPLY PLANT MARNEULI ML89-23",
+				},
+				[25] = {
+					name = "SUPPLY PLANT MARNEULI ML89-24",
+				},
+				[26] = {
+					name = "SUPPLY PLANT MARNEULI ML89-25",
+				},
+				[27] = {
+					name = "SUPPLY PLANT MARNEULI ML89-26",
+				},
+				[28] = {
+					name = "SUPPLY PLANT MARNEULI ML89-27",
+				},	
+				[29] = {
+					name = "SUPPLY PLANT MARNEULI ML89-28",
+				},															
+			},
+		},
+
+		-- SUPPLY LINES
+		["bridge GORI"] = {--{supply line  gori
+			task = "Strike",
+			priority = 6,
+			--picture = {"Bridges positions EJ80-EH99.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "bridge little river",
+					x = -289338.90250721,
+					y = 821231.45182713,
+				},
+				[2] = {
+					name = "bridge big river",
+					x = -290558.91171324,
+					y = 820769.67147346,
+				},
+			},
+		},		
+		["Bridge Supply Line Gori - Tbilisi"] =  {--{supply line  gori
+			task = "Strike",
+			priority = 6,
+			--picture = {"Bridges positions EJ80-EH99.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 4,
+				max = 8,
+			},			
+			elements = {
+				[1] = {
+					name = "Bridge Supply Line Gori - Tbilisi-1",
+					x = -291901.15661608,
+					y = 836269.95717029,
+				},
+				[2] = {
+					name = "Bridge Supply Line Gori - Tbilisi-2",
+					x = -293785.15756579,
+					y = 848374.93828642,
+				},
+				[3] = {
+					name = "Bridge Supply Line Gori - Tbilisi-3",
+					x = -299055.94360335,
+					y = 864280.68645882,
+				},
+				[4] = {
+					name = "Bridge Supply Line Gori - Tbilisi-4",
+					x = -299277.05648133,
+					y = 872977.58810726,
+				},
+				[5] = {
+					name = "Bridge Supply Line Gori - Tbilisi-5",
+					x = -300308.92274769,
+					y = 878191.35657638,
+				},
+			},
+		},		
+		["bridge TKIBULI"] = { -- supply line kutaisi - farp ambrolauri
+			task = "Strike",
+			priority = 6,
+			--picture = {"Bridges positions EJ80-EH99.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "bridge TKIBULI river", -- cambia il nome
+					x = -263345.09071519,
+					y = 722875.74340048,				
+				},
+				[2] = {
+					name = "bridge TKIBULI lake", -- cambia il nome
+					x = -263318.92491384,
+					y = 722806.48098515,				
+				},
+			},							
+		},		
+		["Bridge Supply Line Marneuli - Tbilisi"] = { -- supply line kutaisi - farp ambrolauri
+			task = "Strike",
+			priority = 6,
+			--picture = {"Bridges positions EJ80-EH99.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 4,
+				max = 8,
+			},
+			elements = {
+				[1] = {
+					name = "Bridge Supply Line Marneuli - Tbilisi-1", -- cambia il nome
+					x = -324597.40552542,
+					y = 882950.48548748,				
+				},					
+				[2] = {
+					name = "Bridge Supply Line Marneuli - Tbilisi-2", -- cambia il nome
+					x = -317070.77633033,
+					y = 891234.90923188,				
+				},					
+				[3] = {
+					name = "Bridge Supply Line Marneuli - Tbilisi-3", -- cambia il nome
+					x = -313485.95939054,
+					y = 883397.98896592,				
+				},	
+			},								
+		},		
+		["Rail Bridge Dapnari-KM76"] = { --supply line kobuleti - kutaisi
+			task = "Strike",
+			priority = 6,
+			picture = {"Bridges positions Dapnari-KM76.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Rail Bridge Dapnari North part-KM76",
+					x = -292722.10351563,
+					y = 671988.8125,
+				},
+				[2] = {
+					name = "Rail Bridge Dapnari Center part-KM76",
+					x = -292822.03710938,
+					y = 671985.1875,
+				},
+				[3] = {
+					name = "Rail Bridge Dapnari South part-KM76",
+					x = -292921.97070313,
+					y = 671981.56445313,
+				},
+			},
+		},		
+		["Bridge Dapnari-KM76"] = { --supply line kobuleti - kutaisi
+			task = "Strike",
+			priority = 6,
+			picture = {"Bridges positions Dapnari-KM76.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Bridge Dapnari North part-KM76",
+					x = -292658.8359375,
+					y = 672266.87695313,
+				},
+				[2] = {
+					name = "Bridge Dapnari South part-KM76",
+					x = -292795.8515625,
+					y = 672238.12304688,
+				},
+			},
+		},
+		["Bridge Vartsihe-LM16"] = { --supply line kutaisi - farp khashuri, gor
+			task = "Strike",
+			priority = 6,
+			picture = {"Bridges positions LM16-LM17-LM18.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Bridge Vartsihe West part-LM16",
+					x = -285269.1875,
+					y = 702893.90625,
+				},
+				[2] = {
+					name = "Bridge Vartsihe Center West part-LM16",
+					x = -285340.36523438,
+					y = 703014.46484375,
+				},
+				[3] = {
+					name = "Bridge Vartsihe Center East part-LM16",
+					x = -285411.54101563,
+					y = 703135.01953125,
+				},
+				[4] = {
+					name = "Bridge Vartsihe East part-LM16",
+					x = -285482.71875,
+					y = 703255.578125,
+				},
+			},
+		},				
+		["Bridge Geguti-LM17"] = {--supply line kutaisi - farp khashuri, gori
+			task = "Strike",
+			priority = 6,
+			--picture = {"Bridges positions LM16-LM17-LM18.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Bridge Geguti North part-LM17",
+					x = -282606.98828125,
+					y = 704785.0078125,
+				},
+				[2] = {
+					name = "Bridge Geguti Center part-LM17",
+					x = -282733.71875,
+					y = 704844.5,
+				},
+				[3] = {
+					name = "Bridge Geguti South part-LM17",
+					x = -282860.44921875,
+					y = 704903.9921875,
+				},
+			},
+		},
+		["Bridge Kutaisi-LM18"] = {--supply line -kutaisi -ambrolauri
+			task = "Strike",
+			priority = 6,
+			--picture = {"Bridges positions LM16-LM17-LM18.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Bridge Kutaisi West part-LM18",
+					x = -274859.59277344,
+					y = 701001.1796875,
+				},
+				[2] = {
+					name = "Bridge Kutaisi East part-LM18",
+					x = -274873.90722656,
+					y = 701140.4453125,
+				},
+			},
+		},
+		["Rail Bridge North Geguti-LM17"] = {--supply line kutaisi - farp khashuri, gori
+			task = "Strike",
+			priority = 6,
+			picture = {"Bridges positions LM16-LM17-LM18.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Rail Bridge North Geguti West part-LM17",
+					x = -280436.1328125,
+					y = 701658.0546875,
+				},
+				[2] = {
+					name = "Rail Bridge North Geguti Center part-LM17",
+					x = -280394.33398438,
+					y = 701748.8984375,
+				},
+				[3] = {
+					name = "Rail Bridge North Geguti East part-LM17",
+					x = -280352.53515625,
+					y = 701839.7421875,
+				},
+			},
+		},
+		["Bridge Koki-GH20"] = { --supply line sukhumi -senaki
+			task = "Strike",
+			priority = 6,
+			picture = {"Bridge positions GG19-GH10-GH20-GH21-GH31-GH42.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Bridge Koki North part-GH20",
+					x = -255475.2109375,
+					y = 616593.7421875,
+				},
+				[2] = {
+					name = "Bridge Koki Center part-GH20",
+					x = -255590.4296875,
+					y = 616673.2734375,
+				},
+				[3] = {
+					name = "Bridge Koki South part-GH20",
+					x = -255705.6484375,
+					y = 616752.796875,
+				},
+			},
+		},
+		["Rail Bridge Tagiloni-GH21"] = { --supply line sukhumi -senaki
+			task = "Strike",
+			priority = 6,
+			picture = {"Bridge positions GG19-GH10-GH20-GH21-GH31-GH42.png"},
+			attributes = {"Bridge"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Rail Bridge Tagiloni North up part-GH21",
+					x = -250657.7734375,
+					y = 622172,
+				},
+				[2] = {
+					name = "Rail Bridge Tagiloni North middle part-GH21",
+					x = -250744.234375,
+					y = 622222.2421875,
+				},
+				[3] = {
+					name = "Rail Bridge Tagiloni North down part-GH21",
+					x = -250830.6953125,
+					y = 622272.4921875,
+				},
+				[4] = {
+					name = "Rail Bridge Tagiloni South up part-GH21",
+					x = -250917.15625,
+					y = 622322.734375,
+				},
+				[5] = {
+					name = "Rail Bridge Tagiloni South middle part-GH21",
+					x = -251003.6171875,
+					y = 622372.984375,
+				},
+				[6] = {
+					name = "Rail Bridge Tagiloni South down part-GH21",
+					x = -251090.078125,
+					y = 622423.2265625,
+				},
+			},
+		},
+
+		-- INFRASTRUCTURE, FACILITIES
+		["Leselidze Train Station - EJ80"] = {
+			task = "Strike",
+			priority = 1,
+			picture = {"Leselidze Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 4,
+			},
+			elements = {
+				[1] = {
+					name = "Leselidze Train Station Hangar 1",
+					x = -169643.34375,
+					y = 470197.90625,
+				},
+				[2] = {
+					name = "Leselidze Train Station Hangar 2",
+					x = -169649.5,
+					y = 470258.59375,
+				},
+				[3] = {
+					name = "Leselidze Train Station Hangar 3",
+					x = -169836.35205078,
+					y = 470377.88964844,
+				},
+				[4] = {
+					name = "Leselidze Train Station Hangar 4",
+					x = -169724.6875,
+					y = 470219.125,
+				},
+			},
+		},
+		["Bzyb Train Station - FH18"] = {
+			task = "Strike",
+			priority = 1,
+			picture = {"Bzyb Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 4,
+			},
+			elements = {
+				[1] = {
+					name = "Bzyb Train Station Hangar 1",
+					x = -185802.78125,
+					y = 497412.5,
+				},
+				[2] = {
+					name = "Bzyb Train Station Hangar 2",
+					x = -185798.53125,
+					y = 497473.34375,
+				},
+				[3] = {
+					name = "Bzyb Train Station Hangar 3",
+					x = -185871.625,
+					y = 497466.28125,
+				},
+				[4] = {
+					name = "Bzyb Train Station Hangar 4",
+					x = -185871.046875,
+					y = 497421.78125,
+				},
+			},
+		},
+		["Adzhkhahara Train Station - FH28"] = {
+			task = "Strike",
+			priority = 1,
+			picture = {"Adzhkhahara Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Adzhkhahara Train Station Hangar 1",
+					x = -186107.1875,
+					y = 508142.1875,
+				},
+				[2] = {
+					name = "Adzhkhahara Train Station Hangar 2",
+					x = -186052.78125,
+					y = 508035.40625,
+				},
+				[3] = {
+					name = "Adzhkhahara Train Station Hangar 3",
+					x = -186081.21875,
+					y = 508089.34375,
+				},
+				[4] = {
+					name = "Adzhkhahara Train Station Hangar 4",
+					x = -186135.640625,
+					y = 508196.125,
+				},
+				[5] = {
+					name = "Adzhkhahara Train Station Hangar 5",
+					x = -186151.65625,
+					y = 508070.03125,
+				},
+				[6] = {
+					name = "Adzhkhahara Train Station Hangar 6",
+					x = -186114.59375,
+					y = 507998.1875,
+				},
+			},
 		},	
+		["Gudauta Train Station - FH37"] = {
+			task = "Strike",
+			priority = 1,
+			picture = {"Gudauta Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Gudauta Train Station Hangar 1",
+					x = -196995.96875,
+					y = 519848.40625,
+				},
+				[2] = {
+					name = "Gudauta Train Station Hangar 2",
+					x = -196992.15625,
+					y = 519787.53125,
+				},
+				[3] = {
+					name = "Gudauta Train Station Hangar 3",
+					x = -196930.96875,
+					y = 519884.96875,
+				},
+				[4] = {
+					name = "Gudauta Train Station Hangar 4",
+					x = -196930.875,
+					y = 519927.5625,
+				},
+				[5] = {
+					name = "Gudauta Train Station Hangar 5",
+					x = -197092.15625,
+					y = 519718.28125,
+				},
+				[6] = {
+					name = "Gudauta Train Station Hangar 6",
+					x = -197092.15625,
+					y = 519749.53125,
+				},
+				[7] = {
+					name = "Gudauta Train Station Hangar 7",
+					x = -197040.53125,
+					y = 519628.59375,
+				},
+				[8] = {
+					name = "Gudauta Train Station Hangar 8",
+					x = -197092.82836914,
+					y = 519652.375,
+				},
+				[9] = {
+					name = "Gudauta Train Station Hangar 9",
+					x = -197092.82836914,
+					y = 519671.90625,
+				},
+				[10] = {
+					name = "Gudauta Train Station Hangar 10",
+					x = -197092.82836914,
+					y = 519690.9375,
+				},
+				[11] = {
+					name = "Gudauta Train Station Hangar 11",
+					x = -197055.8125,
+					y = 519824.65625,
+				},
+			},
+		},.
+		["Novyy Afon Train Station - FH57"] = {
+			task = "Strike",
+			priority = 1,
+			picture = {"Novyy Afon Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Novyy Afon Train Station Hangar 1",
+					x = -198444.3125,
+					y = 538777.375,
+				},
+				[2] = {
+					name = "Novyy Afon Train Station Hangar 2",
+					x = -198418.21875,
+					y = 538722.25,
+				},
+				[3] = {
+					name = "Novyy Afon Train Station Hangar 3",
+					x = -198356.1875,
+					y = 538764.75,
+				},
+				[4] = {
+					name = "Novyy Afon Train Station Hangar 4",
+					x = -198378.46875,
+					y = 538803.25,
+				},
+			},
+		},
+		["Gumista Train Station - FH56"] = {
+			task = "Strike",
+			priority = 1,
+			picture = {"Gumista Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Gumista Train Station Hangar 1",
+					x = -203787.28125,
+					y = 547048.4375,
+				},
+				[2] = {
+					name = "Gumista Train Station Hangar 2",
+					x = -203761.8125,
+					y = 546993,
+				},
+				[3] = {
+					name = "Gumista Train Station Hangar 3",
+					x = -203899.54248047,
+					y = 546970.57617188,
+				},
+				[4] = {
+					name = "Gumista Train Station Hangar 4",
+					x = -203867.72363281,
+					y = 546904.91210938,
+				},
+				[5] = {
+					name = "Gumista Train Station Hangar 5",
+					x = -203849.30273438,
+					y = 546948.3125,
+				},
+			},
+		},
+		["Sukhumi Train Station - FH66"] = {
+			task = "Strike",
+			priority = 1,
+			picture = {"Sukhumi Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Sukhumi Train Station Hangar 1",
+					x = -204884.0625,
+					y = 554344.375,
+				},
+				[2] = {
+					name = "Sukhumi Train Station Hangar 2",
+					x = -204955.125,
+					y = 554377.1875,
+				},
+				[3] = {
+					name = "Sukhumi Train Station Hangar 3",
+					x = -204968.50488281,
+					y = 554325.88476563,
+				},
+				[4] = {
+					name = "Sukhumi Train Station Hangar 4",
+					x = -204995.84375,
+					y = 554283,
+				},
+				[5] = {
+					name = "Sukhumi Train Station Hangar 5",
+					x = -204949.65007019,
+					y = 554210.63818359,
+				},
+			},
+		},
+		["Kvemo-Merheuli Train Station - FH66"] = {
+			task = "Strike",
+			priority = 1,
+			picture = {"Kvemo-Merheuli Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 4,
+			},
+			elements = {
+				[1] = {
+					name = "Kvemo-Merheuli Train Station Hangar 1",
+					x = -207974.40625,
+					y = 557894.3125,
+				},
+				[2] = {
+					name = "Kvemo-Merheuli Train Station Hangar 2",
+					x = -208008.9375,
+					y = 557919.25,
+				},
+				[3] = {
+					name = "Kvemo-Merheuli Train Station Hangar 3",
+					x = -207881.71875,
+					y = 557755.5,
+				},
+				[4] = {
+					name = "Kvemo-Merheuli Train Station Hangar 4",
+					x = -207933.375,
+					y = 557787.875,
+				},
+			},
+		},			
+		["Sukhumi-Babushara Train Station - FH74"] = {
+			task = "Strike",
+			priority = 1,
+			picture = {"Sukhumi-Babushara Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Sukhumi-Babushara Train Station Hangar 1",
+					x = -219071.4375,
+					y = 565464.4375,
+				},
+				[2] = {
+					name = "Sukhumi-Babushara Train Station Hangar 2",
+					x = -219023.4375,
+					y = 565426.8125,
+				},
+				[3] = {
+					name = "Sukhumi-Babushara Train Station Hangar 3",
+					x = -219005.28125,
+					y = 565502.9375,
+				},
+				[4] = {
+					name = "Sukhumi-Babushara Train Station Hangar 4",
+					x = -219001.41796875,
+					y = 565629.19628906,
+				},
+				[5] = {
+					name = "Sukhumi-Babushara Train Station Hangar 5",
+					x = -219245.6875,
+					y = 565555.05175781,
+				},
+				[6] = {
+					name = "Sukhumi-Babushara Train Station Hangar 6",
+					x = -219235.99511719,
+					y = 565595.43847656,
+				},
+				[7] = {
+					name = "Sukhumi-Babushara Train Station Fuel Tank 1",
+					x = -219203.48779297,
+					y = 565530.51834106,
+				},
+				[8] = {
+					name = "Sukhumi-Babushara Train Station Fuel Tank 2",
+					x = -219196.45996094,
+					y = 565561.22433472,
+				},
+				[9] = {
+					name = "Sukhumi-Babushara Train Station Fuel Tank 3",
+					x = -219146.88867188,
+					y = 565517.56420898,
+				},
+			},
+		},
+		["Senaki-Kolkhi Train Station - KM58"] = {
+			task = "Strike",
+			priority = 2,
+			picture = {"Senaki-Kolkhi Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Senaki-Kolkhi Train Station Hangar 1",
+					x = -278439.875,
+					y = 648014.0625,
+				},
+				[2] = {
+					name = "Senaki-Kolkhi Train Station Hangar 2",
+					x = -278455.3125,
+					y = 647955,
+				},
+				[3] = {
+					name = "Senaki-Kolkhi Train Station Hangar 3",
+					x = -278521.20019531,
+					y = 648174.72851563,
+				},
+				[4] = {
+					name = "Senaki-Kolkhi Train Station Hangar 4",
+					x = -278343.05957031,
+					y = 648212.17578125,
+				},
+				[5] = {
+					name = "Senaki-Kolkhi Train Station Hangar 5",
+					x = -278502.85058594,
+					y = 648053.55078125,
+				},
+				[6] = {
+					name = "Senaki-Kolkhi Train Station Hangar 6",
+					x = -278530.84375,
+					y = 647975.75,
+				},
+				[7] = {
+					name = "Senaki-Kolkhi Train Station Fuel Tank 1",
+					x = -278419.37255859,
+					y = 647905.97418213,
+				},
+				[8] = {
+					name = "Senaki-Kolkhi Train Station Fuel Tank 2",
+					x = -278418.84960938,
+					y = 647877.89447021,
+				},
+				[9] = {
+					name = "Senaki-Kolkhi Train Station Fuel Tank 3",
+					x = -278398.14453125,
+					y = 647870.21691895,
+				},
+				[10] = {
+					name = "Senaki-Kolkhi Train Station Fuel Tank 4",
+					x = -278397.734375,
+					y = 647898.79650879,
+				},
+				[11] = {
+					name = "Senaki-Kolkhi Train Station Hangar 7",
+					x = -278609.26757813,
+					y = 648182.73242188,
+				},
+			},
+		},
+		["Kobuleti Train Station - GG44"] = {
+			task = "Strike",
+			priority = 2,
+			picture = {" Kobuleti Train Station.png"},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			elements = {
+				[1] = {
+					name = "Kobuleti Train Station Hangar 1",
+					x = -316275.96289063,
+					y = 638171.36035156,
+				},
+				[2] = {
+					name = "Kobuleti Train Station Hangar 2",
+					x = -316280.92919922,
+					y = 638212.02636719,
+				},
+				[3] = {
+					name = "Kobuleti Train Station Hangar 3",
+					x = -316282.33740234,
+					y = 638238.39453125,
+				},
+				[4] = {
+					name = "Kobuleti Train Station Hangar 4",
+					x = -316283.07177734,
+					y = 638260.47753906,
+				},
+				[5] = {
+					name = "Kobuleti Train Station Hangar 5",
+					x = -316336.25,
+					y = 638392.6875,
+				},
+				[6] = {
+					name = "Kobuleti Train Station Hangar 6",
+					x = -316335.1875,
+					y = 638495.125,
+				},
+				[7] = {
+					name = "Kobuleti Train Station Hangar 7",
+					x = -316337,
+					y = 638439.0625,
+				},
+			},
+		},		
+					
 		--[[
 		["Rail Bridge Kul tubani-EJ80"] = {
 			task = "Strike",
