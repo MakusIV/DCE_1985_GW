@@ -1588,10 +1588,62 @@ targetlist = {
 					name = "CHERKESSK SUPPLY PLANT KP69-29",
 				},			
 			},
+		},
+		["SUPPLY PLANT DL65"] = {
+			task = "Strike",
+			priority = 4,
+			--picture = {""},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,  --3,
+				max = 3,  --6,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "SUPPLY PLANT DL65-1",
+				},
+				[2] = {
+					name = "SUPPLY PLANT DL65-2",
+				},
+				[3] = {
+					name = "SUPPLY PLANT DL65-3",
+				},
+				[4] = {
+					name = "SUPPLY PLANT DL65-4",
+				},
+				[5] = {
+					name = "SUPPLY PLANT DL65-5",
+				},
+				[6] = {
+					name = "SUPPLY PLANT DL65-6",
+				},
+				[7] = {
+					name = "SUPPLY PLANT DL65-7",
+				},
+				[8] = {
+					name = "SUPPLY PLANT DL65-8",
+				},
+				[9] = {
+					name = "SUPPLY PLANT DL65-9",
+				},
+				[10] = {
+					name = "SUPPLY PLANT DL65-10",
+				},
+				[11] = {
+					name = "SUPPLY PLANT DL65-11",
+				},
+				[12] = {
+					name = "SUPPLY PLANT DL65-12",
+				},
+				[13] = {
+					name = "SUPPLY PLANT DL65-13",
+				},					
+			},
 		},		
 
 		-- SUPPLY LINES
-		["BAKSAN-MINERALNYE SUPPLY LINE"] = {
+		["BAKSAN-MINERALNYE SUPPLY LINE"] = {--ok
 			task = "Strike",
 			priority = 4,
 			picture = {"Target - BAKSAN-MINERALNYE SUPPLY LINE.png"},
@@ -1613,7 +1665,7 @@ targetlist = {
 				},
 			},
 		},		
-		["BAKSAN-MOZDOK SUPPLY LINE"] = {--change with new bridge elements
+		["BAKSAN-MOZDOK SUPPLY LINE"] = {--ok:
 			task = "Strike",
 			priority = 2,
 			picture = {"Target - Vladikavkaz Bridge.png"},
@@ -1650,193 +1702,30 @@ targetlist = {
 				max = 3, -- --6,
 			},
 			elements = {
+			
 				[1] = {
-					name = "Bridge Vladikavkaz MN 76",
-					x = -165689.171875,
-					y = 850781.9375,
-				},
+					name = "Bridge north bank South Beslan",
+					x = -140249,
+					y = 810039,
+				},				
 				[2] = {
-					name = "Bridge Vladikavkaz North MN 76",
-					x = -164245.28125,
-					y = 850403,
+					name = "Kardzhin Railway Bridge",
+					x = -145396,
+					y = 814587,
 				},
 				[3] = {
-					name = "Bridge Vladikavkaz South MN 76",
-					x = -168229.1875,
-					y = 852723.0625,
+					name = "Kardzhin Bridge",
+					x = -145497,
+					y = 815414,
 				},
-				[4] = {
-					name = "Bridge north bank South Beslan",
-					x = -151580.80078125,
-					y = 835949.02734375,
-				},
-				[5] = {
-					name = "Bridge south bank South Beslan",
-					x = -151456.44921875,
-					y = 836013.34375,
-				},
-				[6] = {
+				--[[[4] = { -- too far
 					name = "Bridge Alagir",
 					x = -173099.3125,
 					y = 815939.25,
-				},				
+				},]]	
 			},
-		},	
-		["High priority Target BESLAN FARP SUPPLY LINE A"] = {--ok
-			task = "Strike",
-			priority = 6,
-			picture = {"Target - Vladikavkaz Bridge.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3, -- --3,
-				max = 3, -- --6,
-			},
-			elements = {
-				[1] = {
-					name = "Bridge Vladikavkaz MN 76",
-					x = -165689.171875,
-					y = 850781.9375,
-				},
-				[2] = {
-					name = "Bridge Vladikavkaz North MN 76",
-					x = -164245.28125,
-					y = 850403,
-				},
-				[3] = {
-					name = "Bridge Vladikavkaz South MN 76",
-					x = -168229.1875,
-					y = 852723.0625,
-				},
-			},
-		},	
-		["High priority Target BESLAN FARP SUPPLY LINE B"] = {--ok
-			task = "Strike",
-			priority = 6,
-			picture = {"Target - Beslan Bridge.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3, --getTargetFirepower(2, "blue", "med", "Bridge", "Strike", true, "med"), --3,
-				max = 3, -- --6,
-			},
-			elements = {				
-				[1] = {
-					name = "Bridge north bank South Beslan",
-					x = -151580.80078125,
-					y = 835949.02734375,
-				},
-				[2] = {
-					name = "Bridge south bank South Beslan",
-					x = -151456.44921875,
-					y = 836013.34375,
-				},								
-			},
-		},
-		["High priority Target BESLAN FARP SUPPLY LINE C"] = {--ok
-			task = "Strike",
-			priority = 6,
-			picture = {"Target - Alagir Bridge.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3, --getTargetFirepower(1, "blue", "med", "Bridge", "Strike", true, "med"), --3,
-				max = 3, --getTargetFirepower(1, "blue", "med", "Bridge", "Strike", false, "med"), --6,
-			},
-			elements = {				
-				[1] = {
-					name = "Bridge Alagir",
-					x = -173099.3125,
-					y = 815939.25,
-				},				
-			},
-		},				
-		["BESLAN-LENIGORI FARP SUPPLY LINE"] = {-- same BESLAN-NOGIR FARP SUPPLY LINE
-			task = "Strike",
-			priority = 1,
-			--picture = {"Vladikavkaz_Bridge.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3, -- --3,
-				max = 3, -- --6,
-			},
-			elements = {
-				[1] = {
-					name = "Bridge Vladikavkaz MN 76",
-					x = -165689.171875,
-					y = 850781.9375,
-				},				
-				[2] = {
-					name = "Bridge Vladikavkaz South MN 76",
-					x = -168229.1875,
-					y = 852723.0625,
-				},
-				[3] = {
-					name = "Bridge Vladikavkaz North MN 76",
-					x = -164245.28125,
-					y = 850403,
-				},
-				[4] = {
-					name = "Bridge north bank South Beslan",
-					x = -151580.80078125,
-					y = 835949.02734375,
-				},
-				[5] = {
-					name = "Bridge south bank South Beslan",
-					x = -151456.44921875,
-					y = 836013.34375,
-				},
-				[6] = {
-					name = "Bridge Alagir",
-					x = -173099.3125,
-					y = 815939.25,
-				},
-			},
-		},	
-		["BESLAN-TSKHINVALI FARP SUPPLY LINE"] = {-- same BESLAN-NOGIR FARP SUPPLY LINE + Rail Bridge Digora MN 38
-			task = "Strike",
-			priority = 1,
-			--picture = {"Vladikavkaz_Bridge.png"},
-			attributes = {"Bridge"},
-			firepower = {
-				min = 3, --getTargetFirepower(7, "blue", "mix", "Bridge", "Strike", true, "med"), --3,
-				max = 3, --getTargetFirepower(7, "blue", "mix", "Bridge", "Strike", false, "med"), --6,
-			},
-			elements = {
-				[1] = {
-					name = "Bridge Vladikavkaz MN 76",
-					x = -165689.171875,
-					y = 850781.9375,
-				},				
-				[2] = {
-					name = "Bridge Vladikavkaz South MN 76",
-					x = -168229.1875,
-					y = 852723.0625,
-				},
-				[3] = {
-					name = "Bridge Vladikavkaz North MN 76",
-					x = -164245.28125,
-					y = 850403,
-				},
-				[4] = {
-					name = "Bridge north bank South Beslan",
-					x = -151580.80078125,
-					y = 835949.02734375,
-				},
-				[5] = {
-					name = "Bridge south bank South Beslan",
-					x = -151456.44921875,
-					y = 836013.34375,
-				},
-				[6] = {
-					name = "Bridge Alagir",
-					x = -173099.3125,
-					y = 815939.25,
-				},
-				[7] = {
-					name = "Rail Bridge Digora MN 38",
-					x = -157146.546875,
-					y = 809730.375,
-				},		
-			},
-		},		
+		},			
+							
 		["High priority Target Rail Bridge Digora MN 38"] = {
 			task = "Strike",
 			priority = 6,
@@ -4312,6 +4201,58 @@ targetlist = {
 				},															
 			},
 		},
+		["BLUE SUPPLY PLANT LM32"] = {
+			task = "Strike",
+			priority = 4,
+			--picture = {""},
+			attributes = {"Structure"},
+			firepower = {
+				min = 3,  --3,
+				max = 3,  --6,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "BLUE SUPPLY PLANT LM32-1",
+				},
+				[2] = {
+					name = "BLUE SUPPLY PLANT LM32-2",
+				},
+				[3] = {
+					name = "BLUE SUPPLY PLANT LM32-3",
+				},
+				[4] = {
+					name = "BLUE SUPPLY PLANT LM32-4",
+				},
+				[5] = {
+					name = "BLUE SUPPLY PLANT LM32-5",
+				},
+				[6] = {
+					name = "BLUE SUPPLY PLANT LM32-6",
+				},
+				[7] = {
+					name = "BLUE SUPPLY PLANT LM32-7",
+				},
+				[8] = {
+					name = "BLUE SUPPLY PLANT LM32-8",
+				},
+				[9] = {
+					name = "BLUE SUPPLY PLANT LM32-9",
+				},
+				[10] = {
+					name = "BLUE SUPPLY PLANT LM32-10",
+				},
+				[11] = {
+					name = "BLUE SUPPLY PLANT LM32-11",
+				},
+				[12] = {
+					name = "BLUE SUPPLY PLANT LM32-12",
+				},
+				[13] = {
+					name = "BLUE SUPPLY PLANT LM32-13",
+				},					
+			},
+		},	
 
 		-- SUPPLY LINES
 		["bridge GORI"] = {--{supply line  gori
@@ -4325,14 +4266,14 @@ targetlist = {
 			},
 			elements = {
 				[1] = {
-					name = "bridge little river",
-					x = -289338.90250721,
-					y = 821231.45182713,
+					name = "Railway bridge river",
+					x = -290225,
+					y = 819647,
 				},
 				[2] = {
-					name = "bridge big river",
-					x = -290558.91171324,
-					y = 820769.67147346,
+					name = "bridge river",
+					x = -290588,
+					y = 820748,
 				},
 			},
 		},		
@@ -4345,32 +4286,17 @@ targetlist = {
 				min = 4,
 				max = 8,
 			},			
-			elements = {
+			elements = {				
 				[1] = {
-					name = "Bridge Supply Line Gori - Tbilisi-1",
-					x = -291901.15661608,
-					y = 836269.95717029,
-				},
-				[2] = {
-					name = "Bridge Supply Line Gori - Tbilisi-2",
-					x = -293785.15756579,
-					y = 848374.93828642,
-				},
-				[3] = {
 					name = "Bridge Supply Line Gori - Tbilisi-3",
 					x = -299055.94360335,
 					y = 864280.68645882,
 				},
-				[4] = {
+				[2] = {
 					name = "Bridge Supply Line Gori - Tbilisi-4",
 					x = -299277.05648133,
 					y = 872977.58810726,
-				},
-				[5] = {
-					name = "Bridge Supply Line Gori - Tbilisi-5",
-					x = -300308.92274769,
-					y = 878191.35657638,
-				},
+				},				
 			},
 		},		
 		["bridge TKIBULI"] = { -- supply line kutaisi - farp ambrolauri
@@ -4385,13 +4311,13 @@ targetlist = {
 			elements = {
 				[1] = {
 					name = "bridge TKIBULI river", -- cambia il nome
-					x = -263345.09071519,
-					y = 722875.74340048,				
+					x = -263308,
+					y = 722794,				
 				},
 				[2] = {
 					name = "bridge TKIBULI lake", -- cambia il nome
-					x = -263318.92491384,
-					y = 722806.48098515,				
+					x = -266804,
+					y = 721594,				
 				},
 			},							
 		},		
@@ -4407,19 +4333,14 @@ targetlist = {
 			elements = {
 				[1] = {
 					name = "Bridge Supply Line Marneuli - Tbilisi-1", -- cambia il nome
-					x = -324597.40552542,
-					y = 882950.48548748,				
+					x = -312931,
+					y = 882274,				
 				},					
 				[2] = {
 					name = "Bridge Supply Line Marneuli - Tbilisi-2", -- cambia il nome
-					x = -317070.77633033,
-					y = 891234.90923188,				
-				},					
-				[3] = {
-					name = "Bridge Supply Line Marneuli - Tbilisi-3", -- cambia il nome
-					x = -313485.95939054,
-					y = 883397.98896592,				
-				},	
+					x = -313467,
+					y = 883404,				
+				},										
 			},								
 		},		
 		["Rail Bridge Dapnari-KM76"] = { --supply line kobuleti - kutaisi
@@ -4434,18 +4355,18 @@ targetlist = {
 			elements = {
 				[1] = {
 					name = "Rail Bridge Dapnari North part-KM76",
-					x = -292722.10351563,
-					y = 671988.8125,
+					x = -275778,
+					y = 740414,
 				},
 				[2] = {
 					name = "Rail Bridge Dapnari Center part-KM76",
-					x = -292822.03710938,
-					y = 671985.1875,
+					x = -275151,
+					y = 740473,
 				},
 				[3] = {
 					name = "Rail Bridge Dapnari South part-KM76",
-					x = -292921.97070313,
-					y = 671981.56445313,
+					x = -274882,
+					y = 740736,
 				},
 			},
 		},		
@@ -4471,7 +4392,7 @@ targetlist = {
 				},
 			},
 		},
-		["Bridge Vartsihe-LM16"] = { --supply line kutaisi - farp khashuri, gor
+		--[[["Bridge Vartsihe-LM16"] = { -- sostituisci con quelli soprasupply line kutaisi - farp khashuri, gor
 			task = "Strike",
 			priority = 6,
 			picture = {"Bridges positions LM16-LM17-LM18.png"},
@@ -4502,8 +4423,8 @@ targetlist = {
 					y = 703255.578125,
 				},
 			},
-		},				
-		["Bridge Geguti-LM17"] = {--supply line kutaisi - farp khashuri, gori
+		},	]]			
+		--[[["Bridge Geguti-LM17"] = {--supply line kutaisi - farp khashuri, gori
 			task = "Strike",
 			priority = 6,
 			--picture = {"Bridges positions LM16-LM17-LM18.png"},
@@ -4529,7 +4450,7 @@ targetlist = {
 					y = 704903.9921875,
 				},
 			},
-		},
+		},]]
 		["Bridge Kutaisi-LM18"] = {--supply line -kutaisi -ambrolauri
 			task = "Strike",
 			priority = 6,
@@ -4822,7 +4743,7 @@ targetlist = {
 					y = 519824.65625,
 				},
 			},
-		},.
+		},
 		["Novyy Afon Train Station - FH57"] = {
 			task = "Strike",
 			priority = 1,
