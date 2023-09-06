@@ -248,7 +248,7 @@ targetlist = {
 		},
 		
 		-- SAM SITE
-		["101 EWR Site"] = {
+		["101 EWR Site"] = {--ok
 			task = "Strike",
 			priority = 5,
 			-- picture = {""},
@@ -260,7 +260,7 @@ targetlist = {
 			class = "vehicle",
 			name = "101 EWR Site",
 		},
-		["102 EWR Site"] = {
+		["102 EWR Site"] = {--ok
 			task = "Strike",
 			priority = 5,
 			attributes = {"soft"},
@@ -271,7 +271,7 @@ targetlist = {
 			class = "vehicle",
 			name = "102 EWR Site",
 		},
-		["103 EWR Site"] = {
+		["103 EWR Site"] = {--ok
 			task = "Strike",
 			priority = 5,
 			attributes = {"soft"},
@@ -282,40 +282,7 @@ targetlist = {
 			class = "vehicle",
 			name = "103 EWR Site",
 		},		
-		["SA-10 BESLAN SAM site"] = {
-			task = "Strike",
-			priority = 6,
-			attributes = {"SAM"},
-			firepower = {
-				min = 2, 
-				max = 4, 
-			},
-			class = "vehicle",
-			name = "SA-10 BESLAN SAM site",
-		},
-		["204 SA-6 Site B-1"] = {
-			task = "Strike",
-			priority = 6,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3, 
-				max = 6, 
-			},
-			class = "vehicle",
-			name = "204 SA-6 Site B-1",
-		},
-		["206 SA-2 Site B-3"] = {
-			task = "Strike",
-			priority = 6,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,  --3,
-				max = 6,  --4,
-			},
-			class = "vehicle",
-			name = "206 SA-2 Site B-3",
-		},		
-		["SA-10 MOZDOK SAM site"] = {
+		["SA-10 MOZDOK SAM site"] = { --ok
 			task = "Strike",
 			priority = 6,
 			attributes = {"SAM"},
@@ -326,7 +293,7 @@ targetlist = {
 			class = "vehicle",
 			name = "SA-10 MOZDOK SAM site",
 		},
-		["104 SA-6 Site E-4"] = {
+		["Beslan SA-11 SAM Site"] = { --0k
 			task = "Strike",
 			priority = 6,
 			attributes = {"SAM"},
@@ -335,7 +302,7 @@ targetlist = {
 				max = 3, -- --4,
 			},
 			class = "vehicle",
-			name = "104 SA-6 Site E-4",
+			name = "Beslan SA-11 SAM Site",
 		},		
 		["106 SA-2 Site C-6"] = {
 			task = "Strike",
@@ -349,7 +316,7 @@ targetlist = {
 			class = "vehicle",
 			name = "106 SA-2 Site C-6",
 		},
-		["Teberda SA-2 Site"] = {
+		["Teberda SA-11 SAM Site"] = { --ok
 			task = "Strike",
 			priority = 6,
 			-- picture = {""},
@@ -359,9 +326,9 @@ targetlist = {
 				max = 3, -- --4,
 			},
 			class = "vehicle",
-			name = "Teberda SA-2 Site",
+			name = "Teberda SA-11 SAM Site",
 		},
-		["DM-34 SA-5 Site-1"] = {
+		["DM-34 SA-5 Site"] = {--ok
 			task = "Strike",
 			priority = 6,
 			-- picture = {""},
@@ -371,9 +338,9 @@ targetlist = {
 				max = 3, -- --4,
 			},
 			class = "vehicle",
-			name = "DM-34 SA-5 Site-1",
+			name = "DM-34 SA-5 Site",
 		},
-		["Maykop SA-2"] = {
+		["Maykop SA-11 SAM Site"] = { --ok
 			task = "Strike",
 			priority = 4,
 			-- picture = {""},
@@ -383,9 +350,9 @@ targetlist = {
 				max = 3, -- --4,
 			},
 			class = "vehicle",
-			name = "Maykop SA-2",
+			name = "Maykop SA-11 SAM Site",
 		},
-		["NOVOROSSIYSK SA-2 Site DK-04"] = {
+		["NOVOROSSIYSK SA-10 Site"] = {--ok
 			task = "Strike",
 			priority = 4,
 			-- picture = {""},
@@ -395,9 +362,9 @@ targetlist = {
 				max = 6, -- --4,
 			},
 			class = "vehicle",
-			name = "Maykop SA-2",
+			name = "NOVOROSSIYSK SA-10 Site",
 		},
-		["NKRYMSK SA-5 Site DK-17"] = {
+		["MINERALNYE SA-10 SAM Site"] = {--ok
 			task = "Strike",
 			priority = 4,
 			-- picture = {""},
@@ -407,7 +374,7 @@ targetlist = {
 				max = 6, -- --4,
 			},
 			class = "vehicle",
-			name = "Maykop SA-2",
+			name = "MINERALNYE SA-10 SAM Site",
 		},
 		
 		-- eliminare?
@@ -3730,7 +3697,7 @@ targetlist = {
 		},
 
 		-- SAM SITE
-		["Hawk Site Kutaisi"] = {
+		["Hawk Site Kutaisi"] = { --ok
 			task = "Strike",
 			priority = 6,
 			attributes = {"SAM"},
@@ -3741,7 +3708,7 @@ targetlist = {
 			class = "vehicle",
 			name = "Hawk Site Kutaisi",
 		},
-		["Rapier Site Tabakhmela"] = {
+		["Hawk Site Tabakhmela"] = {--ok
 			task = "Strike",
 			priority = 6,
 			attributes = {"SAM"},
@@ -3750,7 +3717,7 @@ targetlist = {
 				max = 6,
 			},
 			class = "vehicle",
-			name = "Rapier Site Tabakhmela",
+			name = "Hawk Site Tabakhmela",
 		},
 		["Vaziani Defenses"] = {
 			task = "Strike",
@@ -3840,6 +3807,30 @@ targetlist = {
 			class = "vehicle",
 			name = "Rapier Site bridge Vartsihe Geguti",
 		},
+		["Batumi Patriot Site"] = { --ok
+			task = "Strike",
+			priority = 6,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Batumi Patriot Site",
+		},
+		["Batumi Patriot Site"] = { --ok
+			task = "Strike",
+			priority = 6,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Batumi Patriot Site",
+		},
+
+
 
 		
 		["GORI AA"] = {--ok
