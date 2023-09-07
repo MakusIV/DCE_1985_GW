@@ -41,21 +41,36 @@
 
 ---------------------- total ------------------------
 
-M-2000C *
-F-15C *
-F-117A *
-CH-47D
-E-3A *
-E-2C inserire su portaerei *
-KC-135 *
-KC135MPRS *
-AJS37 *
-Mirage-F1C *
-Mirage-F1EE *
-C-101CC *
-Tornado *
+Fighter
+F-15C 		CAP(2), Intercept(2)
+F-16A 		CAP(2), Sweep(2)
+M-2000C 	Escort(1.5), Intercept(1.7)
+Mirage-F1C 	Escort(1.5)
+F-5E 		Escort(1) 
+F-14A-135: 	Intercept(2)
 
-UH-1H
+Attacker
+AJS37		Ship(2), SEAD(1.5), Jammer(2)
+A.10A		CAS(2)
+Tornado		Struct(2), Ship(2), SEAD(2)
+F-4E 		CAS(2), SEAD(2)
+C-101CC		CAS(1.3), Ship(1.6)
+
+Bomber
+F-117A 		Struct(2)
+B-52H 		Struct(2)
+
+AWACS
+E-3A
+E-2C 
+
+Tanker
+KC-135
+KC135MPRS
+
+Helicopter
+CH-47D
+UH-1H 
 AH-1W
 SH-60B
 OH-58D
@@ -63,27 +78,36 @@ OH-58D
 
 
 
-F-14A
-MiG-31
-MiG-29A *
-Su-27
-Su-25
-Tu-22M3
+Fighter
+MiG-31			Intercept(2)
+MiG-29A			CAP(2), Intercept(2) 
+Su-27			CAP(2), Sweep(2)
+MiG-21Bis		Escort(2), Sweep(1)
+MiG-23MLD		Escort(2), CAP(1.5)
+MiG-25PD		Intercept(2)							
+
+Attacker
+Su-25			CAS(2), SEAD(1.5), Flare(1)
+MiG-27K			CAS(2), Ship(1.5)
+L-39C			CAS(1.5)
+
+Bomber
+Tu-22M3			Struct(2), Ship(2)	
+Su-24M			Struct(1.5), SEAD(2), Laser(1)
+Su-17M4			Struct(2), SEAD(1.5)
+
+Recognition
 Su-24MR
-Su-24M 
-A-50
-An-26B
-MiG-21Bis (only Syrian) *
-Su-17M4 (only Syrian) *
-MiG-27K *
-MiG-23MLD
-MiG-25PD *
 MiG-25RBT
-MiG-19P (no)
+
+AWACS
+A-50
+
+Transport
+An-26B
 Il-76MD
-L-39C (only Syrian) *
 
-
+Helicopter
 SA342M
 SA342Minigun
 SA342Mistral
@@ -92,9 +116,10 @@ Mi-24P
 Mi-24V
 Mi-8MT
 
-INSERISCI ["Laser Illumination"] = true, NEI TASK SU-25
 
----------------------- Vaziani (LimitedParkNb = 91) -------------------------
+INSERISCI ["Laser Illumination"] = true, NEI TASK SU-25??
+
+	---------------------- Vaziani (LimitedParkNb = 91) -------------------------
 	---------------------- Tbilissi-Lochini (LimitedParkNb = 73) -------------------------
 	---------------------- Soganlug (LimitedParkNb = 5) -------------------------
 	---------------------- Kutaisi (LimitedParkNb = 58) -------------------------
@@ -174,7 +199,7 @@ oob_air = {
 					["SEAD"] = true,
 				},
 				tasksCoef = {									--unit tasks coef (optional)
-					["Strike"] = 1.5,							-- coef normal : = 1
+					["Strike"] = 2,							-- coef normal : = 1
 					["SEAD"] = 2,
 					["Laser Illumination"] = 1,
 					["Intercept"] = 0.5,
@@ -210,13 +235,13 @@ oob_air = {
 					["Strike"] = false,
 				},
 				tasksCoef = {									--unit tasks coef (optional)
-					["Strike"] = 2,								-- coef normal : = 1
+					["Strike"] = 1.5,								-- coef normal : = 1
 					["SEAD"] = 1,
 					["Laser Illumination"] = 1,
 					["Intercept"] = 0.5,
 					["CAP"] = 0.7,
-					["Escort"] = 0.5,
-					["Fighter Sweep"] = 0.2,	
+					["Escort"] = 1,
+					["Fighter Sweep"] = 0.5,	
 				},
 				number = 8,
 			},
@@ -262,6 +287,9 @@ oob_air = {
 				tasks = {										--unit tasks
 					["Strike"] = true,
 				},
+				tasksCoef = {									--unit tasks coef (optional)
+					["Strike"] = 2,								-- coef normal : = 1								
+				},
 				number = 2,
 			},
 			[8] = {
@@ -305,6 +333,9 @@ oob_air = {
 				skill = getSkill(mission_ini.min_skill_blue_refuelling, mission_ini.max_skill_blue_refuelling),			--unit skill
 				tasks = {										--unit tasks
 					["Strike"] = true,
+				},
+				tasksCoef = {									--unit tasks coef (optional)
+					["Strike"] = 2,								-- coef normal : = 1								
 				},
 				number = 4,
 			},
@@ -579,7 +610,7 @@ oob_air = {
 					["Laser Illumination"] = 1,
 					["Intercept"] = 1.5,
 					["CAP"] = 1.5,
-					["Escort"] = 1,
+					["Escort"] = 1.5,
 					["Fighter Sweep"] = 1.5,				
 				},
 				number = 8,
@@ -615,7 +646,7 @@ oob_air = {
 					["Laser Illumination"] = 1,
 					["Intercept"] = 1.5,
 					["CAP"] = 1.5,
-					["Escort"] = 1,
+					["Escort"] = 1.5,
 					["Fighter Sweep"] = 1.5,				
 				},
 				number = 8,
@@ -757,7 +788,7 @@ oob_air = {
 					["Laser Illumination"] = 1,
 					["Intercept"] = 0.5,
 					["CAP"] = 0.7,
-					["Escort"] = 0.5,
+					["Escort"] = 1,
 					["Fighter Sweep"] = 0.2,	
 				},
 				number = 8,
@@ -803,6 +834,9 @@ oob_air = {
 				skill = getSkill(mission_ini.min_skill_blue_refuelling, mission_ini.max_skill_blue_refuelling),			--unit skill
 				tasks = {										--unit tasks
 					["Strike"] = true,
+				},
+				tasksCoef = {									--unit tasks coef (optional)
+					["Strike"] = 2,								-- coef normal : = 1								
 				},
 				number = 4,
 			},
@@ -979,7 +1013,7 @@ oob_air = {
 				},
 				tasksCoef = {									--unit tasks coef (optional)
 					["Strike"] = 1.3,							-- coef normal : = 1				
-					["Intercept"] = 1.7,
+					["Intercept"] = 2,
 				},
 				number = 8,
 			},
@@ -1482,8 +1516,8 @@ oob_air = {
 			--[[[6] = {
 				name = "945 Squadron",							--unit name
 				type = "MiG-21Bis",								--aircraft type
-				country = "Syria",								--unit country
-				livery = "Syria CAMO 1980",						--unit livery
+				country = "Ossetia",								--unit country
+				livery = "",						--unit livery
 				base = "Mineralnye-Vody",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_fighter, mission_ini.max_skill_red_fighter),			--unit skill
 				tasks = {										--unit tasks
@@ -1599,7 +1633,7 @@ oob_air = {
 					["Strike"] = 0.5,							-- coef normal : = 1				
 					["Laser Illumination"] = 1,
 					["Intercept"] = 0.7,
-					["CAP"] = 1,
+					["CAP"] = 1.5,
 					["Escort"] = 2,
 					["Fighter Sweep"] = 1.5,	
 				},
@@ -1618,7 +1652,7 @@ oob_air = {
 			--[[[14] = {
 				name = "2 Squadron",							--unit name
 				type = "L-39C",									--aircraft type
-				country = "Syria",								--unit country
+				country = "Ossetia",								--unit country
 				livery = "",									--unit livery
 				base = "Nalchik",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
@@ -1838,7 +1872,7 @@ oob_air = {
 			[19] = {
 				name = "3 Squadron",							--unit name
 				type = "L-39C",									--aircraft type
-				country = "Syria",								--unit country
+				country = "Ossetia",								--unit country
 				livery = "",									--unit livery
 				base = "Mozdok",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
@@ -1874,7 +1908,7 @@ oob_air = {
 			[21] = {
 				name = "677 Squadron",							--unit name
 				type = "Su-17M4",								--aircraft type
-				country = "Syria",								--unit country
+				country = "Ossetia",								--unit country
 				livery = "",									--unit livery
 				base = "Mozdok",						--unit base
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
@@ -1946,8 +1980,8 @@ oob_air = {
 					["Anti-ship Strike"] = false,
 				},
 				tasksCoef = {									--unit tasks coef (optional)
-					["Strike"] = 1.8,							-- coef normal : = 1
-					["SEAD"] = 2,
+					["Strike"] = 2,							-- coef normal : = 1
+					["SEAD"] = 1.5,
 					["Anti-ship Strike"] = 1,
 					["Flare Illumination"] = 1,			
 				},
@@ -1979,8 +2013,8 @@ oob_air = {
 				},
 				tasksCoef = {									--unit tasks coef (optional)
 					["Strike"] = 0.5,							-- coef normal : = 1				
-					["Intercept"] = 0.5,
-					["CAP"] = 1.3,
+					["Intercept"] = 2,
+					["CAP"] = 2,
 					["Escort"] = 2,
 					["Fighter Sweep"] = 1.5,	
 				},
@@ -2010,7 +2044,7 @@ oob_air = {
 					["Anti-ship Strike"] = false,
 				},
 				tasksCoef = {									--unit tasks coef (optional)
-					["Strike"] = 1.3,							-- coef normal : = 1
+					["Strike"] = 1.5,							-- coef normal : = 1
 					["SEAD"] = 2,
 					["Laser Illumination"] = 1,				
 					["Anti-ship Strike"] = 1.7,
@@ -2073,7 +2107,7 @@ oob_air = {
 					["Anti-ship Strike"] = true,
 				},
 				tasksCoef = {									--unit tasks coef (optional)
-					["Strike"] = 1.5,								-- coef normal : = 1								
+					["Strike"] = 2,								-- coef normal : = 1								
 					["Anti-ship Strike"] = 2,
 				},
 				number = 2,
@@ -2106,7 +2140,7 @@ oob_air = {
 					["Intercept"] = 2,
 					["CAP"] = 2,
 					["Escort"] = 1,
-					["Fighter Sweep"] = 1.5,	
+					["Fighter Sweep"] = 2,	
 				},
 				number = 8,
 			},
@@ -2151,7 +2185,6 @@ oob_air = {
 				number = 24,
 			},		
 		-------------------- end Krasnodar-Center Airbase ----------------
-
 
 		-------------------- Krymsk Airbase (LimitedParkNb = 57)----------------
 			-- 132nd Heavy Bomber Aviation Regiment		Tu-22M3			2+10 		Russia				Strike Structure, Anti-ship Strike
@@ -2208,7 +2241,7 @@ oob_air = {
 					["Intercept"] = 1.5,
 					["CAP"] = 2,
 					["Escort"] = 2,
-					["Fighter Sweep"] = 1.5,	
+					["Fighter Sweep"] = 2,	
 				},
 				number = 8,
 			},
@@ -2263,7 +2296,7 @@ oob_air = {
 					["Anti-ship Strike"] = false,
 				},
 				tasksCoef = {									--unit tasks coef (optional)
-					["Strike"] = 2,								-- coef normal : = 1
+					["Strike"] = 1.5,								-- coef normal : = 1
 					["SEAD"] = 2,
 					["Laser Illumination"] = 1,				
 					["Anti-ship Strike"] = 1,
@@ -2511,7 +2544,7 @@ oob_air = {
 					["Strike"] = true,
 				},
 				number = 6,
-			},.
+			},
 			[64] = {
 				name = "R/16th Squadron",						--unit name
 				inactive = true,
@@ -2572,7 +2605,6 @@ oob_air = {
 			},
 			
 		-------------------- end LENIGORI FARP MM56 Helibase ----------------		
-		
 
 		-------------------- INACTIVE Sayqal Airbase/Helibase (LimitedParkNb = 59) ----------------
 			-- INACTIVE 267 ShAP					Su-25				4+26			Russia				Strike CAS, SEAD

@@ -2645,7 +2645,7 @@ targetlist = {
 				},
 			},
 		},
-		["Gudauta Airbase"] = {
+		--[[["Gudauta Airbase"] = {
 			task = "Strike",
 			priority = 1,
 			picture = {"Gudauta Airbase South.png", "Gudauta Airbase North"},
@@ -2831,7 +2831,7 @@ targetlist = {
 					y = 515642.35498047,
 				},
 			},
-		},
+		},]]
 		["Senaki Airbase"] = {
 			task = "Strike",
 			priority = 1,
@@ -3206,7 +3206,7 @@ targetlist = {
 				},
 			},
 		},
-		["Kobuleti Airbase"] = {
+		--[[["Kobuleti Airbase"] = {
 			task = "Strike",
 			priority = 2,
 			picture = {"Kobuleti Airbase.png", "Kobuleti Airbase-Ammo-Hangar-Command.png"},
@@ -3392,7 +3392,7 @@ targetlist = {
 					y = 636484.125,
 				},
 			},
-		},
+		},]]
 		["Batumi Airbase"] = {
 			task = "Strike",
 			priority = 2,
@@ -3602,6 +3602,7 @@ targetlist = {
 				},
 			},
 		},
+		-- manca Vaziani, Soganlug
 
 		--AIRBASE OCA STRIKE
 		["Sukhumi OCA Strike"] = {
@@ -3752,7 +3753,7 @@ targetlist = {
 			class = "vehicle",
 			name = "Sukhumi Defenses",
 		},
-		["Kobuleti Defenses"] = {
+		--[[["Kobuleti Defenses"] = {
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -3762,7 +3763,7 @@ targetlist = {
 			},
 			class = "vehicle",
 			name = "Kobuleti Defenses",
-		},
+		},]]
 		["Batumi Air Defenses"] = {
 			task = "Strike",
 			priority = 2,
@@ -3817,18 +3818,7 @@ targetlist = {
 			},
 			class = "vehicle",
 			name = "Batumi Patriot Site",
-		},
-		["Batumi Patriot Site"] = { --ok
-			task = "Strike",
-			priority = 6,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Batumi Patriot Site",
-		},
+		},		
 
 
 
@@ -4414,8 +4404,8 @@ targetlist = {
 					y = 703255.578125,
 				},
 			},
-		},	]]			
-		--[[["Bridge Geguti-LM17"] = {--supply line kutaisi - farp khashuri, gori
+		},]]			
+		["Bridge Geguti-LM17"] = {--supply line kutaisi - farp khashuri, gori
 			task = "Strike",
 			priority = 6,
 			--picture = {"Bridges positions LM16-LM17-LM18.png"},
@@ -4441,7 +4431,7 @@ targetlist = {
 					y = 704903.9921875,
 				},
 			},
-		},]]
+		},
 		["Bridge Kutaisi-LM18"] = {--supply line -kutaisi -ambrolauri
 			task = "Strike",
 			priority = 6,
