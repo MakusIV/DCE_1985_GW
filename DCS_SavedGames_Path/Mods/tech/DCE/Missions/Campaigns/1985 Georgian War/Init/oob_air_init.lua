@@ -1421,7 +1421,7 @@ oob_air = {
 			-- 790.IAP							MiG-25PD		15		Russia			Intercept
 			-- 117.IAP							MiG-27K			8+24	Russia			Strike CAS, Anti-ship Strike 
 			-- 113.IAP							MiG-23MLD		8+24	Russia			Escort (attacker and bomber)
-			-- INACTIVE 945 Squadron			MiG-21Bis		8+24	Syria			Escort
+			-- INACTIVE 945 Squadron			MiG-21Bis		8+24	Belarus			Escort
 			-- INACTIVE 3.OSAP					An-26B			6		Russia			Transport
 			-- 13.OSAP							Il-76MD			4		Russia			Transport
 
@@ -1516,7 +1516,7 @@ oob_air = {
 			--[[[6] = {
 				name = "945 Squadron",							--unit name
 				type = "MiG-21Bis",								--aircraft type
-				country = "Ossetia",								--unit country
+				country = "Belarus",								--unit country
 				livery = "",						--unit livery
 				base = "Mineralnye-Vody",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_fighter, mission_ini.max_skill_red_fighter),			--unit skill
@@ -1581,7 +1581,7 @@ oob_air = {
 		-------------------- Nalchik (LimitedParkNb = 14) ----------------------
 			-- 127.IAP					MiG-27K			8+24	Russia				Strike CAS, Anti-ship Strike 
 			-- 123.IAP					MiG-23MLD		8+24	Russia				Escort, CAP, Intercept
-			-- INACTIVE 2 Squadron		L-39C			8+24	Syria				Strike CAS soft
+			-- INACTIVE 2 Squadron		L-39C			8+24	Belarus				Strike CAS soft
 
 			-- 32 F, 32 A
 		
@@ -1652,7 +1652,7 @@ oob_air = {
 			--[[[14] = {
 				name = "2 Squadron",							--unit name
 				type = "L-39C",									--aircraft type
-				country = "Ossetia",								--unit country
+				country = "Belarus",								--unit country
 				livery = "",									--unit livery
 				base = "Nalchik",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
@@ -1679,7 +1679,7 @@ oob_air = {
 				name = "R/2 Squadron",
 				inactive = true,								--unit name
 				type = "L-39C",									--aircraft type
-				country = "Syria",								--unit country
+				country = "Belarus",								--unit country
 				base = "Reserves",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
 				tasks = {},										--unit tasks
@@ -1830,8 +1830,8 @@ oob_air = {
 
 		-------------------- Mozdok Airbase (LimitedParkNb = 39) -----
 			-- 67 Squadron					MiG-23MLD			8+24	Russia						Escort, CAP
-			-- 3 Squadron					L-39C				8+24	Syria						Strike CAS soft
-			-- 677 Squadron					Su-17M4				8+24	Syria						Strike Structure, SEAD
+			-- 3 Squadron					L-39C				8+24	Belarus						Strike CAS soft
+			-- 677 Squadron					Su-17M4				8+24	Belarus						Strike Structure, SEAD
 			-- 522 Squadron					An-26B				2+4		Russia						Transport
 
 			-- 32 F, 32 A, 32 B, 6 T
@@ -1839,7 +1839,7 @@ oob_air = {
 			[17] = {
 				name = "67 Squadron",							--unit name
 				type = "MiG-23MLD",								--aircraft type
-				country = "Syria",								--unit country
+				country = "Belarus",								--unit country
 				livery = "",									--unit livery
 				base = "Mozdok",						--unit base
 				skill = getSkill(mission_ini.min_skill_red_fighter, mission_ini.max_skill_red_fighter),			--unit skill
@@ -1863,7 +1863,7 @@ oob_air = {
 				name = "R/67 Squadron",							--unit name
 				inactive = true,
 				type = "MiG-23MLD",								--aircraft type
-				country = "Syria",								--unit country
+				country = "Belarus",								--unit country
 				base = "Reserves",
 				skill = getSkill(mission_ini.min_skill_red_fighter, mission_ini.max_skill_red_fighter),			--unit skill
 				tasks = {},										--unit tasks
@@ -1872,7 +1872,7 @@ oob_air = {
 			[19] = {
 				name = "3 Squadron",							--unit name
 				type = "L-39C",									--aircraft type
-				country = "Ossetia",								--unit country
+				country = "Belarus",								--unit country
 				livery = "",									--unit livery
 				base = "Mozdok",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
@@ -1899,7 +1899,7 @@ oob_air = {
 				name = "R/3 Squadron",							--unit name
 				inactive = true,
 				type = "L-39C",									--aircraft type
-				country = "Syria",								--unit country
+				country = "Belarus",								--unit country
 				base = "Reserves",
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
 				tasks = {},										--unit tasks
@@ -1908,7 +1908,7 @@ oob_air = {
 			[21] = {
 				name = "677 Squadron",							--unit name
 				type = "Su-17M4",								--aircraft type
-				country = "Ossetia",								--unit country
+				country = "Belarus",								--unit country
 				livery = "",									--unit livery
 				base = "Mozdok",						--unit base
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
@@ -1929,7 +1929,7 @@ oob_air = {
 				name = "R/677 Squadron",							--unit name
 				inactive = true,
 				type = "Su-17M4",								--aircraft type
-				country = "Syria",								--unit country
+				country = "Belarus",								--unit country
 				base = "Reserves",
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
 				tasks = {},										--unit tasks
@@ -2452,7 +2452,7 @@ oob_air = {
 				name = "16th Squadron",							--unit name
 				type = "SA342Minigun",							--aircraft type
 				helicopter = true,								--true for helicopter units
-				country = "Ossetia",							--unit country
+				country = "Belarus",							--unit country
 				livery = "",									--unit livery
 				base = "NOGIR FARP MN76",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_helicopter, mission_ini.max_skill_red_helicopter),			--unit skill
@@ -2476,7 +2476,7 @@ oob_air = {
 				name = "14th Squadron",							--unit name
 				type = "SA342Mistral",							--aircraft type
 				helicopter = true,								--true for helicopter units
-				country = "Ossetia",							--unit country
+				country = "Belarus",							--unit country
 				livery = "",									--unit livery
 				base = "NOGIR FARP MN76",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_helicopter, mission_ini.max_skill_red_helicopter),			--unit skill
@@ -2500,7 +2500,7 @@ oob_air = {
 				name = "15th Squadron",							--unit name
 				type = "SA342M",								--aircraft type
 				helicopter = true,								--true for helicopter units
-				country = "Ossetia",							--unit country
+				country = "Belarus",							--unit country
 				livery = "",									--unit livery
 				base = "NOGIR FARP MN76",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_helicopter, mission_ini.max_skill_red_helicopter),			--unit skill
@@ -2525,9 +2525,9 @@ oob_air = {
 		
 		-------------------- LENIGORI FARP MM56 Helibase (LimitedParkNb =48) ----------------		
 			
-			-- 16th Squadron				SA342Minigun	6+18			Ossetia				Strike CAS Soft
-			-- 14th Squadron				SA342Mistral	6+18			Ossetia				Strike CAS Soft
-			-- 15th Squadron				SA342M			6+18			Ossetia				Strike CAS Soft
+			-- 16th Squadron				SA342Minigun	6+18			Belarus				Strike CAS Soft
+			-- 14th Squadron				SA342Mistral	6+18			Belarus				Strike CAS Soft
+			-- 15th Squadron				SA342M			6+18			Belarus				Strike CAS Soft
 
 			-- 72 H-A
 		
@@ -2535,7 +2535,7 @@ oob_air = {
 				name = "16th Squadron",							--unit name
 				type = "SA342Minigun",							--aircraft type
 				helicopter = true,								--true for helicopter units
-				country = "Ossetia",							--unit country
+				country = "Belarus",							--unit country
 				livery = "",									--unit livery
 				base = "LENIGORI FARP MM56",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_helicopter, mission_ini.max_skill_red_helicopter),			--unit skill
@@ -2559,7 +2559,7 @@ oob_air = {
 				name = "14th Squadron",							--unit name
 				type = "SA342Mistral",							--aircraft type
 				helicopter = true,								--true for helicopter units
-				country = "Ossetia",							--unit country
+				country = "Belarus",							--unit country
 				livery = "",									--unit livery
 				base = "LENIGORI FARP MM56",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_helicopter, mission_ini.max_skill_red_helicopter),			--unit skill
@@ -2583,7 +2583,7 @@ oob_air = {
 				name = "15th Squadron",							--unit name
 				type = "SA342M",								--aircraft type
 				helicopter = true,								--true for helicopter units
-				country = "Ossetia",							--unit country
+				country = "Belarus",							--unit country
 				livery = "",									--unit livery
 				base = "LENIGORI FARP MM56",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_helicopter, mission_ini.max_skill_red_helicopter),			--unit skill
@@ -2769,16 +2769,16 @@ oob_air = {
 		-------------------- end Sayqal Airbase ----------------
 
 		-------------------- INACTIVE Mezzeh Airbase (LimitedParkNb = 28) -----
-			-- INACTIVE 37 Squadron					MiG-21Bis		4+26			Syria				Escort
-			-- INACTIVE 11 Squadron					L-39C			4+26			Syria				Strike CAS soft
+			-- INACTIVE 37 Squadron					MiG-21Bis		4+26			Belarus				Escort
+			-- INACTIVE 11 Squadron					L-39C			4+26			Belarus				Strike CAS soft
 
 			-- 32 F, 32 A
 
 			--[[[70] = {
 				name = "37 Squadron",							--unit name
 				type = "MiG-21Bis",								--aircraft type
-				country = "Syria",								--unit country
-				livery = "syria (2)",						--unit livery
+				country = "Belarus",								--unit country
+				livery = "Belarus (2)",						--unit livery
 				base = "Mezzeh",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_fighter, mission_ini.max_skill_red_fighter),			--unit skill
 				tasks = {										--unit tasks
@@ -2801,7 +2801,7 @@ oob_air = {
 				name = "R/37 Squadron",							--unit name
 				inactive = true,
 				type = "MiG-21Bis",								--aircraft type
-				country = "Syria",								--unit country
+				country = "Belarus",								--unit country
 				base = "Reserves",
 				skill = getSkill(mission_ini.min_skill_red_fighter, mission_ini.max_skill_red_fighter),			--unit skill
 				tasks = {},										--unit tasks
@@ -2810,7 +2810,7 @@ oob_air = {
 			[72] = {
 				name = "11 Squadron",							--unit name
 				type = "L-39C",									--aircraft type
-				country = "Syria",								--unit country
+				country = "Belarus",								--unit country
 				livery = "",									--unit livery
 				base = "Mezzeh",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
@@ -2837,7 +2837,7 @@ oob_air = {
 				name = "R/11 Squadron",							--unit name
 				inactive = true,
 				type = "L-39C",									--aircraft type
-				country = "Syria",								--unit country
+				country = "Belarus",								--unit country
 				base = "Reserves",
 				skill = getSkill(mission_ini.min_skill_red_attacker, mission_ini.max_skill_red_attacker),			--unit skill
 				tasks = {},										--unit tasks
@@ -2847,7 +2847,7 @@ oob_air = {
 		-------------------- end Mezzeh Airbase -------------------------
 
 		-------------------- INACTIVE Abu al-Duhur (LimitedParkNb = 36) ---------------
-			-- INACTIVE 946 Squadron				MiG-21Bis			8+28	Syria				Escort, Intercept
+			-- INACTIVE 946 Squadron				MiG-21Bis			8+28	Belarus				Escort, Intercept
 			-- INACTIVE 793.IAP						MiG-25PD			8		Russia				Intercept
 			-- INACTIVE 2 Guards BAP 21 th BAA		Su-24M				4+28	Russia				Strike Structure-armor, SEAD
 
@@ -2856,8 +2856,8 @@ oob_air = {
 			--[[[11] = {
 				name = "946 Squadron",								--unit name
 				type = "MiG-21Bis",									--aircraft type
-				country = "Syria",									--unit country
-				livery = "syria (1)",								--unit livery
+				country = "Belarus",									--unit country
+				livery = "Belarus (1)",								--unit livery
 				base = "Abu al-Duhur",								--unit base
 				skill = getSkill(mission_ini.min_skill_red_fighter, mission_ini.max_skill_red_fighter),			--unit skill
 				tasks = {											--unit tasks

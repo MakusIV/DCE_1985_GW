@@ -376,9 +376,22 @@ targetlist = {
 			class = "vehicle",
 			name = "MINERALNYE SA-10 SAM Site",
 		},
+		["DL56 SA-15 Tor SAM Site"] = {--ok
+			task = "Strike",
+			priority = 6,
+			-- picture = {""},
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,  --3,
+				max = 3, -- --4,
+			},
+			class = "vehicle",
+			name = "DL56 SA-15 Tor SAM Site",
+		},
+		--
 		
 		-- eliminare?
-		["LENIGORI FARP Air Defence"] = {
+		--[[["LENIGORI FARP Air Defence"] = {
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -399,7 +412,7 @@ targetlist = {
 			},
 			class = "vehicle",
 			name = "TSKHINVALI FARP AA",
-		},		
+		},	]]	
 		-- SHIP -- 
 		["Russian Convoy 1"] = {
 			task = "Anti-ship Strike",
@@ -2303,6 +2316,30 @@ targetlist = {
 			text = "",
 		},
 		
+		--Transport
+		["Airlift Beslan"] = {
+			task = "Transport",
+			priority = 1,
+			attributes = {},
+			firepower = {
+				min = 1,
+				max = 1,
+			},
+			base = "Maykop-Khanskaya",
+			destination = "Beslan",
+		},
+		["Airlift Mineralnye-Vody"] = {
+			task = "Transport",
+			priority = 1,
+			attributes = {},
+			firepower = {
+				min = 1,
+				max = 1,
+			},
+			base = "Beslan",
+			destination = "Mineralnye-Vody",
+		},
+
 		-- FARP
 		["KHASHURI FARP LM84"] = {
 			task = "Strike",
@@ -2516,28 +2553,7 @@ targetlist = {
 		
 		
 		-- AIRBASE STRIKE
-		["Airlift Beslan"] = {
-			task = "Transport",
-			priority = 1,
-			attributes = {},
-			firepower = {
-				min = 1,
-				max = 1,
-			},
-			base = "Maykop-Khanskaya",
-			destination = "Beslan",
-		},
-		["Airlift Mineralnye-Vody"] = {
-			task = "Transport",
-			priority = 1,
-			attributes = {},
-			firepower = {
-				min = 1,
-				max = 1,
-			},
-			base = "Beslan",
-			destination = "Mineralnye-Vody",
-		},
+		
 		["Tbilissi-Lochini OCA Strike"] = {
 			task = "Strike",
 			priority = 1,
@@ -3602,7 +3618,131 @@ targetlist = {
 				},
 			},
 		},
-		-- manca Vaziani, Soganlug
+		["Vaziani Airbase"] = {
+			task = "Strike",
+			priority = 2,
+			picture = {""},
+			attributes = {"Structure"},
+			firepower = {
+				min = 4,
+				max = 8,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "Vaziani Airbase Logistic-1",
+					
+				},
+				[2] = {
+					name = "Vaziani Airbase Logistic-2",
+					
+				},
+				[3] = {
+					name = "Vaziani Airbase Logistic-3",
+					
+				},
+				[4] = {
+					name = "Vaziani Airbase Logistic-4",
+					
+				},
+				[5] = {
+					name = "Vaziani Airbase Logistic-5",
+					
+				},
+				[6] = {
+					name = "Vaziani Airbase Logistic-6",
+					
+				},
+				[7] = {
+					name = "Vaziani Airbase Logistic-7",
+					
+				},
+				[8] = {
+					name = "Vaziani Airbase Logistic-8",
+					
+				},
+				[9] = {
+					name = "Vaziani Airbase Logistic-9",
+					
+				},
+				[10] = {
+					name = "Vaziani Airbase Logistic-10",
+					
+				},
+				[11] = {
+					name = "Vaziani Airbase Logistic-11",
+					
+				},
+				[12] = {
+					name = "Vaziani Airbase Logistic-12",
+					
+				},
+				
+			},
+		},
+		["Soganlug Airbase"] = {
+			task = "Strike",
+			priority = 2,
+			picture = {""},
+			attributes = {"Structure"},
+			firepower = {
+				min = 4,
+				max = 8,
+			},
+			class = "static",
+			elements = {
+				[1] = {
+					name = "Soganlug Airbase Logistic-1",
+					
+				},
+				[2] = {
+					name = "Soganlug Airbase Logistic-2",
+					
+				},
+				[3] = {
+					name = "Soganlug Airbase Logistic-3",
+					
+				},
+				[4] = {
+					name = "Soganlug Airbase Logistic-4",
+					
+				},
+				[5] = {
+					name = "Soganlug Airbase Logistic-5",
+					
+				},
+				[6] = {
+					name = "Soganlug Airbase Logistic-6",
+					
+				},
+				[7] = {
+					name = "Soganlug Airbase Logistic-7",
+					
+				},
+				[8] = {
+					name = "Soganlug Airbase Logistic-8",
+					
+				},
+				[9] = {
+					name = "Soganlug Airbase Logistic-9",
+					
+				},
+				[10] = {
+					name = "Soganlug Airbase Logistic-10",
+					
+				},
+				[11] = {
+					name = "Soganlug Airbase Logistic-11",
+					
+				},
+				[12] = {
+					name = "Soganlug Airbase Logistic-12",
+					
+				},
+				
+			},
+		},
+	
 
 		--AIRBASE OCA STRIKE
 		["Sukhumi OCA Strike"] = {
@@ -3818,8 +3958,20 @@ targetlist = {
 			},
 			class = "vehicle",
 			name = "Batumi Patriot Site",
+		},
+		["Vaziani Patriot Site"] = { --ok
+			task = "Strike",
+			priority = 6,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Vaziani Patriot Site",
 		},		
 
+	
 
 
 		
