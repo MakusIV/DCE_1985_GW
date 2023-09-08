@@ -143,13 +143,13 @@ camp = {
         
                     ["Fighter Sweep"] = {
         
-                        ["min"] = 4,
-                        ["max"] = 7,
+                        ["min"] = 3,
+                        ["max"] = 6,
                     },
         
                     ["Escort"] = {
         
-                        ["min"] = 3,
+                        ["min"] = 2,
                         ["max"] = 5,
                     },
                 },
@@ -170,13 +170,13 @@ camp = {
         
                     ["Fighter Sweep"] = {
         
-                        ["min"] = 4,
-                        ["max"] = 7,
+                        ["min"] = 3,
+                        ["max"] = 6,
                     },
         
                     ["Escort"] = {
         
-                        ["min"] = 3,
+                        ["min"] = 2,
                         ["max"] = 5,
                     },
                 },
@@ -235,8 +235,8 @@ camp = {
         
                         ["low"] = {
         
-                            ["min_vCruise_TAS"] = 400 / 3.6, -- Km/h @ slm
-                            ["max_vCruise_TAS"] = 500 / 3.6, -- Km/h @ slm
+                            ["min_vCruise_TAS"] = 450 / 3.6, -- Km/h @ slm
+                            ["max_vCruise_TAS"] = 600 / 3.6, -- Km/h @ slm
                             ["min_hCruise"] = 100, -- m slm
                             ["max_hCruise"] = 999, -- m slm
                         },			
@@ -344,8 +344,8 @@ camp = {
         
                         ["low"] = {
         
-                            ["min_vCruise_TAS"] = 400 / 3.6, -- Km/h @ slm
-                            ["max_vCruise_TAS"] = 550 / 3.6, -- Km/h @ slm
+                            ["min_vCruise_TAS"] = 450 / 3.6, -- Km/h @ slm
+                            ["max_vCruise_TAS"] = 600 / 3.6, -- Km/h @ slm
                             ["min_hCruise"] = 100, -- m slm
                             ["max_hCruise"] = 999, -- m slm
                         },			
