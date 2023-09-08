@@ -2525,15 +2525,15 @@ oob_air = {
 		
 		-------------------- LENIGORI FARP MM56 Helibase (LimitedParkNb =48) ----------------		
 			
-			-- 16th Squadron				SA342Minigun	6+18			Belarus				Strike CAS Soft
-			-- 14th Squadron				SA342Mistral	6+18			Belarus				Strike CAS Soft
+			-- 16th Squadron				SA342			6+18			Belarus				Strike CAS Soft
+			-- 14th Squadron				SA342M			6+18			Belarus				Strike CAS Soft
 			-- 15th Squadron				SA342M			6+18			Belarus				Strike CAS Soft
 
 			-- 72 H-A
 		
 			[63] = {
 				name = "16th Squadron",							--unit name
-				type = "SA342Minigun",							--aircraft type
+				type = "SA342M",								--aircraft type
 				helicopter = true,								--true for helicopter units
 				country = "Belarus",							--unit country
 				livery = "",									--unit livery
@@ -2557,7 +2557,7 @@ oob_air = {
 			},
 			[65] = {
 				name = "14th Squadron",							--unit name
-				type = "SA342Mistral",							--aircraft type
+				type = "SA342M",								--aircraft type
 				helicopter = true,								--true for helicopter units
 				country = "Belarus",							--unit country
 				livery = "",									--unit livery
@@ -2943,5 +2943,5 @@ oob_air = {
 			},]]	
 
 		-------------------- end Abu al-Duhur -----------
-		},
+	},
 }

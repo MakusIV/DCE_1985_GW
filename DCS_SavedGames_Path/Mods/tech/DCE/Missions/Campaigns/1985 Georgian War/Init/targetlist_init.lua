@@ -59,7 +59,7 @@ targetlist = {
 				max = 4, -- max num enemy aircraft
 			},
 			base = "Vaziani",
-			radius = 200000,
+			radius = 110000,
 			inactive = false,
 		},
 		["Kutaisi Alert"] = {
@@ -71,7 +71,7 @@ targetlist = {
 				max = 4,
 			},
 			base = "Kutaisi",
-			radius = 200000,
+			radius = 150000,
 			inactive = false,
 		},
 		["Kutaisi Alert 100"] = {
@@ -2140,7 +2140,7 @@ targetlist = {
 			base = "Nalchik",
 			radius = 100000,
 		},	
-		["Nalchik Alert 200 Km"] = {
+		["Nalchik Alert 150 Km"] = {
 			task = "Intercept",
 			priority = 7,
 			attributes = {},
@@ -2149,9 +2149,9 @@ targetlist = {
 				max = 5,
 			},
 			base = "Nalchik",
-			radius = 200000,
+			radius = 150000,
 		},
-		["Mineralnye-Vody Alert 280 Km"] = {
+		["Mineralnye-Vody Alert 200 Km"] = {
 			task = "Intercept",
 			priority = 4,
 			attributes = {},
@@ -2160,7 +2160,7 @@ targetlist = {
 				max = 5,
 			},
 			base = "Mineralnye-Vody",
-			radius = 280000,
+			radius = 200000,
 		},
 		["Beslan Alert 120 Km"] = {
 			task = "Intercept",
@@ -2173,7 +2173,7 @@ targetlist = {
 			base = "Beslan",
 			radius = 120000,
 		},		
-		["Mineralnye-Vody Alert 200 Km"] = {
+		["Mineralnye-Vody Alert 150 Km"] = {
 			task = "Intercept",
 			priority = 5,
 			attributes = {},
@@ -2182,7 +2182,7 @@ targetlist = {
 				max = 5,
 			},
 			base = "Mineralnye-Vody",
-			radius = 200000,
+			radius = 150000,
 		},
 		["Mozdok Alert 200 Km"] = {
 			task = "Intercept",
