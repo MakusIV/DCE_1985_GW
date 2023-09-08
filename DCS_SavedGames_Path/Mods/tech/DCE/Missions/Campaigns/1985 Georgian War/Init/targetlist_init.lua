@@ -2524,7 +2524,7 @@ targetlist = {
 				max = 4,
 			},
 			class = "vehicle",
-			name = "EWR-1",
+			name = "EWR-1 Site",
 		},
 		["EWR-2 Site"] = {
 			task = "Strike",
@@ -2535,7 +2535,7 @@ targetlist = {
 				max = 4,
 			},
 			class = "vehicle",
-			name = "EWR-2",
+			name = "EWR-2 Site",
 		},
 		["EWR-3 Site"] = {
 			task = "Strike",
@@ -2546,7 +2546,7 @@ targetlist = {
 				max = 4,
 			},
 			class = "vehicle",
-			name = "EWR-3",
+			name = "EWR-3 Site",
 		},
 		
 		
@@ -3860,7 +3860,7 @@ targetlist = {
 			class = "vehicle",
 			name = "Hawk Site Tabakhmela",
 		},
-		["Vaziani Defenses"] = {
+		["Vaziani Airbase Defence"] = {
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -3869,9 +3869,9 @@ targetlist = {
 				max = 6,
 			},
 			class = "vehicle",
-			name = "Vaziani Defenses",
+			name = "Vaziani Airbase Defence",
 		},
-		["Tbilisi Defenses"] = {
+		["Tbilisi-Lochini Airbase Defence"] = {
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -3880,9 +3880,9 @@ targetlist = {
 				max = 6,
 			},
 			class = "vehicle",
-			name = "Tbilisi Defenses",
+			name = "Tbilisi Airbase Defence",
 		},
-		["Sukhumi Defenses"] = {
+		["Sukhumi Airbase Defence"] = {
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -3891,9 +3891,20 @@ targetlist = {
 				max = 6,
 			},
 			class = "vehicle",
-			name = "Sukhumi Defenses",
+			name = "Sukhumi Airbase Defence",
+		},		
+		["Batumi Airbase Defence"] = {
+			task = "Strike",
+			priority = 2,
+			attributes = {"SAM"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "vehicle",
+			name = "Batumi Airbase Defence",
 		},
-		--[[["Kobuleti Defenses"] = {
+		["Kutaisi Airbase Defence"] = {
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -3902,20 +3913,9 @@ targetlist = {
 				max = 6,
 			},
 			class = "vehicle",
-			name = "Kobuleti Defenses",
-		},]]
-		["Batumi Air Defenses"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Batumi Air Defenses",
+			name = "Kutaisi Airbase Defence",
 		},
-		["Kutaisi Defenses"] = {
+		["Senaki-Kolkhi Airbase Defence"] = {
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -3924,18 +3924,7 @@ targetlist = {
 				max = 6,
 			},
 			class = "vehicle",
-			name = "Kutaisi Defenses",
-		},
-		["Senaki Defenses"] = {
-			task = "Strike",
-			priority = 2,
-			attributes = {"SAM"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "vehicle",
-			name = "Senaki Defenses",
+			name = "Senaki Airbase Defence",
 		},
 		["Rapier Site bridge Vartsihe Geguti"] = {
 			task = "Strike",
@@ -3970,9 +3959,6 @@ targetlist = {
 			class = "vehicle",
 			name = "Vaziani Patriot Site",
 		},		
-
-	
-
 
 		
 		["GORI AA"] = {--ok
