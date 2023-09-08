@@ -120,7 +120,7 @@ Mi-8MT
 INSERISCI ["Laser Illumination"] = true, NEI TASK SU-25??
 
 	---------------------- Vaziani (LimitedParkNb = 91) -------------------------
-	---------------------- Tbilissi-Lochini (LimitedParkNb = 73) -------------------------
+	---------------------- Tbilisi-Lochini (LimitedParkNb = 73) -------------------------
 	---------------------- Soganlug (LimitedParkNb = 5) -------------------------
 	---------------------- Kutaisi (LimitedParkNb = 58) -------------------------
 	---------------------- Senaki-Kolkhi (LimitedParkNb = 67) -------------------------
@@ -429,7 +429,7 @@ oob_air = {
 			},				
 		-------------------- end Soganlug --------	
 			
-		-------------------- Tbilissi-Lochini (LimitedParkNb = 6) -------------------------
+		-------------------- Tbilisi-Lochini (LimitedParkNb = 6) -------------------------
 			-- 7 ACCS					E-3A			3			USA				AWACS	
 			-- 801 ARS					KC-135			3+7			USA				Refueler
 
@@ -440,7 +440,7 @@ oob_air = {
 				type = "E-3A",									--aircraft type
 				country = "USA",								--unit country
 				livery = "usaf standard",						--unit livery
-				base = "Tbilissi-Lochini",								--unit base
+				base = "Tbilisi-Lochini",								--unit base
 				skill = getSkill(mission_ini.min_skill_blue_awacs, mission_ini.max_skill_blue_awacs),			--unit skill
 				tasks = {										--unit tasks
 					["AWACS"] = true,
@@ -452,7 +452,7 @@ oob_air = {
 				type = "KC-135",							--aircraft type
 				country = "USA",							--unit country
 				livery = "Standard USAF",					--unit livery
-				base = "Tbilissi-Lochini",						--unit base
+				base = "Tbilisi-Lochini",						--unit base
 				skill = getSkill(mission_ini.min_skill_blue_refuelling, mission_ini.max_skill_blue_refuelling),			--unit skill
 				tasks = {									--unit tasks
 					["Refueling"] = true,
@@ -469,7 +469,7 @@ oob_air = {
 				tasks = {},									--unit tasks
 				number = 7,
 			},		
-		-------------------- end Tbilissi-Lochini -------------------------
+		-------------------- end Tbilisi-Lochini -------------------------
 
 		-------------------- Sukhumi (LimitedParkNb = 10) -------------------------------
 			-- F6 Karlsborg					AJS37			8+24			Sweden			Anti-ship Strike, SEAD

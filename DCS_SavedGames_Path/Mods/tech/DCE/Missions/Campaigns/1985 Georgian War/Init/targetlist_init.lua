@@ -111,7 +111,7 @@ targetlist = {
 			radius = 111000,
 			text = "",
 		},		
-		["CAP Tbilissi"] = {
+		["CAP Tbilisi"] = {
 			task = "CAP",
 			priority = 20,
 			attributes = {"Air Forces"},
@@ -121,7 +121,7 @@ targetlist = {
 			},
 			refpoint = "CAP Tbilissi",
 			radius = 50000,
-			text = "North west of Tbilissi",
+			text = "North west of Tbilisi",
 		},		
 		["CAP Kutaisi"] = {
 			task = "CAP",
@@ -244,7 +244,7 @@ targetlist = {
 			},
 			refpoint = "Tanker Track East KC135",
 			radius = 15000,
-			text = "north west of Tbilissi",
+			text = "north west of Tbilisi",
 		},
 		
 		-- SAM SITE
@@ -2553,18 +2553,7 @@ targetlist = {
 		
 		
 		-- AIRBASE STRIKE
-		
-		["Tbilissi-Lochini OCA Strike"] = {
-			task = "Strike",
-			priority = 1,
-			attributes = {"Parked Aircraft"},
-			firepower = {
-				min = 3,
-				max = 6,
-			},
-			class = "airbase",
-			name = "Tbilissi-Lochini",
-		},
+				
 		["Sukhumi Airbase"] = {
 			task = "Strike",
 			priority = 4,
@@ -3506,7 +3495,7 @@ targetlist = {
 				},
 			},
 		},
-		["Tbilissi Airbase"] = {
+		["Tbilisi Airbase"] = {
 			task = "Strike",
 			priority = 2,
 			picture = {"Tbilisi Airbase.png"},
@@ -3745,6 +3734,18 @@ targetlist = {
 	
 
 		--AIRBASE OCA STRIKE
+
+		["Tbilisi-Lochini OCA Strike"] = {
+			task = "Strike",
+			priority = 1,
+			attributes = {"Parked Aircraft"},
+			firepower = {
+				min = 3,
+				max = 6,
+			},
+			class = "airbase",
+			name = "Tbilisi-Lochini",
+		},
 		["Sukhumi OCA Strike"] = {
 			task = "Strike",
 			priority = 1,
@@ -3880,7 +3881,7 @@ targetlist = {
 				max = 6,
 			},
 			class = "vehicle",
-			name = "Tbilisi Airbase Defence",
+			name = "Tbilisi-Lochini Airbase Defence",
 		},
 		["Sukhumi Airbase Defence"] = {
 			task = "Strike",
@@ -3924,7 +3925,7 @@ targetlist = {
 				max = 6,
 			},
 			class = "vehicle",
-			name = "Senaki Airbase Defence",
+			name = "Senaki-Kolkhi Airbase Defence",
 		},
 		["Rapier Site bridge Vartsihe Geguti"] = {
 			task = "Strike",
@@ -3961,7 +3962,7 @@ targetlist = {
 		},		
 
 		
-		["GORI AA"] = {--ok
+		["GORI FARP AA"] = {--ok
 			task = "Strike",
 			priority = 2,
 			attributes = {"SAM"},
@@ -3970,7 +3971,7 @@ targetlist = {
 				max = 4,
 			},
 			class = "vehicle",
-			name = "GORI AA",
+			name = "GORI FARP AA",
 		},
 		["KHASHURI FARP AA"] = {--ok
 			task = "Strike",

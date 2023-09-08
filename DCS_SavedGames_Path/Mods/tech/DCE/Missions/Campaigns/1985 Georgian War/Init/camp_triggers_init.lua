@@ -57,12 +57,12 @@ camp_triggers = {
 		once = true,												--Trigger is fired once
 		condition = 'true',											--Condition of the trigger to return true or false embedded as string
 		action = {													--Trigger action function embedded as string
-			[1] = 'Action.Text("After the effective political action of the Minister of the Interior, a group of Georgian nationalists led by the Army Corps General Baaka Kobakhidze, carried out a coup by supporting Georgian military forces and with the political and military support of some western countries coordinated by the USA. On 9 September 1975, Tbilissi government buildings were occupied by Georgian military forces, at the same time the airports of Tbilissi, Soganlug, Vaziani, Kutaisi, Batumi, Kobuleti, Senaki, Sukhumi and Gudauta were occupied by Western coalition and/or Georgian military forces (Georgian War Coalition).")',
+			[1] = 'Action.Text("After the effective political action of the Minister of the Interior, a group of Georgian nationalists led by the Army Corps General Baaka Kobakhidze, carried out a coup by supporting Georgian military forces and with the political and military support of some western countries coordinated by the USA. On 9 September 1975, Tbilisi government buildings were occupied by Georgian military forces, at the same time the airports of Tbilisi, Soganlug, Vaziani, Kutaisi, Batumi, Kobuleti, Senaki, Sukhumi and Gudauta were occupied by Western coalition and/or Georgian military forces (Georgian War Coalition).")',
 			[2] = 'Action.Text("The Georgian War Coalition occupy the whole area of North Ossetia up to Kurta. During this expansion phase, Georgian forces manage to appropriate an important quantity of Russian military equipment, including: Mig-19, Mig-21, Mig-27, SU-17, AN-26 as well as SAM systems of the SA-2, SA-3, SA-6, SA-8, SA-9 with AAA ZSU-23, ZSU-57. ")',
 			[3] = 'Action.Text("The goal of the Georgian War Coalition is to exploit the weakness of the Soviet Union to establish control in this important area through important and explicit military action. The decision made by Western countries to participate directly in the military action is based on the security that the conflict will remain localized in the Caucasian area due to the extreme weakness and instability facing the entire Soviet Union.")',
 			[4] = 'Action.Text("Against all odds, Russia reacts swiftly and forcefully to the attack by engaging an impressive amount of military air forces in support of the ground operations necessary to restore military control over Georgia. After being relegated to Sakire, the Russian forces present in North Ossetia launch an immediate counterattack that allows them to consolidate their position in the areas of Didmukha, Tskhinvali and Sathiari by rejecting Georgian forces in the areas of Tsveri, Tkviavi and Kaspi.")',
 			[5] = 'Action.Text("At this stage of the conflict, the main Russian military air bases are Mineralnye, Nalchik, Beslan and Mozdok where are operative squadrons of Mig-21, Mig-23, Mig-25, Mig-27, Su-17, Su-24, L-39. Maykop and Mineralnye are used by heavy bomber Tu-22, Kransnodar and Nalchik are operative Tu-126 (A-50 :| ) Awacs. In many Russian airbases are operative An-26 for transport. Russian FARP are presents in Nogir, Tskhinvali and Lenigori area, where are operative Mi-8MTV2 and Mi-24 squads.")',
-			[6] = 'Action.Text("The main Georgian and Western Coalition military base are Batumi, Kutaisi, Tbilissi, Vaziani where are operative squadron of Mig-19, Mig-21, Mig-27, F-4E, F-5, AJS-37 (Sweden). Batumi airbase are operative heavy bomber B-52 and at Kutaisi airbase are operative some new E-3 Awacs. In many Georgian airbases are operative C-130 and An-26 for transport and KC135 for refuelling. Georgian FARP are presents in Gori, khashuri, Ambrolauri where are operative the 6th and 17th Cavalry with UH-1H and AH-1.")',
+			[6] = 'Action.Text("The main Georgian and Western Coalition military base are Batumi, Kutaisi, Tbilisi, Vaziani where are operative squadron of Mig-19, Mig-21, Mig-27, F-4E, F-5, AJS-37 (Sweden). Batumi airbase are operative heavy bomber B-52 and at Kutaisi airbase are operative some new E-3 Awacs. In many Georgian airbases are operative C-130 and An-26 for transport and KC135 for refuelling. Georgian FARP are presents in Gori, khashuri, Ambrolauri where are operative the 6th and 17th Cavalry with UH-1H and AH-1.")',
 			[7] = 'Action.Text("US NAvy has sent the CVN-68 USS Nimitz (T.Roosvelt) and CV-67 USS John F. Kennedy (J.C. Stennis) which operates off the coast of Batumi, and VF 101 (your group) and VF 118/GA are ready for aggressive operation.")',
 			[8] = 'Action.Text("The effectiveness of operations depends on obtaining air superiority, of destruction airbases, ground forces and on the integrity of supply asset (supply plant and supply line). Obviously, these assets are sensitive targets for the enemy, so it is very important to defend them and destroy those of the enemy. ")',
 			[9] = 'Action.AddImage("Newspaper_FirstNight_blue.jpg", "blue")',
@@ -87,7 +87,7 @@ camp_triggers = {
 	["Campaign End Victory 2 (enemy Fighter + Fighter-Bomber < 10 unit)"] = {
 		active = true,
 		once = true,
-		condition = 'Return.AirUnitReady("790.IAP") + Return.AirUnitReady("113.IAP") + Return.AirUnitReady("123.IAP") + Return.AirUnitReady("948 Squadron") + Return.AirUnitReady("67 Squadron") + Return.AirUnitReady("764.IAP") + Return.AirUnitReady("797.IAP") + Return.AirUnitReady("159.IAP") + Return.AirUnitReady("81st TFS") < 10',
+		condition = 'Return.AirUnitReady("790.IAP") + Return.AirUnitReady("113.IAP") + Return.AirUnitReady("123.IAP") + Return.AirUnitReady("948 Squadron") + Return.AirUnitReady("67 Squadron") + Return.AirUnitReady("764.IAP") + Return.AirUnitReady("797.IAP") + Return.AirUnitReady("159.IAP") < 10',
 		action = {
 			[1] = 'Action.CampaignEnd("win")',
 			[2] = 'Action.Text("Syrian coalition fighter planes have been annihilated. After repeated air strikes and disastrous losses in air-air combat (aircraft losses are bigger of 80%), the Syrian coalition is not longer able to produce any sorties or offer any resistance. The The USA and Nato countries now owns complete air superiority. With the disappearance of the air threat, the role of the F-14A Tomcat in this war comes to an end. Once again the victorious Tomcat has proved to be to leading fighter in the world. Well done.")',
@@ -111,7 +111,7 @@ camp_triggers = {
 	["Campaign End Victory 4 (enemy Fighter + Fighter-Bomber < 12 unit and Attacker + Bomber < 15 unit)"] = {
 		active = true,
 		once = true,
-		condition = '( Return.AirUnitReady("790.IAP") + Return.AirUnitReady("113.IAP") + Return.AirUnitReady("123.IAP") + Return.AirUnitReady("948 Squadron") + Return.AirUnitReady("67 Squadron") + Return.AirUnitReady("764.IAP") + Return.AirUnitReady("797.IAP") + Return.AirUnitReady("159.IAP") + Return.AirUnitReady("81st TFS") < 12 ) and ( Return.AirUnitReady("117.IAP") + Return.AirUnitReady("127.IAP") + Return.AirUnitReady("127.IAP") + Return.AirUnitReady("3 Squadron") + Return.AirUnitReady("677 Squadron") + Return.AirUnitReady("368 ShAP")  + Return.AirUnitReady("3 BAP 149th BAA")  + Return.AirUnitReady("402nd Heavy Bomber Aviation Regiment") + Return.AirUnitReady("373 ShAP") + Return.AirUnitReady("4 Guards BAP 132nd BAA") + Return.AirUnitReady("132nd Heavy Bomber Aviation Regiment") + Return.AirUnitReady("637 Squadron") < 15 )',
+		condition = '( Return.AirUnitReady("790.IAP") + Return.AirUnitReady("113.IAP") + Return.AirUnitReady("123.IAP") + Return.AirUnitReady("948 Squadron") + Return.AirUnitReady("67 Squadron") + Return.AirUnitReady("764.IAP") + Return.AirUnitReady("797.IAP") + Return.AirUnitReady("159.IAP") < 12 ) and ( Return.AirUnitReady("117.IAP") + Return.AirUnitReady("127.IAP") + Return.AirUnitReady("127.IAP") + Return.AirUnitReady("3 Squadron") + Return.AirUnitReady("677 Squadron") + Return.AirUnitReady("368 ShAP")  + Return.AirUnitReady("3 BAP 149th BAA")  + Return.AirUnitReady("402nd Heavy Bomber Aviation Regiment") + Return.AirUnitReady("373 ShAP") + Return.AirUnitReady("4 Guards BAP 132nd BAA") + Return.AirUnitReady("132nd Heavy Bomber Aviation Regiment") + Return.AirUnitReady("637 Squadron") < 15 )',
 		action = {
 			[1] = 'Action.CampaignEnd("win")',
 			[2] = 'Action.Text("Syrian coalition Air Force is in ruins. After repeated air strikes and disastrous losses in air-air combat (aircraft losses are bigger 70% for Fighter and 60% for Bomber), the Syrian coalition is not longer able to offer any resistance. The Usa and Nato countries now owns complete ground invasion. With the disappearance of the air threat, the role of the F-14A Tomcat in this war comes to an end. Once again the victorious Tomcat has proved to be to leading fighter in the world. Well done.")',
@@ -207,7 +207,7 @@ camp_triggers = {
 	["Campaign End Loss 7"] = {
 		active = true,
 		once = true,
-		condition = 'Return.TargetAlive("Vaziani Airbase") < 4 and Return.TargetAlive("Tbilissi Airbase") < 8 and Return.TargetAlive("Soganlug Airbase") < 5 and Return.TargetAlive("Kutaisi Airbase") < 10 and Return.TargetAlive("Senaki Airbase") < 12 and Return.TargetAlive("Batumi Airbase") < 7 and Return.TargetAlive("Sukhumi Airbase") < 3',
+		condition = 'Return.TargetAlive("Vaziani Airbase") < 4 and Return.TargetAlive("Tbilisi Airbase") < 8 and Return.TargetAlive("Soganlug Airbase") < 5 and Return.TargetAlive("Kutaisi Airbase") < 10 and Return.TargetAlive("Senaki Airbase") < 12 and Return.TargetAlive("Batumi Airbase") < 7 and Return.TargetAlive("Sukhumi Airbase") < 3',
 		action = {
 			[1] = 'Action.CampaignEnd("win")',
 			[2] = 'Action.Text("The USA and NATO Air Force are in ruins. All ours main bases are destroyed, USA and NATO Countries are not longer able to produce any sorties or offer any resistance. The Russian forces now owns complete air superiority and reconquer their territories.")',
@@ -337,7 +337,7 @@ camp_triggers = {
 			[1] = 'Action.Text("After the facilities at Batumi Airbase have been hit by air strikes, air operations at this base came to a complete stop. Intelligence believes that due to the heavy damage inflicted, the base is no longer ably to produce any aviation sorties.")',
 		}
 	},
-	["Kobuleti Airbase Disabled"] = {
+	--[[["Kobuleti Airbase Disabled"] = {
 		active = true,
 		condition = 'Return.TargetAlive("Kobuleti Airbase") < 11',
 		action = {
@@ -351,7 +351,7 @@ camp_triggers = {
 		action = {
 			[1] = 'Action.Text("After the facilities at Kobuleti Airbase have been hit by air strikes, air operations at this base came to a complete stop. Intelligence believes that due to the heavy damage inflicted, the base is no longer ably to produce any aviation sorties.")',
 		}
-	},
+	},]]
 	["Senaki Airbase Disabled"] = {
 		active = true,
 		condition = 'Return.TargetAlive("Senaki Airbase") < 12',
@@ -382,19 +382,19 @@ camp_triggers = {
 			[1] = 'Action.Text("The infrastructure at Kutaisi Airbase has been destroyed by air strikes. Flying operations at this base have ceased completely and are unlikely to resume. This will ease our efforts to hit other targets in the Kutaisi Country area.")',
 		}
 	},
-	["Tbilissi Airbase Disabled"] = {
+	["Tbilisi Airbase Disabled"] = {
 		active = true,
-		condition = 'Return.TargetAlive("Tbilissi Airbase") < 7',
+		condition = 'Return.TargetAlive("Tbilisi Airbase") < 7',
 		action = {
-			[1] = 'db_airbases["Tbilissi-Lochini"].inactive = true',
+			[1] = 'db_airbases["Tbilisi-Lochini"].inactive = true',
 		}
 	},
-	["Tbilissi Airbase Disabled Text"] = {
+	["Tbilisi Airbase Disabled Text"] = {
 		active = true,
 		once = false,
-		condition = 'Return.TargetAlive("Tbilissi Airbase") < 7',
+		condition = 'Return.TargetAlive("Tbilisi Airbase") < 7',
 		action = {
-			[1] = 'Action.Text("The infrastructure at Tbilissi-Lochini Airbase has been destroyed by air strikes. Flying operations at this base have ceased completely and are unlikely to resume. This will ease our efforts to hit other targets in the Kutaisi Country area.")',
+			[1] = 'Action.Text("The infrastructure at Tbilisi-Lochini Airbase has been destroyed by air strikes. Flying operations at this base have ceased completely and are unlikely to resume. This will ease our efforts to hit other targets in the Kutaisi Country area.")',
 		}
 	},	
 	["Sukhumi Airbase Disabled"] = {
@@ -889,11 +889,6 @@ camp_triggers = {
 		active = true,
 		condition = 'true',
 		action = 'Action.AirUnitReinforce("R/23.OSAP", "23.OSAP", 1)',
-	},	
-	["Reinforce 81st TFS"] = {
-		active = true,
-		condition = 'true',
-		action = 'Action.AirUnitReinforce("R/81st TFS", "81st TFS", 4)',
 	},	
 	["Reinforce 15th Squadron"] = {
 		active = true,

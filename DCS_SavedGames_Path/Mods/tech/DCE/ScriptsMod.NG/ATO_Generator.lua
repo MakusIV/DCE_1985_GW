@@ -788,7 +788,7 @@ for side,unit in pairs(oob_air) do																								--iterate through all 
 																						if target.x ~= nil and target.y ~= nil then
 																							if active_log then log.info("target coord: ".. target.x .. ", " .. target.y) end													
 																						end
-
+																						--print("unit: " .. unit[n].name .. "-" .. unit[n].type .. ", task: " .. task .. ", target: " .. target_name .. ", side: " .. side .. ", target coord: ".. (target.x or "nil") .. ", " .. (target.y or "nil"))
 																						local ToTarget = GetDistance(airbasePoint, target)											--direct distance to target
 																						if active_log then log.traceLow("direct distance to target: " .. ToTarget) end
 																						

@@ -72,7 +72,7 @@ db_airbases = {
 		ILS = "RWY 135/108.75 RWY 315/108.75",							-- ILS : optionnel
 		LimitedParkNb = 91,
 	},
-	['Tbilissi-Lochini'] = {
+	['Tbilisi-Lochini'] = {
 		x =	-315478.57142857,
 		y = 896538.85714286,
 		elevation = 471,

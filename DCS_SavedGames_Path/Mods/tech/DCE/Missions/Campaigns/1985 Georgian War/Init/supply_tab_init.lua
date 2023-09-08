@@ -36,7 +36,7 @@
 			AMBROLAURI FARP LN41 (Bridge Kutaisi-LM18 [2]),
 
 		SUPPLY PLANT MARNEULI ML89 [29]:
-			Tbilissi (d),
+			Tbilisi (d),
 			Soganlug (d),
 			Vaziani (d),
 
@@ -236,10 +236,10 @@ supply_tab = {
 		['SUPPLY PLANT  MARNEULI ML89'] = {--      supply plant
 			['integrity'] = 1,
 			['supply_line_names'] = {				
-				['Tbilissi Airbase'] = {
+				['Tbilisi Airbase'] = {
 					['integrity'] = 1,
 					['airbase_supply'] = {
-						['Tbilissi-Lochini'] = true,
+						['Tbilisi-Lochini'] = true,
 						['Reserves-R/801 ARS'] = true,												
 					},
 				},

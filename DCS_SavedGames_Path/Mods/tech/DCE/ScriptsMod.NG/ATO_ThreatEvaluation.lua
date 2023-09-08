@@ -513,7 +513,7 @@ local function AddThreat(unit, side, hide)											--unput is side and unit-ta
 			elevation = 3,
 			min_alt = 100, -- DCE: 135, LAUNCHER DCS ENCYCLOPEDIA:  60, airgoon 25-18000
 			max_alt = 18000, --LAUNCHER DCS ENCYCLOPEDIA = 13700, airgoon 18000
-			rilevability = camp.module_config.ATO_ThreatEvaluation.LARGE_AAA_SAM_RADAR_VEHICLE_RILEVABILITY,
+			rilevability = camp.module_config.ATO_ThreatEvaluation.LARGE_SAM_VEHICLE_RILEVABILITY,
 		}	
 		
 	elseif unit.type == "Patriot str" then 
@@ -552,7 +552,7 @@ local function AddThreat(unit, side, hide)											--unput is side and unit-ta
 			elevation = 4,
 			min_alt = 1,
 			max_alt = 15000, --airgoon: 120B, 20000, 120C: 26000
-			rilevability = camp.module_config.ATO_ThreatEvaluation.LARGE_AAA_SAM_RADAR_VEHICLE_RILEVABILITY,
+			rilevability = camp.module_config.ATO_ThreatEvaluation.LARGE_SAM_VEHICLE_RILEVABILITY,
 		}
 
 	
