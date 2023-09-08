@@ -355,6 +355,7 @@ local function checkWeather(mission, unit, unit_loadout, flight_loadout, task, i
 			if not isSupportFlight and ( task == "Strike" or task == "Anti-ship Strike" or task == "Reconnaissance" ) then		--extra requirement for A-G tasks
 				if active_log then log.traceLow("extra requirement for A-G tasks in weather capable analisys")		 end
 
+				print("unit: " .. unit.name .. "-" .. unit.type .. ", task: " .. task .. ", unit_loadout: " .. inspect(unit_loadout))
 				if unit_loadout.hAttack > cloud_base then																		--attack alt is above cloud base
 					if active_log then log.traceLow("attack alt(" .. unit_loadout.hAttack .. ") is above cloud base(" .. cloud_base .. ")") end
 					
