@@ -488,15 +488,16 @@ function GetRoute(basePoint, targetPoint, profile, side_, task, time, multipackn
 						local lenghtL, lenghtR 
 						log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", headingL: " .. headingL .. ", headingR: " .. headingR)
 						
-						if string.sub(position, 1, 2) == "le" then	-- p1 on left of center circle			
-							lenghtL = min_distance_from_p1_p2 + (r/2 - min_distance_from_p1_p2)/2 + separation_from_threat_range
-							lenghtR = min_distance_from_p1_p2 + r/2 + separation_from_threat_range
-							log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", p1 on left of center circle (position: " .. position .. "), lenghtL: " .. lenghtL .. ", lenghtR: " .. lenghtR)
+						--p1 on right of cente.r circle		
+					        lenghtR = min_distance_from_p1_p2 + (r - min_distance_from_p1_p2)/2 + separation_from_threat_range --r/2 per non esagerare nello spostamento?
+						lenghtL = min_distance_from_p1_p2 + r/2 + separation_from_threat_range
+						log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", p1 on right of center circle (position: " .. position .. "), lenghtL: " .. lenghtL .. ", lenghtR: " .. lenghtR)
 						
-						else --p1 on right of cente.r circle		
-							lenghtR = min_distance_from_p1_p2 + (r - min_distance_from_p1_p2)/2 + separation_from_threat_range
-							lenghtL = min_distance_from_p1_p2 + r/2 + separation_from_threat_range
-							log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", p1 on right of center circle (position: " .. position .. "), lenghtL: " .. lenghtL .. ", lenghtR: " .. lenghtR)
+						if string.sub(position, 1, 2) == "le" then	-- p1 on left of center circle			
+							local ll = lenghtL 
+							lenghtL = lenghtR 
+							lenghtR = ll
+							log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", p1 on left of center circle (position: " .. position .. "), lenghtL: " .. lenghtL .. ", lenghtR: " .. lenghtR)
 						end
 
 						local alfaL = 90
