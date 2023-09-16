@@ -107,8 +107,8 @@ local function evalRadarDetection(profile_alt, threat, type_profile, threat_tabl
 		else
 			threatentry.level = threat.level																	--full threat level is applied
 			log.traceLow("type_profile: " .. type_profile .. ", threat isn't ewr assigned full threatentry.level = " .. threatentry.level .. ", insert ewr in threat_table.ground[" .. profile_alt .. "]")
-			table.insert(threat_table.ground[profile_alt], threatentry)
 		end
+		table.insert(threat_table.ground[profile_alt], threatentry)
 	
 	else
 		log.traceLow("type_profile: " .. type_profile .. ", threat is an ewr, insert ewr in threat_table.ewr[" .. profile_alt .. "]")
