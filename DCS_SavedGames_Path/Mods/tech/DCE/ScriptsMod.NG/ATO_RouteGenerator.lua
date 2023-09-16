@@ -477,7 +477,7 @@ function GetRoute(basePoint, targetPoint, profile, side_, task, time, multipackn
 						log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", max_tan_angle (" .. max_tan_angle .. ") >= 90 -> max_tangent_angle = 45")		
 					end
 
-					-- local function
+					-- return data for new route point computer with old metodi (shifting at 90,-90 degree)
 					local function GetTangentInfoBase(p1, p1_p2_heading, min_distance_from_p1_p2, r, position, separation_from_threat_range) 
 						local previous_log_level = log.level
 						log.level = function_log_level --"traceVeryLow" -- 
@@ -491,13 +491,15 @@ function GetRoute(basePoint, targetPoint, profile, side_, task, time, multipackn
 						--p1 on right of cente.r circle		
 					        lenghtR = min_distance_from_p1_p2 + (r - min_distance_from_p1_p2)/2 + separation_from_threat_range --r/2 per non esagerare nello spostamento?
 						lenghtL = min_distance_from_p1_p2 + r/2 + separation_from_threat_range
-						log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", p1 on right of center circle (position: " .. position .. "), lenghtL: " .. lenghtL .. ", lenghtR: " .. lenghtR)
-						
+							
 						if string.sub(position, 1, 2) == "le" then	-- p1 on left of center circle			
 							local ll = lenghtL 
 							lenghtL = lenghtR 
 							lenghtR = ll
 							log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", p1 on left of center circle (position: " .. position .. "), lenghtL: " .. lenghtL .. ", lenghtR: " .. lenghtR)
+						else
+                                                        log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", p1 on right of center circle (position: " .. position .. "), lenghtL: " .. lenghtL .. ", lenghtR: " .. lenghtR)
+
 						end
 
 						local alfaL = 90
