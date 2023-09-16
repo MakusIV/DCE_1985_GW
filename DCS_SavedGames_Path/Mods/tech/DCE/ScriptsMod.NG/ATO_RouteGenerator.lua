@@ -474,7 +474,7 @@ function GetRoute(basePoint, targetPoint, profile, side_, task, time, multipackn
 						log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", max_tan_angle (" .. max_tan_angle .. ") < 90 -> max_tangent_angle = " .. max_tangent_angle)		
 
 					else
-						max_tangent_angle = 45
+						max_tangent_angle = ATO_RG_CONF.MAX_TANGENT_ANGLE
 						log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", max_tan_angle (" .. max_tan_angle .. ") >= 90 -> max_tangent_angle = 45")		
 					end
 
