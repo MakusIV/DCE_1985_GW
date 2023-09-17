@@ -474,7 +474,7 @@ function GetRoute(basePoint, targetPoint, profile, side_, task, time, multipackn
 						log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", max_tan_angle (" .. max_tan_angle .. ") < 90 -> max_tangent_angle = " .. max_tangent_angle)		
 
 					else
-						max_tangent_angle = ATO_RG_CONF.MAX_TANGENT_ANGLE
+						max_tangent_angle = ATO_RG_CONFIG.MAX_TANGENT_ANGLE
 						log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", max_tan_angle (" .. max_tan_angle .. ") >= 90 -> max_tangent_angle = 45")		
 					end
 
@@ -627,10 +627,10 @@ function GetRoute(basePoint, targetPoint, profile, side_, task, time, multipackn
 				log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", radius_with_separation: " .. radius_with_separation .. ", p1_threat_distance: " .. GetDistance(point1, threat[1]) .. ", p2_threat_distance: " .. GetDistance(point2, threat[1]) .. ", min_distance_from_threat_p1_p2: " .. GetTangentDistance(point1, point2, threat[1]))					
 				
 				log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", compute tangent info with p1-p2: ")
-				response, tpL, tpR, headingL, headingR, lenghtL, lenghtR, position = GetTangentInfo(point1, point2, threat[1], threat[1].range, ATO_RG_CONF.MAX_TANGENT_ANGLE, ATO_RG_CONFIG.SEPARATION_FROM_THREAT_RANGE)								
+				response, tpL, tpR, headingL, headingR, lenghtL, lenghtR, position = GetTangentInfo(point1, point2, threat[1], threat[1].range, ATO_RG_CONFIG.MAX_TANGENT_ANGLE, ATO_RG_CONFIG.SEPARATION_FROM_THREAT_RANGE)								
 		
 				log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", compute tangent info with p2-p1: ")
-				response1, tpL1, tpR1, headingL1, headingR1, lenghtL1, lenghtR1, position1 = GetTangentInfo(point2, point1, threat[1], threat[1].range, ATO_RG_CONF.MAX_TANGENT_ANGLE, ATO_RG_CONFIG.SEPARATION_FROM_THREAT_RANGE)				
+				response1, tpL1, tpR1, headingL1, headingR1, lenghtL1, lenghtR1, position1 = GetTangentInfo(point2, point1, threat[1], threat[1].range, ATO_RG_CONFIG.MAX_TANGENT_ANGLE, ATO_RG_CONFIG.SEPARATION_FROM_THREAT_RANGE)				
 				
 				if response and response1 then
 					log.traceVeryLow(nameFunction .. ", instance: " .. instance .. ", point1 and point2 are within threat circonference ")
