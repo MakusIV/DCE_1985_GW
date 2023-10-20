@@ -1,8 +1,10 @@
---Loadouts database SYRIA 1984
+--Loadouts database Georgian 1984
 
 
 ---------------------------------------------------------------------------------------------------------
--- Old_Boy rev. OB.1.0.0: first implementation
+-- Old_Boy rev. OB.1.0.3: Inherit from Loadouts database Georgian 1975, implements 1985 asset and remove obsolete asset
+-- Old_Boy rev. OB.1.0.2: implements compute loadouts cruise parameters code (property)
+-- Old_Boy rev. OB.1.0.1: implements compute firepower code (property)
 -------------------------------------------------------------------------------------------------------
 
 
@@ -4951,7 +4953,7 @@ db_loadouts = {
 				firepower = 7,
 				vCruise = 215,
 				vAttack = 215,
-				hCruise = 200,
+				hCruise = 6200,
 				hAttack = nil,
 				standoff = nil, --rb04 range: 32000 
 				tStation = nil,
@@ -9880,7 +9882,7 @@ db_loadouts = {
 				day = true,
 				night = false,
 				adverseWeather = true,
-				range = 500000,
+				range = 200000,
 				capability = 5,
 				firepower = 1,
 				vCruise = 40,
